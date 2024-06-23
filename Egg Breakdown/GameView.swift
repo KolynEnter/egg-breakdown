@@ -7,7 +7,14 @@
 
 import SwiftUI
 
+
+let playerId = UUID()
 struct GameView: View {
+    let eggcups: [EggCupDropZone] = [
+        EggCupDropZone(id: UUID(), playerId: playerId, isTargeted: false, eggCup: EggCup(id: UUID(), eggType: EggType.normal, isCovered: false)),
+        EggCupDropZone(id: UUID(), playerId: playerId, isTargeted: true, eggCup: EggCup(id: UUID(), eggType: EggType.normal, isCovered: false)),
+        EggCupDropZone(id: UUID(), playerId: playerId, isTargeted: false, eggCup: EggCup(id: UUID(), eggType: EggType.normal, isCovered: false)),
+        EggCupDropZone(id: UUID(), playerId: playerId, isTargeted: false, eggCup: EggCup(id: UUID(), eggType: EggType.normal, isCovered: false))]
     var body: some View {
         return VStack {
             Rectangle()
@@ -25,10 +32,9 @@ struct GameView: View {
             VStack {
                 Spacer()
                 HStack {
-                    EggCup()
-                    EggCup()
-                    EggCup()
-                    EggCup()
+                    ForEach(eggcups, id: \.id) { eggcup in
+                        eggcup
+                    }
                 }
                 .frame(height: 150.0)
                 
@@ -68,6 +74,13 @@ struct GameView: View {
                 Spacer()
             }
             HStack {
+                Button {
+                    print("Pressed Egg")
+                } label: {
+                    Image("egg")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
                 Rectangle()
                     .foregroundColor(.white)
                 Text("8")

@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D778E7D2C27C66E008A5E54 /* EggCup_DropZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D778E7C2C27C66E008A5E54 /* EggCup_DropZone.swift */; };
+		5D778E802C27CA35008A5E54 /* Draggable_EggCup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D778E7F2C27CA35008A5E54 /* Draggable_EggCup.swift */; };
 		5D9F241F2C266085005BF969 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F241E2C266085005BF969 /* Game.swift */; };
 		5D9F24212C2660F7005BF969 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24202C2660F7005BF969 /* MainView.swift */; };
 		5D9F24232C26610F005BF969 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24222C26610F005BF969 /* GameView.swift */; };
 		5D9F24252C266C8D005BF969 /* Egg_Cup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24242C266C8D005BF969 /* Egg_Cup.swift */; };
 		5DD867A22C26559E00E37087 /* Egg_BreakdownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD867A12C26559E00E37087 /* Egg_BreakdownApp.swift */; };
 		5DD867A42C26559E00E37087 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD867A32C26559E00E37087 /* ContentView.swift */; };
-		5DD867A62C26559E00E37087 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD867A52C26559E00E37087 /* Item.swift */; };
 		5DD867A82C2655A100E37087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DD867A72C2655A100E37087 /* Assets.xcassets */; };
 		5DD867AB2C2655A100E37087 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DD867AA2C2655A100E37087 /* Preview Assets.xcassets */; };
 		5DD867B52C2655A100E37087 /* Egg_BreakdownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD867B42C2655A100E37087 /* Egg_BreakdownTests.swift */; };
@@ -39,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D778E7C2C27C66E008A5E54 /* EggCup_DropZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggCup_DropZone.swift; sourceTree = "<group>"; };
+		5D778E7E2C27C986008A5E54 /* Egg-Breakdown-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Egg-Breakdown-Info.plist"; sourceTree = SOURCE_ROOT; };
+		5D778E7F2C27CA35008A5E54 /* Draggable_EggCup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draggable_EggCup.swift; sourceTree = "<group>"; };
 		5D9F241E2C266085005BF969 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		5D9F24202C2660F7005BF969 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		5D9F24222C26610F005BF969 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
@@ -46,7 +50,6 @@
 		5DD8679E2C26559E00E37087 /* Egg Breakdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Egg Breakdown.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DD867A12C26559E00E37087 /* Egg_BreakdownApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Egg_BreakdownApp.swift; sourceTree = "<group>"; };
 		5DD867A32C26559E00E37087 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		5DD867A52C26559E00E37087 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		5DD867A72C2655A100E37087 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5DD867AA2C2655A100E37087 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5DD867B02C2655A100E37087 /* Egg BreakdownTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Egg BreakdownTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +84,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D778E7B2C27C62E008A5E54 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				5D9F24242C266C8D005BF969 /* Egg_Cup.swift */,
+				5D778E7C2C27C66E008A5E54 /* EggCup_DropZone.swift */,
+				5D778E7F2C27CA35008A5E54 /* Draggable_EggCup.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
 		5DD867952C26559E00E37087 = {
 			isa = PBXGroup;
 			children = (
@@ -104,15 +117,15 @@
 		5DD867A02C26559E00E37087 /* Egg Breakdown */ = {
 			isa = PBXGroup;
 			children = (
+				5D778E7E2C27C986008A5E54 /* Egg-Breakdown-Info.plist */,
+				5D778E7B2C27C62E008A5E54 /* components */,
 				5DD867A12C26559E00E37087 /* Egg_BreakdownApp.swift */,
 				5DD867A32C26559E00E37087 /* ContentView.swift */,
-				5DD867A52C26559E00E37087 /* Item.swift */,
 				5DD867A72C2655A100E37087 /* Assets.xcassets */,
 				5DD867A92C2655A100E37087 /* Preview Content */,
 				5D9F241E2C266085005BF969 /* Game.swift */,
 				5D9F24202C2660F7005BF969 /* MainView.swift */,
 				5D9F24222C26610F005BF969 /* GameView.swift */,
-				5D9F24242C266C8D005BF969 /* Egg_Cup.swift */,
 			);
 			path = "Egg Breakdown";
 			sourceTree = "<group>";
@@ -273,9 +286,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DD867A42C26559E00E37087 /* ContentView.swift in Sources */,
-				5DD867A62C26559E00E37087 /* Item.swift in Sources */,
 				5DD867A22C26559E00E37087 /* Egg_BreakdownApp.swift in Sources */,
+				5D778E7D2C27C66E008A5E54 /* EggCup_DropZone.swift in Sources */,
 				5D9F24212C2660F7005BF969 /* MainView.swift in Sources */,
+				5D778E802C27CA35008A5E54 /* Draggable_EggCup.swift in Sources */,
 				5D9F24232C26610F005BF969 /* GameView.swift in Sources */,
 				5D9F241F2C266085005BF969 /* Game.swift in Sources */,
 				5D9F24252C266C8D005BF969 /* Egg_Cup.swift in Sources */,
@@ -445,11 +459,11 @@
 				DEVELOPMENT_TEAM = KDFWD22A6K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Egg-Breakdown-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -474,11 +488,11 @@
 				DEVELOPMENT_TEAM = KDFWD22A6K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Egg-Breakdown-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
