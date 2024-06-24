@@ -9,12 +9,19 @@ import SwiftUI
 
 
 let playerId = UUID()
+
+
 struct GameView: View {
-    let eggcups: [EggCupDropZone] = [
-        EggCupDropZone(id: UUID(), playerId: playerId, isTargeted: false, eggCup: EggCup(id: UUID(), eggType: EggType.normal, isCovered: false)),
-        EggCupDropZone(id: UUID(), playerId: playerId, isTargeted: true, eggCup: EggCup(id: UUID(), eggType: EggType.normal, isCovered: false)),
-        EggCupDropZone(id: UUID(), playerId: playerId, isTargeted: false, eggCup: EggCup(id: UUID(), eggType: EggType.normal, isCovered: false)),
-        EggCupDropZone(id: UUID(), playerId: playerId, isTargeted: false, eggCup: EggCup(id: UUID(), eggType: EggType.normal, isCovered: false))]
+    var eggCupDropZones: [EggCupDropZone]
+    
+    init() {
+        eggCupDropZones = []
+        eggCupDropZones.append(EggCupDropZone(playerId: playerId, isTargeted: false))
+        eggCupDropZones.append(EggCupDropZone(playerId: playerId, isTargeted: false))
+        eggCupDropZones.append(EggCupDropZone(playerId: playerId, isTargeted: false))
+        eggCupDropZones.append(EggCupDropZone(playerId: playerId, isTargeted: false))
+    }
+    
     var body: some View {
         return VStack {
             Rectangle()
@@ -32,7 +39,7 @@ struct GameView: View {
             VStack {
                 Spacer()
                 HStack {
-                    ForEach(eggcups, id: \.id) { eggcup in
+                    ForEach(eggCupDropZones, id: \.id) { eggcup in
                         eggcup
                     }
                 }

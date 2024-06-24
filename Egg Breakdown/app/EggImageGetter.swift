@@ -1,29 +1,11 @@
 //
-//  Egg_Cup.swift
+//  EggImageGetter.swift
 //  Egg Breakdown
 //
-//  Created by Jianxin Lin on 6/21/24.
+//  Created by Jianxin Lin on 6/23/24.
 //
 
 import SwiftUI
-
-struct EggCup: View {
-    let id: UUID
-    let eggType: EggType
-    let isCovered: Bool
-    
-    var body: some View {
-        return ZStack {
-            getEggImage(eggType: eggType)
-            
-            if isCovered {
-                Image("bag")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-            }
-        }
-    }
-}
 
 func getEggImage(eggType: EggType) -> some View {
     if eggType == EggType.normal {
@@ -39,8 +21,4 @@ func getEggImage(eggType: EggType) -> some View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
     }
-}
-
-enum EggType: Codable {
-    case normal, golden, broken
 }

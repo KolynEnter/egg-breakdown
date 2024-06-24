@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D778E7D2C27C66E008A5E54 /* EggCup_DropZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D778E7C2C27C66E008A5E54 /* EggCup_DropZone.swift */; };
-		5D778E802C27CA35008A5E54 /* Draggable_EggCup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D778E7F2C27CA35008A5E54 /* Draggable_EggCup.swift */; };
-		5D9F241F2C266085005BF969 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F241E2C266085005BF969 /* Game.swift */; };
+		5D52C58C2C28FCB6007810D4 /* EggType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D52C58B2C28FCB6007810D4 /* EggType.swift */; };
+		5D52C5902C28FD7F007810D4 /* GamePhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D52C58F2C28FD7F007810D4 /* GamePhase.swift */; };
+		5D52C5932C28FEF5007810D4 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D52C5922C28FEF5007810D4 /* Player.swift */; };
+		5D52C5952C29011D007810D4 /* RobotPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D52C5942C29011D007810D4 /* RobotPlayer.swift */; };
+		5D52C5962C2902DA007810D4 /* Egg-Breakdown-Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = 5D778E7E2C27C986008A5E54 /* Egg-Breakdown-Info.plist */; };
+		5D52C5982C29051C007810D4 /* EggImageGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D52C5972C29051C007810D4 /* EggImageGetter.swift */; };
+		5D52C59C2C290848007810D4 /* EggCupCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D52C59B2C290848007810D4 /* EggCupCover.swift */; };
+		5D778E7D2C27C66E008A5E54 /* EggCupDropZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D778E7C2C27C66E008A5E54 /* EggCupDropZone.swift */; };
+		5D778E802C27CA35008A5E54 /* DraggableEggCup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D778E7F2C27CA35008A5E54 /* DraggableEggCup.swift */; };
+		5D9F241F2C266085005BF969 /* EggBreakdownGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F241E2C266085005BF969 /* EggBreakdownGame.swift */; };
 		5D9F24212C2660F7005BF969 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24202C2660F7005BF969 /* MainView.swift */; };
 		5D9F24232C26610F005BF969 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24222C26610F005BF969 /* GameView.swift */; };
-		5D9F24252C266C8D005BF969 /* Egg_Cup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24242C266C8D005BF969 /* Egg_Cup.swift */; };
 		5DD867A22C26559E00E37087 /* Egg_BreakdownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD867A12C26559E00E37087 /* Egg_BreakdownApp.swift */; };
 		5DD867A42C26559E00E37087 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD867A32C26559E00E37087 /* ContentView.swift */; };
 		5DD867A82C2655A100E37087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DD867A72C2655A100E37087 /* Assets.xcassets */; };
@@ -40,13 +46,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5D778E7C2C27C66E008A5E54 /* EggCup_DropZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggCup_DropZone.swift; sourceTree = "<group>"; };
-		5D778E7E2C27C986008A5E54 /* Egg-Breakdown-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Egg-Breakdown-Info.plist"; sourceTree = SOURCE_ROOT; };
-		5D778E7F2C27CA35008A5E54 /* Draggable_EggCup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draggable_EggCup.swift; sourceTree = "<group>"; };
-		5D9F241E2C266085005BF969 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		5D52C58B2C28FCB6007810D4 /* EggType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggType.swift; sourceTree = "<group>"; };
+		5D52C58F2C28FD7F007810D4 /* GamePhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePhase.swift; sourceTree = "<group>"; };
+		5D52C5922C28FEF5007810D4 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		5D52C5942C29011D007810D4 /* RobotPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotPlayer.swift; sourceTree = "<group>"; };
+		5D52C5972C29051C007810D4 /* EggImageGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggImageGetter.swift; sourceTree = "<group>"; };
+		5D52C59B2C290848007810D4 /* EggCupCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggCupCover.swift; sourceTree = "<group>"; };
+		5D778E7C2C27C66E008A5E54 /* EggCupDropZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggCupDropZone.swift; sourceTree = "<group>"; };
+		5D778E7E2C27C986008A5E54 /* Egg-Breakdown-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Egg-Breakdown-Info.plist"; sourceTree = SOURCE_ROOT; };
+		5D778E7F2C27CA35008A5E54 /* DraggableEggCup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableEggCup.swift; sourceTree = "<group>"; };
+		5D9F241E2C266085005BF969 /* EggBreakdownGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggBreakdownGame.swift; sourceTree = "<group>"; };
 		5D9F24202C2660F7005BF969 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		5D9F24222C26610F005BF969 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
-		5D9F24242C266C8D005BF969 /* Egg_Cup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Egg_Cup.swift; sourceTree = "<group>"; };
 		5DD8679E2C26559E00E37087 /* Egg Breakdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Egg Breakdown.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DD867A12C26559E00E37087 /* Egg_BreakdownApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Egg_BreakdownApp.swift; sourceTree = "<group>"; };
 		5DD867A32C26559E00E37087 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,12 +95,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D52C58D2C28FCE3007810D4 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				5DD867A32C26559E00E37087 /* ContentView.swift */,
+				5D9F24202C2660F7005BF969 /* MainView.swift */,
+				5D9F24222C26610F005BF969 /* GameView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		5D52C58E2C28FD72007810D4 /* enums */ = {
+			isa = PBXGroup;
+			children = (
+				5D52C58B2C28FCB6007810D4 /* EggType.swift */,
+				5D52C58F2C28FD7F007810D4 /* GamePhase.swift */,
+			);
+			path = enums;
+			sourceTree = "<group>";
+		};
+		5D52C5912C28FDB9007810D4 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				5DD867A72C2655A100E37087 /* Assets.xcassets */,
+				5D9F241E2C266085005BF969 /* EggBreakdownGame.swift */,
+				5DD867A12C26559E00E37087 /* Egg_BreakdownApp.swift */,
+				5D52C5922C28FEF5007810D4 /* Player.swift */,
+				5D52C5942C29011D007810D4 /* RobotPlayer.swift */,
+				5D52C5972C29051C007810D4 /* EggImageGetter.swift */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
 		5D778E7B2C27C62E008A5E54 /* components */ = {
 			isa = PBXGroup;
 			children = (
-				5D9F24242C266C8D005BF969 /* Egg_Cup.swift */,
-				5D778E7C2C27C66E008A5E54 /* EggCup_DropZone.swift */,
-				5D778E7F2C27CA35008A5E54 /* Draggable_EggCup.swift */,
+				5D778E7C2C27C66E008A5E54 /* EggCupDropZone.swift */,
+				5D778E7F2C27CA35008A5E54 /* DraggableEggCup.swift */,
+				5D52C59B2C290848007810D4 /* EggCupCover.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -97,6 +140,7 @@
 		5DD867952C26559E00E37087 = {
 			isa = PBXGroup;
 			children = (
+				5D778E7E2C27C986008A5E54 /* Egg-Breakdown-Info.plist */,
 				5DD867A02C26559E00E37087 /* Egg Breakdown */,
 				5DD867B32C2655A100E37087 /* Egg BreakdownTests */,
 				5DD867BD2C2655A100E37087 /* Egg BreakdownUITests */,
@@ -117,15 +161,11 @@
 		5DD867A02C26559E00E37087 /* Egg Breakdown */ = {
 			isa = PBXGroup;
 			children = (
-				5D778E7E2C27C986008A5E54 /* Egg-Breakdown-Info.plist */,
+				5D52C5912C28FDB9007810D4 /* app */,
+				5D52C58E2C28FD72007810D4 /* enums */,
+				5D52C58D2C28FCE3007810D4 /* views */,
 				5D778E7B2C27C62E008A5E54 /* components */,
-				5DD867A12C26559E00E37087 /* Egg_BreakdownApp.swift */,
-				5DD867A32C26559E00E37087 /* ContentView.swift */,
-				5DD867A72C2655A100E37087 /* Assets.xcassets */,
 				5DD867A92C2655A100E37087 /* Preview Content */,
-				5D9F241E2C266085005BF969 /* Game.swift */,
-				5D9F24202C2660F7005BF969 /* MainView.swift */,
-				5D9F24222C26610F005BF969 /* GameView.swift */,
 			);
 			path = "Egg Breakdown";
 			sourceTree = "<group>";
@@ -285,14 +325,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D52C5962C2902DA007810D4 /* Egg-Breakdown-Info.plist in Sources */,
+				5D52C5932C28FEF5007810D4 /* Player.swift in Sources */,
+				5D52C5982C29051C007810D4 /* EggImageGetter.swift in Sources */,
+				5D52C58C2C28FCB6007810D4 /* EggType.swift in Sources */,
 				5DD867A42C26559E00E37087 /* ContentView.swift in Sources */,
+				5D52C5952C29011D007810D4 /* RobotPlayer.swift in Sources */,
 				5DD867A22C26559E00E37087 /* Egg_BreakdownApp.swift in Sources */,
-				5D778E7D2C27C66E008A5E54 /* EggCup_DropZone.swift in Sources */,
+				5D778E7D2C27C66E008A5E54 /* EggCupDropZone.swift in Sources */,
 				5D9F24212C2660F7005BF969 /* MainView.swift in Sources */,
-				5D778E802C27CA35008A5E54 /* Draggable_EggCup.swift in Sources */,
+				5D778E802C27CA35008A5E54 /* DraggableEggCup.swift in Sources */,
 				5D9F24232C26610F005BF969 /* GameView.swift in Sources */,
-				5D9F241F2C266085005BF969 /* Game.swift in Sources */,
-				5D9F24252C266C8D005BF969 /* Egg_Cup.swift in Sources */,
+				5D52C59C2C290848007810D4 /* EggCupCover.swift in Sources */,
+				5D9F241F2C266085005BF969 /* EggBreakdownGame.swift in Sources */,
+				5D52C5902C28FD7F007810D4 /* GamePhase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
