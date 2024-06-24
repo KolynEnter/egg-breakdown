@@ -8,5 +8,9 @@
 import Foundation
 
 class Player {
-    let id: UUID = UUID()
+    let id: UUID
+    
+    init(id: UUID) {
+        self.id = id
+    }
 }

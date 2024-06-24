@@ -13,11 +13,11 @@ func getEggImage(eggType: EggType) -> some View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
     } else if eggType == EggType.golden {
-        return Image("golden")
+        return Image("golden_egg")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
     } else {
-        return Image("broken")
+        return Image("broken_egg")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
     }

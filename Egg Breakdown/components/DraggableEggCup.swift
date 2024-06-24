@@ -9,7 +9,6 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 struct DraggableEggCup: View, Codable, Hashable, Transferable {
-    let id: UUID
     let playerId: UUID
     let eggType: EggType
     

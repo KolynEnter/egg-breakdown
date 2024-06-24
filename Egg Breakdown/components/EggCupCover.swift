@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct EggCupCover: View {
-    let coverAlphaValue: Double
+    @ObservedObject private var game: EggBreakdownGame
+    
+    let index: Int
+    
+    init(game: EggBreakdownGame, index: Int) {
+        self.game = game
+        self.index = index
+    }
     
     var body: some View {
         return ZStack {
             Image("bag")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .opacity(coverAlphaValue)
+                .opacity(game.coverAlphaValues[index])
         }
     }
 }

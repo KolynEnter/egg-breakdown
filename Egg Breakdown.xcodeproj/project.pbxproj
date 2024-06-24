@@ -19,6 +19,7 @@
 		5D9F241F2C266085005BF969 /* EggBreakdownGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F241E2C266085005BF969 /* EggBreakdownGame.swift */; };
 		5D9F24212C2660F7005BF969 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24202C2660F7005BF969 /* MainView.swift */; };
 		5D9F24232C26610F005BF969 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24222C26610F005BF969 /* GameView.swift */; };
+		5DA00FA32C2A143800011AB9 /* Hammer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA00FA22C2A143800011AB9 /* Hammer.swift */; };
 		5DD867A22C26559E00E37087 /* Egg_BreakdownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD867A12C26559E00E37087 /* Egg_BreakdownApp.swift */; };
 		5DD867A42C26559E00E37087 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD867A32C26559E00E37087 /* ContentView.swift */; };
 		5DD867A82C2655A100E37087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DD867A72C2655A100E37087 /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		5D9F241E2C266085005BF969 /* EggBreakdownGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggBreakdownGame.swift; sourceTree = "<group>"; };
 		5D9F24202C2660F7005BF969 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		5D9F24222C26610F005BF969 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		5DA00FA22C2A143800011AB9 /* Hammer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hammer.swift; sourceTree = "<group>"; };
 		5DD8679E2C26559E00E37087 /* Egg Breakdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Egg Breakdown.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DD867A12C26559E00E37087 /* Egg_BreakdownApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Egg_BreakdownApp.swift; sourceTree = "<group>"; };
 		5DD867A32C26559E00E37087 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				5D778E7C2C27C66E008A5E54 /* EggCupDropZone.swift */,
 				5D778E7F2C27CA35008A5E54 /* DraggableEggCup.swift */,
 				5D52C59B2C290848007810D4 /* EggCupCover.swift */,
+				5DA00FA22C2A143800011AB9 /* Hammer.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DA00FA32C2A143800011AB9 /* Hammer.swift in Sources */,
 				5D52C5962C2902DA007810D4 /* Egg-Breakdown-Info.plist in Sources */,
 				5D52C5932C28FEF5007810D4 /* Player.swift in Sources */,
 				5D52C5982C29051C007810D4 /* EggImageGetter.swift in Sources */,
