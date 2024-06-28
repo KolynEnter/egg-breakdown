@@ -12,13 +12,12 @@ struct GameView: View {
     @State private var hammerOffset = CGSize.zero
     @State private var startLocation = CGSize.zero
     @State private var hammerFrame = CGRect.zero
-    @State private var rivalEggCupFrames: [CGRect] = []
+    @State private var eggCupFrames: [CGRect] = Array(repeating: .zero, count: 8)
     @State private var hammerTargetIndex: Int = 0
 
     private var eggCupDropZones: [EggCupDropZone]
     private var draggableEggCups: [DraggableEggCup]
     private var hammer: Hammer
-    private let updateInterval: Double = 0.3
     
     init(game: EggBreakdownGame, p1: Player, p2: Player) {
         self.game = game
@@ -73,34 +72,10 @@ struct GameView: View {
                             .background(GeometryReader { geo in
                                 Color.clear
                                     .onAppear {
-                                        self.rivalEggCupFrames.append(geo.frame(in: .global))
+                                        self.eggCupFrames[dropZone.index] = geo.frame(in: .global)
                                     }
                             })
                     }
-                    
-//                    ForEach(eggCupDropZones.suffix(eggCupDropZones.count / 2), id: \.id) { dropZone in
-//                        dropZone
-//                            .dropDestination(for: Hammer.self) { hammers, location in
-//                            for hammer in hammers {
-//                                if hammer.playerId == dropZone.playerId {
-//                                    return false
-//                                }
-//                                if game.gamePhase != GamePhase.attack {
-//                                    print("Not in attack phase, attack failed.")
-//                                    return false
-//                                }
-//                                if game.getLocalPlayer().id != game.attackTurnOwnerID {
-//                                    print("It's not your turn to attack yet. Please wait for your opponent.")
-//                                    return false
-//                                }
-//                                
-//                                game.getLocalPlayer().breakEgg(at: dropZone.index)
-//                            }
-//                            return true
-//                        } isTargeted: { isTargeted in
-//                            game.isZoneTargeted[dropZone.index] = isTargeted
-//                        }
-//                    }
                 }
                 .frame(height: 150.0)
                 
@@ -122,9 +97,18 @@ struct GameView: View {
                                 .onEnded { gesture in
                                     let tempFrame = calculateTempHammerFrame()
                                     
-                                    for i in 0..<rivalEggCupFrames.count {
-                                        let rivalEggCupFrame = rivalEggCupFrames[i]
-                                        if tempFrame.intersects(rivalEggCupFrame) {
+                                    for i in 0..<eggCupFrames.count {
+                                        let eggCupFrame = eggCupFrames[i]
+                                        if tempFrame.intersects(eggCupFrame) {
+                                            if game.gamePhase != GamePhase.attack {
+                                                print("Not in attack phase, attack failed.")
+                                                break
+                                            }
+                                            if game.getLocalPlayer().id != game.attackTurnOwnerID {
+                                                print("It's not your turn to attack yet. Please wait for your opponent.")
+                                                break
+                                            }
+                                            game.getLocalPlayer().breakEgg(at: eggCupDropZones[i].index)
                                             
                                             break
                                         }
@@ -146,7 +130,6 @@ struct GameView: View {
                                     self.hammerFrame = geo.frame(in: .global)
                                 }
                         })
-
                 }
                 .zIndex(1)
                 
@@ -157,27 +140,34 @@ struct GameView: View {
                 HStack {
                     ForEach(eggCupDropZones.prefix(eggCupDropZones.count / 2), id: \.id) { dropZone in
                         dropZone
-                            .dropDestination(for: DraggableEggCup.self) { droppedEggCups, location in
-                                for droppedEggCup in droppedEggCups {
-                                    if game.getLocalPlayer().numOfGoldenEggs < 1 {
-                                        print("\(game.getLocalPlayer().id) has not enough golden eggs.")
-                                        return false
+                            .background(GeometryReader { geo in
+                                Color.clear
+                                    .onAppear {
+                                        self.eggCupFrames[dropZone.index] = geo.frame(in: .global)
                                     }
-                                    if droppedEggCup.playerId != dropZone.playerId {
-                                        return false
-                                    }
-                                    if game.gamePhase != GamePhase.setupDefense {
-                                        print("Not in setup defense phase, cannot set.")
-                                        return false
-                                    }
-                                    
-                                    // drag an egg to zone
-                                    game.getLocalPlayer().setEgg(at: dropZone.index, droppedEggType: droppedEggCup.eggType)
-                                }
-                                return true
-                            } isTargeted: { isTargeted in
-                                game.isZoneTargeted[dropZone.index] = isTargeted
-                            }
+                            })
+//                        dropZone
+//                            .dropDestination(for: DraggableEggCup.self) { droppedEggCups, location in
+//                                for droppedEggCup in droppedEggCups {
+//                                    if game.getLocalPlayer().numOfGoldenEggs < 1 {
+//                                        print("\(game.getLocalPlayer().id) has not enough golden eggs.")
+//                                        return false
+//                                    }
+//                                    if droppedEggCup.playerId != dropZone.playerId {
+//                                        return false
+//                                    }
+//                                    if game.gamePhase != GamePhase.setupDefense {
+//                                        print("Not in setup defense phase, cannot set.")
+//                                        return false
+//                                    }
+//                                    
+//                                    // drag an egg to zone
+//                                    game.getLocalPlayer().setEgg(at: dropZone.index, droppedEggType: droppedEggCup.eggType)
+//                                }
+//                                return true
+//                            } isTargeted: { isTargeted in
+//                                game.isZoneTargeted[dropZone.index] = isTargeted
+//                            }
                     }
                 }
                 .frame(height: 150.0)
@@ -210,26 +200,28 @@ struct GameView: View {
     
     func detectHammerSelection() -> Void {
         let tempFrame = calculateTempHammerFrame()
-            
-        for i in 0..<rivalEggCupFrames.count {
-            let rivalEggCupFrame = rivalEggCupFrames[i]
-            if game.isZoneTargeted[hammerTargetIndex] {
-                game.isZoneTargeted[hammerTargetIndex] = false
+        
+        for i in 0..<eggCupFrames.count {
+            if game.isZoneTargeted[i] {
+                game.isZoneTargeted[i] = false
             }
-            if tempFrame.intersects(rivalEggCupFrame) {
-                hammerTargetIndex = i+game.isZoneTargeted.count/2
+        }
+
+        for i in 0..<eggCupFrames.count {
+            if hammer.playerId == eggCupDropZones[i].playerId {
+                continue
+            }
+            if tempFrame.intersects(eggCupFrames[i]) {
+                hammerTargetIndex = i
                 game.isZoneTargeted[hammerTargetIndex] = true
                 break
-            }
-            else {
-                
             }
         }
     }
     
     func calculateTempHammerFrame() -> CGRect {
-        return CGRect(x: -hammerFrame.minX - hammerOffset.width,
-                      y: -hammerFrame.minY - hammerOffset.height,
+        return CGRect(x: hammerOffset.width + hammerFrame.minX,
+                      y: hammerOffset.height + hammerFrame.minY,
                       width: hammerFrame.width,
                       height: hammerFrame.height)
     }
