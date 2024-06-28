@@ -14,8 +14,8 @@ struct MainView: View {
     let p2: Player
     
     init() {
-        p1 = Player(id: UUID())
-        p2 = Player(id: UUID())
+        p1 = Player(id: UUID(), numOfGoldenEggs: 8)
+        p2 = RobotPlayer(id: UUID(), numOfGoldenEggs: 8)
         game = EggBreakdownGame(player1: p1, player2: p2)
     }
     
@@ -39,4 +39,3 @@ struct MainView: View {
         }
     }
 }
-
