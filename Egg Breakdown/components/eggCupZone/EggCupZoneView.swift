@@ -1,32 +1,25 @@
 //
-//  EggCup_DropZone.swift
+//  EggCupZoneView.swift
 //  Egg Breakdown
 //
-//  Created by Jianxin Lin on 6/22/24.
+//  Created by Jianxin Lin on 6/29/24.
 //
 
 import SwiftUI
 
-struct EggCupDropZone: View {
+struct EggCupZoneView: View {
     @ObservedObject private var game: EggBreakdownGame
-    @State private var coverAlphaValue: Double = 1.0
-    
-    let index: Int
-    let id: UUID
+
+    private let index: Int
     private let eggViews: [EggType: some View] = [
         EggType.normal: getEggImage(eggType: EggType.normal),
         EggType.golden: getEggImage(eggType: EggType.golden),
         EggType.broken: getEggImage(eggType: EggType.broken)
     ]
-    let playerId: UUID
-    let isTargeted: Bool
 
-    init(playerId: UUID, isTargeted: Bool, game:EggBreakdownGame, index: Int) {
-        self.id = UUID()
-        
-        self.playerId = playerId
-        self.isTargeted = isTargeted
+    init(game:EggBreakdownGame, index: Int) {
         self.game = game
+        
         self.index = index
     }
     
@@ -34,7 +27,7 @@ struct EggCupDropZone: View {
         return ZStack {
             RoundedRectangle(cornerRadius: 12)
                 .frame(maxWidth: .infinity)
-                .foregroundColor(isTargeted ? .teal.opacity(0.15) : Color(.secondarySystemFill))
+                .foregroundColor(game.isZoneTargeted[index] ? .teal.opacity(0.15) : Color(.secondarySystemFill))
             
             eggViews[game.dropZoneEggType[index]]
             EggCupCover(game: game, index: index)

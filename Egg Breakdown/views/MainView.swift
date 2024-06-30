@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MainView: View {
-    @State private var isInGame: Bool = false
     @ObservedObject var game: EggBreakdownGame
     let p1: Player
     let p2: Player

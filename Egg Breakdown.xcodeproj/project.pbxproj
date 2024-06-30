@@ -13,7 +13,6 @@
 		5D52C5962C2902DA007810D4 /* Egg-Breakdown-Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = 5D778E7E2C27C986008A5E54 /* Egg-Breakdown-Info.plist */; };
 		5D52C5982C29051C007810D4 /* EggImageGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D52C5972C29051C007810D4 /* EggImageGetter.swift */; };
 		5D52C59C2C290848007810D4 /* EggCupCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D52C59B2C290848007810D4 /* EggCupCover.swift */; };
-		5D778E7D2C27C66E008A5E54 /* EggCupDropZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D778E7C2C27C66E008A5E54 /* EggCupDropZone.swift */; };
 		5D778E802C27CA35008A5E54 /* DraggableEggCup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D778E7F2C27CA35008A5E54 /* DraggableEggCup.swift */; };
 		5D9F241F2C266085005BF969 /* EggBreakdownGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F241E2C266085005BF969 /* EggBreakdownGame.swift */; };
 		5D9F24212C2660F7005BF969 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24202C2660F7005BF969 /* MainView.swift */; };
@@ -21,6 +20,17 @@
 		5DA00FA32C2A143800011AB9 /* Hammer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA00FA22C2A143800011AB9 /* Hammer.swift */; };
 		5DA00FA52C2A431F00011AB9 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA00FA42C2A431F00011AB9 /* CustomError.swift */; };
 		5DA00FA72C2A4C2E00011AB9 /* GameToPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA00FA62C2A4C2E00011AB9 /* GameToPlayer.swift */; };
+		5DD3D8712C31C114008BC774 /* EggCupZonesComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD3D86D2C31C113008BC774 /* EggCupZonesComponent.swift */; };
+		5DD3D8722C31C114008BC774 /* EggCupZoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD3D86E2C31C113008BC774 /* EggCupZoneController.swift */; };
+		5DD3D8732C31C114008BC774 /* EggCupZoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD3D86F2C31C113008BC774 /* EggCupZoneView.swift */; };
+		5DD3D8742C31C114008BC774 /* EggCupZoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD3D8702C31C113008BC774 /* EggCupZoneModel.swift */; };
+		5DD3D87E2C31CEB1008BC774 /* DragEggCupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD3D8762C31CEB1008BC774 /* DragEggCupModel.swift */; };
+		5DD3D87F2C31CEB1008BC774 /* DragEggCupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD3D8772C31CEB1008BC774 /* DragEggCupController.swift */; };
+		5DD3D8802C31CEB1008BC774 /* DragEggCupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD3D8782C31CEB1008BC774 /* DragEggCupView.swift */; };
+		5DD3D8812C31CEB1008BC774 /* HammerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD3D87A2C31CEB1008BC774 /* HammerController.swift */; };
+		5DD3D8822C31CEB1008BC774 /* HammerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD3D87B2C31CEB1008BC774 /* HammerComponent.swift */; };
+		5DD3D8832C31CEB1008BC774 /* HammerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD3D87C2C31CEB1008BC774 /* HammerView.swift */; };
+		5DD3D8842C31CEB1008BC774 /* HammerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD3D87D2C31CEB1008BC774 /* HammerModel.swift */; };
 		5DD867A22C26559E00E37087 /* Egg_BreakdownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD867A12C26559E00E37087 /* Egg_BreakdownApp.swift */; };
 		5DD867A42C26559E00E37087 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD867A32C26559E00E37087 /* ContentView.swift */; };
 		5DD867A82C2655A100E37087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DD867A72C2655A100E37087 /* Assets.xcassets */; };
@@ -53,7 +63,6 @@
 		5D52C5922C28FEF5007810D4 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		5D52C5972C29051C007810D4 /* EggImageGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggImageGetter.swift; sourceTree = "<group>"; };
 		5D52C59B2C290848007810D4 /* EggCupCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggCupCover.swift; sourceTree = "<group>"; };
-		5D778E7C2C27C66E008A5E54 /* EggCupDropZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggCupDropZone.swift; sourceTree = "<group>"; };
 		5D778E7E2C27C986008A5E54 /* Egg-Breakdown-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Egg-Breakdown-Info.plist"; sourceTree = SOURCE_ROOT; };
 		5D778E7F2C27CA35008A5E54 /* DraggableEggCup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableEggCup.swift; sourceTree = "<group>"; };
 		5D9F241E2C266085005BF969 /* EggBreakdownGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggBreakdownGame.swift; sourceTree = "<group>"; };
@@ -62,6 +71,17 @@
 		5DA00FA22C2A143800011AB9 /* Hammer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hammer.swift; sourceTree = "<group>"; };
 		5DA00FA42C2A431F00011AB9 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		5DA00FA62C2A4C2E00011AB9 /* GameToPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameToPlayer.swift; sourceTree = "<group>"; };
+		5DD3D86D2C31C113008BC774 /* EggCupZonesComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EggCupZonesComponent.swift; sourceTree = "<group>"; };
+		5DD3D86E2C31C113008BC774 /* EggCupZoneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EggCupZoneController.swift; sourceTree = "<group>"; };
+		5DD3D86F2C31C113008BC774 /* EggCupZoneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EggCupZoneView.swift; sourceTree = "<group>"; };
+		5DD3D8702C31C113008BC774 /* EggCupZoneModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EggCupZoneModel.swift; sourceTree = "<group>"; };
+		5DD3D8762C31CEB1008BC774 /* DragEggCupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragEggCupModel.swift; sourceTree = "<group>"; };
+		5DD3D8772C31CEB1008BC774 /* DragEggCupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragEggCupController.swift; sourceTree = "<group>"; };
+		5DD3D8782C31CEB1008BC774 /* DragEggCupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragEggCupView.swift; sourceTree = "<group>"; };
+		5DD3D87A2C31CEB1008BC774 /* HammerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HammerController.swift; sourceTree = "<group>"; };
+		5DD3D87B2C31CEB1008BC774 /* HammerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HammerComponent.swift; sourceTree = "<group>"; };
+		5DD3D87C2C31CEB1008BC774 /* HammerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HammerView.swift; sourceTree = "<group>"; };
+		5DD3D87D2C31CEB1008BC774 /* HammerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HammerModel.swift; sourceTree = "<group>"; };
 		5DD8679E2C26559E00E37087 /* Egg Breakdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Egg Breakdown.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DD867A12C26559E00E37087 /* Egg_BreakdownApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Egg_BreakdownApp.swift; sourceTree = "<group>"; };
 		5DD867A32C26559E00E37087 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -135,12 +155,46 @@
 		5D778E7B2C27C62E008A5E54 /* components */ = {
 			isa = PBXGroup;
 			children = (
-				5D778E7C2C27C66E008A5E54 /* EggCupDropZone.swift */,
+				5DD3D8752C31CEB1008BC774 /* dragEggCup */,
+				5DD3D8792C31CEB1008BC774 /* hammer */,
+				5DD3D86C2C31C113008BC774 /* eggCupZone */,
 				5D778E7F2C27CA35008A5E54 /* DraggableEggCup.swift */,
 				5D52C59B2C290848007810D4 /* EggCupCover.swift */,
 				5DA00FA22C2A143800011AB9 /* Hammer.swift */,
 			);
 			path = components;
+			sourceTree = "<group>";
+		};
+		5DD3D86C2C31C113008BC774 /* eggCupZone */ = {
+			isa = PBXGroup;
+			children = (
+				5DD3D8702C31C113008BC774 /* EggCupZoneModel.swift */,
+				5DD3D86F2C31C113008BC774 /* EggCupZoneView.swift */,
+				5DD3D86E2C31C113008BC774 /* EggCupZoneController.swift */,
+				5DD3D86D2C31C113008BC774 /* EggCupZonesComponent.swift */,
+			);
+			path = eggCupZone;
+			sourceTree = "<group>";
+		};
+		5DD3D8752C31CEB1008BC774 /* dragEggCup */ = {
+			isa = PBXGroup;
+			children = (
+				5DD3D8762C31CEB1008BC774 /* DragEggCupModel.swift */,
+				5DD3D8772C31CEB1008BC774 /* DragEggCupController.swift */,
+				5DD3D8782C31CEB1008BC774 /* DragEggCupView.swift */,
+			);
+			path = dragEggCup;
+			sourceTree = "<group>";
+		};
+		5DD3D8792C31CEB1008BC774 /* hammer */ = {
+			isa = PBXGroup;
+			children = (
+				5DD3D87A2C31CEB1008BC774 /* HammerController.swift */,
+				5DD3D87B2C31CEB1008BC774 /* HammerComponent.swift */,
+				5DD3D87C2C31CEB1008BC774 /* HammerView.swift */,
+				5DD3D87D2C31CEB1008BC774 /* HammerModel.swift */,
+			);
+			path = hammer;
 			sourceTree = "<group>";
 		};
 		5DD867952C26559E00E37087 = {
@@ -168,9 +222,9 @@
 			isa = PBXGroup;
 			children = (
 				5D52C5912C28FDB9007810D4 /* app */,
+				5D778E7B2C27C62E008A5E54 /* components */,
 				5D52C58E2C28FD72007810D4 /* enums */,
 				5D52C58D2C28FCE3007810D4 /* views */,
-				5D778E7B2C27C62E008A5E54 /* components */,
 				5DD867A92C2655A100E37087 /* Preview Content */,
 			);
 			path = "Egg Breakdown";
@@ -332,18 +386,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DA00FA32C2A143800011AB9 /* Hammer.swift in Sources */,
+				5DD3D8732C31C114008BC774 /* EggCupZoneView.swift in Sources */,
+				5DD3D87E2C31CEB1008BC774 /* DragEggCupModel.swift in Sources */,
 				5DA00FA52C2A431F00011AB9 /* CustomError.swift in Sources */,
 				5D52C5962C2902DA007810D4 /* Egg-Breakdown-Info.plist in Sources */,
+				5DD3D8742C31C114008BC774 /* EggCupZoneModel.swift in Sources */,
 				5D52C5932C28FEF5007810D4 /* Player.swift in Sources */,
+				5DD3D8722C31C114008BC774 /* EggCupZoneController.swift in Sources */,
+				5DD3D8812C31CEB1008BC774 /* HammerController.swift in Sources */,
 				5D52C5982C29051C007810D4 /* EggImageGetter.swift in Sources */,
 				5D52C58C2C28FCB6007810D4 /* EggType.swift in Sources */,
 				5DD867A42C26559E00E37087 /* ContentView.swift in Sources */,
 				5DA00FA72C2A4C2E00011AB9 /* GameToPlayer.swift in Sources */,
+				5DD3D8822C31CEB1008BC774 /* HammerComponent.swift in Sources */,
+				5DD3D8832C31CEB1008BC774 /* HammerView.swift in Sources */,
 				5DD867A22C26559E00E37087 /* Egg_BreakdownApp.swift in Sources */,
-				5D778E7D2C27C66E008A5E54 /* EggCupDropZone.swift in Sources */,
+				5DD3D8712C31C114008BC774 /* EggCupZonesComponent.swift in Sources */,
+				5DD3D8842C31CEB1008BC774 /* HammerModel.swift in Sources */,
 				5D9F24212C2660F7005BF969 /* MainView.swift in Sources */,
 				5D778E802C27CA35008A5E54 /* DraggableEggCup.swift in Sources */,
 				5D9F24232C26610F005BF969 /* GameView.swift in Sources */,
+				5DD3D8802C31CEB1008BC774 /* DragEggCupView.swift in Sources */,
+				5DD3D87F2C31CEB1008BC774 /* DragEggCupController.swift in Sources */,
 				5D52C59C2C290848007810D4 /* EggCupCover.swift in Sources */,
 				5D9F241F2C266085005BF969 /* EggBreakdownGame.swift in Sources */,
 				5D52C5902C28FD7F007810D4 /* GamePhase.swift in Sources */,
@@ -425,6 +489,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -486,6 +551,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
