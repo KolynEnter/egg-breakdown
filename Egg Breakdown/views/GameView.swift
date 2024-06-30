@@ -213,7 +213,7 @@ struct GameView: View {
             }
             if tempFrame.intersects(eggCupFrames[i]) {
                 hammerTargetIndex = i
-                game.isZoneTargeted[hammerTargetIndex] = true
+                game.isZoneTargeted[i] = true
                 break
             }
         }
