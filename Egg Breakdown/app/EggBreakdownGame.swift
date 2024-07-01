@@ -16,6 +16,7 @@ class EggBreakdownGame: ObservableObject {
     // Current Round of the game (1, 2, 3; game ends after Round 3)
     @Published var round: Int = 1
     
+    var eggCupFrames: [CGRect] = Array(repeating: .zero, count: 8)
     private let p1: Player
     private let p2: Player
     private var hasOnePlayerAttackedThisRound: Bool = false
@@ -26,7 +27,7 @@ class EggBreakdownGame: ObservableObject {
     init(player1: Player, player2: Player) {
         self.p1 = player1
         self.p2 = player2
-        
+
         p1.setGame(gameToPlayer: GameToPlayer(game: self,
                                               gameBreakEgg: breakEgg,
                                               endAttackTurn: endAttackTurnFor))
