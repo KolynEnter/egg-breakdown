@@ -10,10 +10,11 @@ import SwiftUI
 struct EggCupCover: View {
     @ObservedObject private var game: EggBreakdownGame
     
-    let index: Int
+    private let index: Int
     
     init(game: EggBreakdownGame, index: Int) {
         self.game = game
+        
         self.index = index
     }
     

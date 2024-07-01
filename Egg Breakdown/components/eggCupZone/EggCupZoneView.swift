@@ -34,4 +34,3 @@ struct EggCupZoneView: View {
         }
     }
 }
-

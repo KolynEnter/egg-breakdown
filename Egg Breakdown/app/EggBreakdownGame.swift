@@ -15,8 +15,10 @@ class EggBreakdownGame: ObservableObject {
     @Published private(set) var gamePhase: GamePhase = GamePhase.setupDefense
     // Current Round of the game (1, 2, 3; game ends after Round 3)
     @Published var round: Int = 1
+
     
     var eggCupFrames: [CGRect] = Array(repeating: .zero, count: 8)
+
     private let p1: Player
     private let p2: Player
     private var hasOnePlayerAttackedThisRound: Bool = false

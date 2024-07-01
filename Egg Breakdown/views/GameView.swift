@@ -17,7 +17,7 @@ struct GameView: View {
 
     init(game: EggBreakdownGame, p1: Player, p2: Player) {
         self.game = game
-        
+
         draggableEggCups = []
         draggableEggCups.append(DraggableEggCup(playerId: p1.id, eggType: EggType.normal))
         draggableEggCups.append(DraggableEggCup(playerId: p1.id, eggType: EggType.golden))
@@ -44,14 +44,6 @@ struct GameView: View {
             .background(.green)
             .padding()
             
-            HStack {
-                Image("golden_egg")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                Text(String(game.getOtherPlayer().numOfGoldenEggs))
-                Rectangle()
-                    .foregroundStyle(.background)
-            }
             VStack {
                 Spacer()
                 
@@ -61,8 +53,9 @@ struct GameView: View {
                 Rectangle()
                     .frame(height: 50)
                     .foregroundStyle(.background)
-                
+
                 HStack {
+                    Spacer()
                     Rectangle()
                     
                     hammerView
@@ -90,16 +83,8 @@ struct GameView: View {
                 } label: {
                     Text("Set")
                 }
-                .opacity(game.gamePhase == GamePhase.setupDefense ? 1 : 0)
-                
-                Rectangle()
-                    .foregroundStyle(.background)
-                
-                Text(String(game.getLocalPlayer().numOfGoldenEggs))
-                draggableEggCups[1]
-                    .draggable(draggableEggCups[1])
             }
+            .navigationBarBackButtonHidden(true)
         }
-        .navigationBarBackButtonHidden(true)
     }
 }
