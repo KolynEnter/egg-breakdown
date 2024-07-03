@@ -19,9 +19,9 @@ struct GameView: View {
     init(game: EggBreakdownGame, p1: Player, p2: Player) {
         self.game = game
         
-        hammerView = HammerView(game: game)
         eggCupZoneListView1 = EggCupZoneListView(game: game, startIndex: 0, playerId: p1.id)
         eggCupZoneListView2 = EggCupZoneListView(game: game, startIndex: 4, playerId: p2.id)
+        hammerView = HammerView(game: game)
         dragEgg1 = DragEggCupView(game: game, targets: eggCupZoneListView1, eggType: EggType.golden)
         dragEgg2 = DragEggCupView(game: game, targets: eggCupZoneListView1, eggType: EggType.normal)
     }
@@ -63,13 +63,13 @@ struct GameView: View {
                     .opacity(0)
                 
                 HStack {
-                    Spacer()
                     Rectangle()
                         .opacity(0)
                     
                     hammerView
                         .zIndex(1)
                 }
+                .zIndex(2)
                 
                 Rectangle()
                     .frame(height: 50)
@@ -101,6 +101,7 @@ struct GameView: View {
                         .opacity(0)
                     
                     Text(String(game.getLocalPlayer().numOfGoldenEggs))
+                    
                     dragEgg1
                         .zIndex(1)
                     

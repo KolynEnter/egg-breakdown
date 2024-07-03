@@ -22,7 +22,6 @@ struct HammerView: View {
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: 128.0, height: 128.0)
-            .fixedSize(horizontal: true, vertical: true)
             .offset(x: offset.width, y: offset.height)
             .gesture(
                 DragGesture()
@@ -57,8 +56,7 @@ struct HammerView: View {
                         }
                     }
             )
-            .background(GeometryReader { geo in
-                Color.clear
+            .background(GeometryReader { geo in Color.clear
                     .onAppear {
                         frame = geo.frame(in: .global)
                     }
@@ -77,7 +75,7 @@ struct HammerView: View {
                 game.isZoneTargeted[i] = false
             }
         }
-        
+
         for i in 0 ..< eggCupFrames.count {
             if currFrame.intersects(eggCupFrames[i]) {
                 targetIndex = i
@@ -90,7 +88,7 @@ struct HammerView: View {
     private func getCurrFrame() -> CGRect {
         return CGRect(x: offset.width + frame.minX,
                       y: offset.height + frame.minY,
-                      width: frame.width,
-                      height: frame.height)
+                      width: 128,
+                      height: 128)
     }
 }
