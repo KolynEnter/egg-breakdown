@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HammerView: View {
-    @ObservedObject var game: EggBreakdownGame
+    @ObservedObject private var game: EggBreakdownGame
     @State private var offset = CGSize.zero
     @State private var frame = CGRect.zero
     @State private var targetIndex: Int = 0
@@ -68,7 +68,7 @@ struct HammerView: View {
             })
     }
     
-    func showHammerSelection() -> Void {
+    private func showHammerSelection() -> Void {
         let currFrame = getCurrFrame()
         let eggCupFrames = game.eggCupFrames
         
@@ -87,7 +87,7 @@ struct HammerView: View {
         }
     }
     
-    func getCurrFrame() -> CGRect {
+    private func getCurrFrame() -> CGRect {
         return CGRect(x: offset.width + frame.minX,
                       y: offset.height + frame.minY,
                       width: frame.width,
