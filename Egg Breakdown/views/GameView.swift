@@ -21,7 +21,7 @@ struct GameView: View {
         
         eggCupZoneListView1 = EggCupZoneListView(game: game, startIndex: 0, playerId: p1.id)
         eggCupZoneListView2 = EggCupZoneListView(game: game, startIndex: 4, playerId: p2.id)
-        hammerView = HammerView(game: game)
+        hammerView = HammerView(game: game, targets: eggCupZoneListView2)
         dragEgg1 = DragEggCupView(game: game, targets: eggCupZoneListView1, eggType: EggType.golden)
         dragEgg2 = DragEggCupView(game: game, targets: eggCupZoneListView1, eggType: EggType.normal)
     }
@@ -31,11 +31,14 @@ struct GameView: View {
             HStack {
                 Text("Round \(String(game.round))")
                 Spacer()
-                Text("Time Remaining: 30s")
+                Text("Phase: \(getPhaseString())")
                 Spacer()
-                Text("Your Score: \(game.getLocalPlayer().score)")
-                Spacer()
-                Text("Opponent Score: \(game.getOtherPlayer().score)")
+                Text("Owner: \(getTurnOwner())")
+//                Text("Time Remaining: 30s")
+//                Spacer()
+//                Text("Your Score: \(game.getLocalPlayer().score)")
+//                Spacer()
+//                Text("Opponent Score: \(game.getOtherPlayer().score)")
             }
             .frame(height: 50)
             .background(.green)
@@ -110,5 +113,29 @@ struct GameView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
+    }
+    
+    func getPhaseString() -> String {
+        if game.gamePhase == .attack {
+            return "Attack"
+        } else if game.gamePhase == .setupDefense {
+            return "Set up Defense"
+        } else if game.gamePhase == .sendMessage {
+            return "Send Message"
+        } else if game.gamePhase == .newRound {
+            return "New Round"
+        }
+        
+        return ""
+    }
+    
+    func getTurnOwner() -> String {
+        if game.turnOwnerId == nil {
+            return "both"
+        } else if game.turnOwnerId == game.getLocalPlayer().id {
+            return "local"
+        } else {
+            return "other"
+        }
     }
 }

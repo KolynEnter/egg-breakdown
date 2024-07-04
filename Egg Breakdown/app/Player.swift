@@ -12,9 +12,10 @@ class Player {
     @Published private(set) var score: Int = 0
     
     let id: UUID
+    let name: String
     
     private var game: EggBreakdownGame?
-    private var Game: EggBreakdownGame {
+    fileprivate var Game: EggBreakdownGame {
         get throws {
             if game == nil {
                 throw CustomError.missingInitializationError
@@ -31,8 +32,8 @@ class Player {
             return gameBreakEgg!
         }
     }
-    private var endAttackTurn: ((Player) -> Void)?
-    fileprivate var EndAttackTurn: (Player) -> Void {
+    private var endAttackTurn: (() -> Void)?
+    fileprivate var EndAttackTurn: () -> Void {
         get throws {
             if endAttackTurn == nil {
                 throw CustomError.missingInitializationError
@@ -41,9 +42,10 @@ class Player {
         }
     }
     
-    init(id: UUID, numOfGoldenEggs: Int) {
+    init(id: UUID, numOfGoldenEggs: Int, name: String) {
         self.id = id
         self.numOfGoldenEggs = numOfGoldenEggs
+        self.name = name
     }
     
     func setGame(gameToPlayer: GameToPlayer) {
@@ -53,13 +55,13 @@ class Player {
     }
     
     func startSetupDefenseTurn() -> Void {
-        print("\(id) starts setting up defense.")
+        print("\(name) starts setting up defense.")
     }
     
     func pressSetButton() -> Void {
         do {
-            try Game.goToAttackPhase()
-            print("\(id) pressed Set button.")
+            try Game.exitSetupDefenseTurn(id: id)
+            print("\(name) pressed Set button.")
             try Game.coverAlphaValues = [0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1]
         } catch {
             print("Game not initialized for player. Press Set button failed.")
@@ -67,14 +69,14 @@ class Player {
     }
     
     func startAttackTurn() -> Void {
-        print("\(id)'s attack turn started.")
+        print("\(name)'s attack turn started.")
     }
     
     func breakEgg(at zoneIndex: Int) -> Void {
         do {
             try GameBreakEgg(zoneIndex)
-            print("\(id) hits egg at index \(zoneIndex).")
-            try EndAttackTurn(self)
+            print("\(name) hits egg at index \(zoneIndex).")
+            try EndAttackTurn()
         } catch {
             print("GameBreakEgg or EndAttackTurn function not initialized for player. Cannot break egg or end turn.")
         }
@@ -119,19 +121,28 @@ class RobotPlayer: Player {
                 }
                 sleep(UInt32(0.2))
             }
+            do {
+                try self.Game.exitSetupDefenseTurn(id: self.id)
+                print("ROBOT: exit setup defense")
+            } catch {
+                print("Game is not initialized for robot player")
+            }
         }
         print("Robot sets eggs at \(randomIndexs)")
     }
     
     override func startAttackTurn() -> Void {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+        print("ROBOT: attack turn started")
+        //DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             super.startAttackTurn()
-            super.breakEgg(at: Int.random(in: 0...3))
+            let breakEggIndex = Int.random(in: 0...3)
+            print("Robot breaks \(breakEggIndex)")
+            super.breakEgg(at: breakEggIndex)
             do {
-                try super.EndAttackTurn(self)
+                try super.EndAttackTurn()
             } catch {
                 print("EndAttackTurn function not initialized for player. Cannot end turn.")
             }
-        }
+        //}
     }
 }

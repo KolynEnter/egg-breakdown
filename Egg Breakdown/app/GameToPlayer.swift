@@ -8,5 +8,5 @@
 struct GameToPlayer {
     let game: EggBreakdownGame
     let gameBreakEgg: (Int)  -> Void
-    let endAttackTurn: (Player) -> Void
+    let endAttackTurn: () -> Void
 }

@@ -37,6 +37,10 @@ struct DragEggCupView: View {
                         let eggCupFrames = game.eggCupFrames
                         
                         for i in 0 ..< eggCupFrames.count {
+                            if !isZoneIndexMatch(globalIndex: i) {
+                                continue
+                            }
+                            
                             let eggCupFrame = eggCupFrames[i]
                             if currFrame.intersects(eggCupFrame) {
                                 if game.getLocalPlayer().numOfGoldenEggs < 1 {
@@ -50,9 +54,7 @@ struct DragEggCupView: View {
                                 }
                                 
                                 // Convert to global index
-                                game.getLocalPlayer()
-                                    .setEgg(at: targets.getControllers()[i].getIndex(), droppedEggType: eggType)
-                                
+                                game.getLocalPlayer().setEgg(at: i, droppedEggType: eggType)
                                 break
                             }
                         }
@@ -74,17 +76,29 @@ struct DragEggCupView: View {
             })
     }
     
+    private func isZoneIndexMatch(globalIndex: Int) -> Bool {
+        return targets.getControllers().contains { controller in
+            controller.getIndex() == globalIndex
+        }
+    }
+    
     private func showDropTargetSelection() -> Void {
         let currFrame = getCurrFrame()
         let eggCupFrames = game.eggCupFrames
         
         for i in 0 ..< eggCupFrames.count {
+            if !isZoneIndexMatch(globalIndex: i) {
+                continue
+            }
             if game.isZoneTargeted[i] {
                 game.isZoneTargeted[i] = false
             }
         }
         
         for i in 0 ..< eggCupFrames.count {
+            if !isZoneIndexMatch(globalIndex: i) {
+                continue
+            }
             if currFrame.intersects(eggCupFrames[i]) {
                 targetIndex = i
                 game.isZoneTargeted[i] = true
