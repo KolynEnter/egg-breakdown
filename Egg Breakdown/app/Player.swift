@@ -102,22 +102,52 @@ class Player {
     func incrementScore() -> Void {
         score += 1
     }
+    
+    func reInit() -> Void {
+        numOfGoldenEggs = 8
+        score = 0
+    }
 }
 
 class RobotPlayer: Player {
+    private var modifiedNumOfGoldenEggs: Int
+    
+    override init(id: UUID, numOfGoldenEggs: Int, name: String) {
+        modifiedNumOfGoldenEggs = numOfGoldenEggs
+        super.init(id: id, numOfGoldenEggs: numOfGoldenEggs, name: name)
+    }
+    
+    override func setEgg(at zoneIndex: Int, droppedEggType: EggType) {
+        do {
+            if droppedEggType == EggType.golden {
+                if try Game.dropZoneEggType[zoneIndex] != droppedEggType {
+                    modifiedNumOfGoldenEggs -= 1
+                }
+            } else {
+                if try Game.dropZoneEggType[zoneIndex] != droppedEggType {
+                    modifiedNumOfGoldenEggs += 1
+                }
+            }
+            try Game.dropZoneEggType[zoneIndex] = droppedEggType
+        } catch {
+            print("Game not initialized for player. Press Set button failed.")
+        }
+    }
+    
     override func pressSetButton() {
         
     }
     
     override func startSetupDefenseTurn() -> Void {
         super.startSetupDefenseTurn()
+        modifiedNumOfGoldenEggs = numOfGoldenEggs
         let numOfGoldenEggsToBeUsed = Int.random(in: 0...[3, super.numOfGoldenEggs].min()!)
         let arr = [4, 5, 6, 7].shuffled()
         let randomIndexs = Array(arr.prefix(numOfGoldenEggsToBeUsed))
         DispatchQueue.global(qos: .default).async {
             for randomIndex in randomIndexs {
                 DispatchQueue.main.async {
-                    super.setEgg(at: randomIndex, droppedEggType: EggType.golden)
+                    self.setEgg(at: randomIndex, droppedEggType: EggType.golden)
                 }
                 sleep(UInt32(0.2))
             }
@@ -144,5 +174,9 @@ class RobotPlayer: Player {
                 print("EndAttackTurn function not initialized for player. Cannot end turn.")
             }
         }
+    }
+    
+    func revealNumOfGoldenEggs() -> Void {
+        numOfGoldenEggs = modifiedNumOfGoldenEggs
     }
 }

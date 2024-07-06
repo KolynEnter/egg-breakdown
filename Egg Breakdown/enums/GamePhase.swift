@@ -10,4 +10,5 @@ enum GamePhase {
     case sendMessage
     case attack
     case newRound
+    case reveal
 }

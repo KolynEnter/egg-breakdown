@@ -12,4 +12,5 @@ import Foundation
 class PopupHelper: ObservableObject {
     @Published var showPopup: Bool = false
     @Published var message: String = ""
+    @Published var isGoToMain: Bool = false
 }

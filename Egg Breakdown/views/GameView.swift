@@ -9,23 +9,35 @@ import SwiftUI
 
 struct GameView: View {
     @ObservedObject private var game: EggBreakdownGame
+    // Initialization order
+    @State private var isShowDraggables: Bool = false
 
-    private var hammerView: HammerView
-    private var eggCupZoneListView1: EggCupZoneListView
-    private var eggCupZoneListView2: EggCupZoneListView
-    private var dragEgg1: DragEggCupView
-    private var dragEgg2: DragEggCupView
+    private let p1: Player
+    private let p2: Player
     private var popupView: GamePopupView
 
     init(game: EggBreakdownGame, popupControl: PopupHelper, p1: Player, p2: Player) {
         self.game = game
         
+        self.p1 = p1
+        self.p2 = p2
         popupView = GamePopupView(popupControl: popupControl)
-        eggCupZoneListView1 = EggCupZoneListView(game: game, startIndex: 0, playerId: p1.id)
-        eggCupZoneListView2 = EggCupZoneListView(game: game, startIndex: 4, playerId: p2.id)
-        hammerView = HammerView(game: game, targets: eggCupZoneListView2)
-        dragEgg1 = DragEggCupView(game: game, targets: eggCupZoneListView1, eggType: EggType.golden)
-        dragEgg2 = DragEggCupView(game: game, targets: eggCupZoneListView1, eggType: EggType.normal)
+    }
+    
+    private var eggCupZoneListView1: EggCupZoneListView {
+        EggCupZoneListView(game: game, startIndex: 0, playerId: p1.id, isShowDraggables: $isShowDraggables)
+    }
+    private var eggCupZoneListView2: EggCupZoneListView {
+        EggCupZoneListView(game: game, startIndex: 4, playerId: p2.id, isShowDraggables: $isShowDraggables)
+    }
+    private var hammerView: HammerView {
+        HammerView(game: game, targets: eggCupZoneListView2)
+    }
+    private var dragEgg1: DragEggCupView {
+        DragEggCupView(game: game, targets: eggCupZoneListView1, eggType: EggType.golden)
+    }
+    private var dragEgg2: DragEggCupView {
+        DragEggCupView(game: game, targets: eggCupZoneListView1, eggType: EggType.normal)
     }
     
     var body: some View {
@@ -69,8 +81,10 @@ struct GameView: View {
                         Rectangle()
                             .opacity(0)
                         
-                        hammerView
-                            .zIndex(1)
+                        if isShowDraggables {
+                            hammerView
+                                .zIndex(1)
+                        }
                     }
                     .zIndex(2)
                     
@@ -87,8 +101,10 @@ struct GameView: View {
                     HStack {
                         Spacer()
                         
-                        dragEgg2
-                            .zIndex(1)
+                        if isShowDraggables {
+                            dragEgg2
+                                .zIndex(1)
+                        }
                         
                         Rectangle()
                             .opacity(0)
@@ -105,8 +121,10 @@ struct GameView: View {
                         
                         Text(String(game.getLocalPlayer().numOfGoldenEggs))
                         
-                        dragEgg1
-                            .zIndex(1)
+                        if isShowDraggables {
+                            dragEgg1
+                                .zIndex(1)
+                        }
                         
                         Spacer()
                     }

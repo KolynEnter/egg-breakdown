@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @ObservedObject var game: EggBreakdownGame
+    @State private var navigate = false
 
     let p1: Player
     let p2: Player
@@ -20,7 +21,7 @@ struct MainView: View {
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 Spacer()
                 
@@ -30,12 +31,25 @@ struct MainView: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: GameView(game: game, popupControl: game.popupControl, p1: p1, p2: p2)) {
+                Button(action: {
+                    performActionBeforeNavigation()
+                }) {
                     Text("Start Game")
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
                 }
                 
                 Spacer()
             }
+            .navigationDestination(isPresented: $navigate) {
+                GameView(game: game, popupControl: game.popupControl, p1: p1, p2: p2)
+            }
         }
+    }
+    
+    func performActionBeforeNavigation() {
+        navigate = true
     }
 }

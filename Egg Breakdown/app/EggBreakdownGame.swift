@@ -108,7 +108,7 @@ class EggBreakdownGame: ObservableObject {
 //            startAttackTurn()
             goToNextGamePhase()
         } else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { [self] in
                 if self.hasGameEnd {
                     return
                 }
@@ -197,8 +197,18 @@ class EggBreakdownGame: ObservableObject {
                     // You lose
                     popupControl.message = "You lose"
                 }
+                popupControl.isGoToMain = true
             }
 //            goToNextGamePhase()
+        } else if gameFlowController.getCurrPhase() == GamePhase.reveal {
+            coverAlphaValues = [0, 0, 0, 0, 0, 0, 0, 0]
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { [self] in
+                if self.getOtherPlayer() is RobotPlayer {
+                    (getOtherPlayer() as! RobotPlayer).revealNumOfGoldenEggs()
+                }
+                self.goToNextGamePhase()
+            }
         }
     }
 }
@@ -208,16 +218,19 @@ fileprivate class GameFlowController {
 //                            GamePhase.sendMessage,
                             GamePhase.attack,
                             GamePhase.attack,
+                            GamePhase.reveal,
                             GamePhase.newRound,
                             GamePhase.setupDefense,
 //                            GamePhase.sendMessage,
                             GamePhase.attack,
                             GamePhase.attack,
+                            GamePhase.reveal,
                             GamePhase.newRound,
                             GamePhase.setupDefense,
 //                            GamePhase.sendMessage,
                             GamePhase.attack,
                             GamePhase.attack,
+                            GamePhase.reveal,
                             GamePhase.newRound]
     private var flowPointer: Int = 0
     
