@@ -17,7 +17,7 @@ struct HammerView: View {
     
     init(game: EggBreakdownGame, targets: EggCupZoneListView) {
         self.game = game
-        
+
         self.targets = targets
     }
     
@@ -30,6 +30,9 @@ struct HammerView: View {
             .gesture(
                 DragGesture()
                     .onChanged { gesture in
+                        if game.hasGameEnd {
+                            return
+                        }
                         offset = gesture.translation
                         showHammerSelection()
                     }
@@ -45,11 +48,13 @@ struct HammerView: View {
                             let eggCupFrame = eggCupFrames[i]
                             if currFrame.intersects(eggCupFrame) {
                                 if game.gamePhase != GamePhase.attack {
-                                    print("Not in attack phase, attack failed.")
+//                                    print("Not in attack phase, attack failed.")
+                                    game.popup(message: "Not in attack phase, attack failed.")
                                     break
                                 }
                                 if game.getLocalPlayer().id != game.turnOwnerId {
-                                    print("It's not your turn to attack yet. Please wait for your opponent.")
+//                                    print("It's not your turn to attack yet. Please wait for your opponent.")
+                                    game.popup(message: "It's not your turn to attack yet. Please wait for your opponent.")
                                     break
                                 }
                                 game.getLocalPlayer().breakEgg(at: targetIndex)

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @ObservedObject var game: EggBreakdownGame
+
     let p1: Player
     let p2: Player
     
@@ -29,7 +30,7 @@ struct MainView: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: GameView(game: game, p1: p1, p2: p2)) {
+                NavigationLink(destination: GameView(game: game, popupControl: game.popupControl, p1: p1, p2: p2)) {
                     Text("Start Game")
                 }
                 

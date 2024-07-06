@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D0A0F9D2C38E27F00C48719 /* GamePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0A0F9C2C38E27F00C48719 /* GamePopupView.swift */; };
+		5D0A0FA02C38ED8F00C48719 /* PopupHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F88F42C377CC6001678FF /* PopupHelper.swift */; };
 		5D52C58C2C28FCB6007810D4 /* EggType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D52C58B2C28FCB6007810D4 /* EggType.swift */; };
 		5D52C5902C28FD7F007810D4 /* GamePhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D52C58F2C28FD7F007810D4 /* GamePhase.swift */; };
 		5D52C5932C28FEF5007810D4 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D52C5922C28FEF5007810D4 /* Player.swift */; };
@@ -54,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D0A0F9C2C38E27F00C48719 /* GamePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePopupView.swift; sourceTree = "<group>"; };
 		5D52C58B2C28FCB6007810D4 /* EggType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggType.swift; sourceTree = "<group>"; };
 		5D52C58F2C28FD7F007810D4 /* GamePhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePhase.swift; sourceTree = "<group>"; };
 		5D52C5922C28FEF5007810D4 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 		5D9F241E2C266085005BF969 /* EggBreakdownGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggBreakdownGame.swift; sourceTree = "<group>"; };
 		5D9F24202C2660F7005BF969 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		5D9F24222C26610F005BF969 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		5D9F88F42C377CC6001678FF /* PopupHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupHelper.swift; sourceTree = "<group>"; };
 		5DA00FA22C2A143800011AB9 /* Hammer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hammer.swift; sourceTree = "<group>"; };
 		5DA00FA42C2A431F00011AB9 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		5DA00FA62C2A4C2E00011AB9 /* GameToPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameToPlayer.swift; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 				5DD867A32C26559E00E37087 /* ContentView.swift */,
 				5D9F24202C2660F7005BF969 /* MainView.swift */,
 				5D9F24222C26610F005BF969 /* GameView.swift */,
+				5D0A0F9C2C38E27F00C48719 /* GamePopupView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 				5D778E7F2C27CA35008A5E54 /* DraggableEggCup.swift */,
 				5D52C59B2C290848007810D4 /* EggCupCover.swift */,
 				5DA00FA22C2A143800011AB9 /* Hammer.swift */,
+				5D9F88F42C377CC6001678FF /* PopupHelper.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -375,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D0A0FA02C38ED8F00C48719 /* PopupHelper.swift in Sources */,
 				5DA00FA32C2A143800011AB9 /* Hammer.swift in Sources */,
 				5DE41EE12C3256B9007EBE33 /* EggCupZoneView.swift in Sources */,
 				5DF242C62C34E6290057643E /* DragEggCupModel.swift in Sources */,
@@ -397,6 +404,7 @@
 				5D52C59C2C290848007810D4 /* EggCupCover.swift in Sources */,
 				5D9F241F2C266085005BF969 /* EggBreakdownGame.swift in Sources */,
 				5D52C5902C28FD7F007810D4 /* GamePhase.swift in Sources */,
+				5D0A0F9D2C38E27F00C48719 /* GamePopupView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,7 +18,7 @@ struct DragEggCupView: View {
     
     init(game: EggBreakdownGame, targets: EggCupZoneListView, eggType: EggType) {
         self.game = game
-        
+
         self.targets = targets
         self.eggType = eggType
     }
@@ -29,6 +29,10 @@ struct DragEggCupView: View {
             .gesture(
                 DragGesture()
                     .onChanged { gesture in
+                        if game.hasGameEnd {
+                            return
+                        }
+                        
                         offset = gesture.translation
                         showDropTargetSelection()
                     }
@@ -44,12 +48,14 @@ struct DragEggCupView: View {
                             let eggCupFrame = eggCupFrames[i]
                             if currFrame.intersects(eggCupFrame) {
                                 if game.getLocalPlayer().numOfGoldenEggs < 1 {
-                                    print("\(game.getLocalPlayer().id) has not enough golden eggs.")
-                                    return
+//                                    print("\(game.getLocalPlayer().id) has not enough golden eggs.")
+                                    game.popup(message: "You have not enough golden eggs.")
+                                    break
                                 }
                                 
                                 if game.gamePhase != GamePhase.setupDefense {
-                                    print("Not in setup defense phase, cannot set.")
+//                                    print("Not in setup defense phase, cannot set.")
+                                    game.popup(message: "Not in setup defense phase, cannot set egg.")
                                     break
                                 }
                                 

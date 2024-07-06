@@ -19,6 +19,8 @@ class EggBreakdownGame: ObservableObject {
     @Published private(set) var turnOwnerId: UUID? = nil
     // Current Round of the game (1, 2, 3; game ends after Round 3)
     @Published var round: Int = 1
+    @Published private(set) var popupControl: PopupHelper
+    @Published private(set) var hasGameEnd: Bool = false
 
     var eggCupFrames: [CGRect] = Array(repeating: .zero, count: 8)
 
@@ -30,6 +32,8 @@ class EggBreakdownGame: ObservableObject {
     private var setupReadyPlayerIDs: [UUID] = []
     
     init(player1: Player, player2: Player) {
+        popupControl = PopupHelper()
+        
         self.p1 = player1
         self.p2 = player2
         
@@ -41,9 +45,20 @@ class EggBreakdownGame: ObservableObject {
         p2.setGame(gameToPlayer: GameToPlayer(game: self,
                                               gameBreakEgg: breakEgg,
                                               endAttackTurn: endAttackTurn))
+        
         startSetupDefenseTurn()
         
         turnOwnerId = p1.id
+    }
+    
+    func popup(message: String) -> Void {
+        popupControl.showPopup = true
+        popupControl.message = message
+    }
+    
+    func popout() -> Void {
+        popupControl.showPopup = false
+        popupControl.message = ""
     }
     
     func getLocalPlayer() -> Player {
@@ -61,8 +76,8 @@ class EggBreakdownGame: ObservableObject {
         
         if !setupReadyPlayerIDs.contains(id) {
             setupReadyPlayerIDs.append(id)
-            print("The ids \(setupReadyPlayerIDs)")
-            print("\(getName()) is ready")
+//            print("The ids \(setupReadyPlayerIDs)")
+//            print("\(getName()) is ready")
         }
         
         if setupReadyPlayerIDs.count == NUM_OF_PLAYERS {
@@ -76,7 +91,6 @@ class EggBreakdownGame: ObservableObject {
         if dropZoneEggType[zoneIndex] == EggType.normal {
             coverAlphaValues[zoneIndex] = 0
             dropZoneEggType[zoneIndex] = EggType.broken
-            
             print("BROKE A NORMAL EGG.")
             addScoreToAttacker()
         } else if dropZoneEggType[zoneIndex] == EggType.golden {
@@ -90,11 +104,14 @@ class EggBreakdownGame: ObservableObject {
     private func endAttackTurn() -> Void {
         if gameFlowController.getCurrPhase() == GamePhase.attack {
             turnOwnerId = getOtherId()
-            print("Give turn to \(getTurnOwner().name).")
+//            print("Give turn to \(getTurnOwner().name).")
 //            startAttackTurn()
             goToNextGamePhase()
         } else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                if self.hasGameEnd {
+                    return
+                }
                 self.refresh()
                 self.turnOwnerId = nil
                 self.goToNextGamePhase()
@@ -152,8 +169,35 @@ class EggBreakdownGame: ObservableObject {
             startAttackTurn()
         } else if gameFlowController.getCurrPhase() == GamePhase.setupDefense {
             startSetupDefenseTurn()
-        } else if gameFlowController.getCurrPhase() == GamePhase.newRound {
             round += 1
+        } else if gameFlowController.getCurrPhase() == GamePhase.newRound {
+            if round + 1 == 4 {
+                // Game end
+                hasGameEnd = true
+                popupControl.showPopup = true
+                let localScore = getLocalPlayer().score
+                let otherScore = getOtherPlayer().score
+                let localGoldenEggs = getLocalPlayer().numOfGoldenEggs
+                let otherGoldenEggs = getOtherPlayer().numOfGoldenEggs
+                if localScore > otherScore {
+                    // You won
+                    popupControl.message = "You won"
+                } else if localScore == otherScore {
+                    if localGoldenEggs > otherGoldenEggs {
+                        // You won
+                        popupControl.message = "You won"
+                    } else if localGoldenEggs == otherGoldenEggs {
+                        // It's a tie
+                        popupControl.message = "It's a tie"
+                    } else {
+                        // You lose
+                        popupControl.message = "You lose"
+                    }
+                } else {
+                    // You lose
+                    popupControl.message = "You lose"
+                }
+            }
 //            goToNextGamePhase()
         }
     }
@@ -174,8 +218,7 @@ fileprivate class GameFlowController {
 //                            GamePhase.sendMessage,
                             GamePhase.attack,
                             GamePhase.attack,
-                            GamePhase.newRound,
-                            GamePhase.setupDefense]
+                            GamePhase.newRound]
     private var flowPointer: Int = 0
     
     func getCurrPhase() -> GamePhase {
@@ -184,6 +227,6 @@ fileprivate class GameFlowController {
     
     func advanceFlow() -> Void {
         flowPointer += 1
-        print("Flow pointer \(flowPointer): \(gameFlow[flowPointer])")
+//        print("Flow pointer \(flowPointer): \(gameFlow[flowPointer])")
     }
 }

@@ -55,13 +55,13 @@ class Player {
     }
     
     func startSetupDefenseTurn() -> Void {
-        print("\(name) starts setting up defense.")
+//        print("\(name) starts setting up defense.")
     }
     
     func pressSetButton() -> Void {
         do {
             try Game.exitSetupDefenseTurn(id: id)
-            print("\(name) pressed Set button.")
+//            print("\(name) pressed Set button.")
             try Game.coverAlphaValues = [0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1]
         } catch {
             print("Game not initialized for player. Press Set button failed.")
@@ -69,7 +69,7 @@ class Player {
     }
     
     func startAttackTurn() -> Void {
-        print("\(name)'s attack turn started.")
+//        print("\(name)'s attack turn started.")
     }
     
     func breakEgg(at zoneIndex: Int) -> Void {
@@ -123,26 +123,26 @@ class RobotPlayer: Player {
             }
             do {
                 try self.Game.exitSetupDefenseTurn(id: self.id)
-                print("ROBOT: exit setup defense")
+//                print("ROBOT: exit setup defense")
             } catch {
                 print("Game is not initialized for robot player")
             }
         }
-        print("Robot sets eggs at \(randomIndexs)")
+//        print("Robot sets eggs at \(randomIndexs)")
     }
     
     override func startAttackTurn() -> Void {
-        print("ROBOT: attack turn started")
-        //DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+//        print("ROBOT: attack turn started")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             super.startAttackTurn()
             let breakEggIndex = Int.random(in: 0...3)
-            print("Robot breaks \(breakEggIndex)")
+//            print("Robot breaks \(breakEggIndex)")
             super.breakEgg(at: breakEggIndex)
             do {
                 try super.EndAttackTurn()
             } catch {
                 print("EndAttackTurn function not initialized for player. Cannot end turn.")
             }
-        //}
+        }
     }
 }
