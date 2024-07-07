@@ -47,12 +47,6 @@ struct DragEggCupView: View {
                             
                             let eggCupFrame = eggCupFrames[i]
                             if currFrame.intersects(eggCupFrame) {
-                                if game.getLocalPlayer().numOfGoldenEggs < 1 {
-//                                    print("\(game.getLocalPlayer().id) has not enough golden eggs.")
-                                    game.popup(message: "You have not enough golden eggs.")
-                                    break
-                                }
-                                
                                 if game.gamePhase != GamePhase.setupDefense {
 //                                    print("Not in setup defense phase, cannot set.")
                                     game.popup(message: "Not in setup defense phase, cannot set egg.")

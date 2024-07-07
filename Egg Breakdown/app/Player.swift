@@ -75,7 +75,7 @@ class Player {
     func breakEgg(at zoneIndex: Int) -> Void {
         do {
             try GameBreakEgg(zoneIndex)
-            print("\(name) hits egg at index \(zoneIndex).")
+//            print("\(name) hits egg at index \(zoneIndex).")
             try EndAttackTurn()
         } catch {
             print("GameBreakEgg or EndAttackTurn function not initialized for player. Cannot break egg or end turn.")
@@ -85,6 +85,12 @@ class Player {
     func setEgg(at zoneIndex: Int, droppedEggType: EggType) -> Void {
         do {
             if droppedEggType == EggType.golden {
+                if try Game.getLocalPlayer().numOfGoldenEggs < 1 {
+//                                    print("\(game.getLocalPlayer().id) has not enough golden eggs.")
+                    try Game.popup(message: "You have not enough golden eggs.")
+                    return
+                }
+                
                 if try Game.dropZoneEggType[zoneIndex] != droppedEggType {
                     numOfGoldenEggs -= 1
                 }

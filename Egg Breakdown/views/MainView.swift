@@ -18,6 +18,8 @@ struct MainView: View {
         p1 = Player(id: UUID(), numOfGoldenEggs: 8, name: "Player")
         p2 = RobotPlayer(id: UUID(), numOfGoldenEggs: 8, name: "Robot")
         game = EggBreakdownGame(player1: p1, player2: p2)
+        
+        SoundManager.shared.playBGM(bgmName: "bgm_loop", extension: "mp3")
     }
     
     var body: some View {

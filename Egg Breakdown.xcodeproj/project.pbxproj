@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		5D0A0F9D2C38E27F00C48719 /* GamePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0A0F9C2C38E27F00C48719 /* GamePopupView.swift */; };
 		5D0A0FA02C38ED8F00C48719 /* PopupHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F88F42C377CC6001678FF /* PopupHelper.swift */; };
+		5D4D4BCB2C39DD6800F0E00E /* hit_egg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5D4D4BCA2C39DD6800F0E00E /* hit_egg.mp3 */; };
+		5D4D4BCD2C39E0FD00F0E00E /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4D4BCC2C39E0FD00F0E00E /* SoundManager.swift */; };
+		5D4D4BD12C3A228C00F0E00E /* bgm_loop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5D4D4BD02C3A228B00F0E00E /* bgm_loop.mp3 */; };
+		5D4D4BD32C3A23DA00F0E00E /* hit_golden_egg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5D4D4BD22C3A23DA00F0E00E /* hit_golden_egg.mp3 */; };
 		5D52C58C2C28FCB6007810D4 /* EggType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D52C58B2C28FCB6007810D4 /* EggType.swift */; };
 		5D52C5902C28FD7F007810D4 /* GamePhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D52C58F2C28FD7F007810D4 /* GamePhase.swift */; };
 		5D52C5932C28FEF5007810D4 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D52C5922C28FEF5007810D4 /* Player.swift */; };
@@ -57,6 +61,11 @@
 
 /* Begin PBXFileReference section */
 		5D0A0F9C2C38E27F00C48719 /* GamePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePopupView.swift; sourceTree = "<group>"; };
+		5D4D4BC72C39D56500F0E00E /* Attribution.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Attribution.txt; sourceTree = "<group>"; };
+		5D4D4BCA2C39DD6800F0E00E /* hit_egg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hit_egg.mp3; sourceTree = "<group>"; };
+		5D4D4BCC2C39E0FD00F0E00E /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		5D4D4BD02C3A228B00F0E00E /* bgm_loop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm_loop.mp3; sourceTree = "<group>"; };
+		5D4D4BD22C3A23DA00F0E00E /* hit_golden_egg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hit_golden_egg.mp3; sourceTree = "<group>"; };
 		5D52C58B2C28FCB6007810D4 /* EggType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggType.swift; sourceTree = "<group>"; };
 		5D52C58F2C28FD7F007810D4 /* GamePhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePhase.swift; sourceTree = "<group>"; };
 		5D52C5922C28FEF5007810D4 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -146,6 +155,7 @@
 				5D52C5922C28FEF5007810D4 /* Player.swift */,
 				5D52C5972C29051C007810D4 /* EggImageGetter.swift */,
 				5DA00FA62C2A4C2E00011AB9 /* GameToPlayer.swift */,
+				5D4D4BCC2C39E0FD00F0E00E /* SoundManager.swift */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -167,6 +177,10 @@
 		5DD867952C26559E00E37087 = {
 			isa = PBXGroup;
 			children = (
+				5D4D4BC72C39D56500F0E00E /* Attribution.txt */,
+				5D4D4BD02C3A228B00F0E00E /* bgm_loop.mp3 */,
+				5D4D4BCA2C39DD6800F0E00E /* hit_egg.mp3 */,
+				5D4D4BD22C3A23DA00F0E00E /* hit_golden_egg.mp3 */,
 				5D649DB62C3262D500D02D9E /* Egg-Breakdown-Info.plist */,
 				5DD867A02C26559E00E37087 /* Egg Breakdown */,
 				5DD867B32C2655A100E37087 /* Egg BreakdownTests */,
@@ -356,7 +370,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DD867AB2C2655A100E37087 /* Preview Assets.xcassets in Resources */,
+				5D4D4BD12C3A228C00F0E00E /* bgm_loop.mp3 in Resources */,
+				5D4D4BCB2C39DD6800F0E00E /* hit_egg.mp3 in Resources */,
 				5DD867A82C2655A100E37087 /* Assets.xcassets in Resources */,
+				5D4D4BD32C3A23DA00F0E00E /* hit_golden_egg.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +412,7 @@
 				5DA00FA72C2A4C2E00011AB9 /* GameToPlayer.swift in Sources */,
 				5DD867A22C26559E00E37087 /* Egg_BreakdownApp.swift in Sources */,
 				5DE41EE32C3256FC007EBE33 /* EggCupZoneModel.swift in Sources */,
+				5D4D4BCD2C39E0FD00F0E00E /* SoundManager.swift in Sources */,
 				5D9F24212C2660F7005BF969 /* MainView.swift in Sources */,
 				5DE41EE52C325727007EBE33 /* EggCupZoneController.swift in Sources */,
 				5D778E802C27CA35008A5E54 /* DraggableEggCup.swift in Sources */,

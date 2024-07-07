@@ -30,10 +30,11 @@ struct GamePopupView: View {
                     popupControl.message = ""
                 } label: {
                     Text("Close")
+                        .foregroundStyle(.foreground)
                 }
             }
             .frame(width: 300, height: 200)
-            .background(Color.white)
+            .background(.background)
             .cornerRadius(10)
             .shadow(radius: 10)
             .padding()

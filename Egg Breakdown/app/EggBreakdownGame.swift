@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 class EggBreakdownGame: ObservableObject {
     private let NUM_OF_PLAYERS: Int = 2
@@ -92,9 +93,11 @@ class EggBreakdownGame: ObservableObject {
             coverAlphaValues[zoneIndex] = 0
             dropZoneEggType[zoneIndex] = EggType.broken
             print("BROKE A NORMAL EGG.")
+            SoundManager.shared.playSFX(sfxName: "hit_egg", extension: "mp3")
             addScoreToAttacker()
         } else if dropZoneEggType[zoneIndex] == EggType.golden {
             coverAlphaValues[zoneIndex] = 0
+            SoundManager.shared.playSFX(sfxName: "hit_golden_egg", extension: "mp3")
             print("IT'S A GOLDEN EGG!")
         } else {
             
@@ -201,8 +204,9 @@ class EggBreakdownGame: ObservableObject {
             }
 //            goToNextGamePhase()
         } else if gameFlowController.getCurrPhase() == GamePhase.reveal {
-            coverAlphaValues = [0, 0, 0, 0, 0, 0, 0, 0]
-            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
+                self.coverAlphaValues = [0, 0, 0, 0, 0, 0, 0, 0]
+            }
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { [self] in
                 if self.getOtherPlayer() is RobotPlayer {
                     (getOtherPlayer() as! RobotPlayer).revealNumOfGoldenEggs()
