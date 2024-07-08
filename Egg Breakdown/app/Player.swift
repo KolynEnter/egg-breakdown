@@ -85,13 +85,16 @@ class Player {
     func setEgg(at zoneIndex: Int, droppedEggType: EggType) -> Void {
         do {
             if droppedEggType == EggType.golden {
-                if try Game.getLocalPlayer().numOfGoldenEggs < 1 {
+                // True if zone is normal egg
+                let isDifferentType = try Game.dropZoneEggType[zoneIndex] != droppedEggType
+                
+                if try Game.getLocalPlayer().numOfGoldenEggs < 1 && isDifferentType{
 //                                    print("\(game.getLocalPlayer().id) has not enough golden eggs.")
                     try Game.popup(message: "You have not enough golden eggs.")
                     return
                 }
                 
-                if try Game.dropZoneEggType[zoneIndex] != droppedEggType {
+                if isDifferentType {
                     numOfGoldenEggs -= 1
                 }
             } else {

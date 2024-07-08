@@ -27,20 +27,36 @@ struct MainView: View {
             VStack {
                 Spacer()
                 
-                Text(/*@START_MENU_TOKEN@*/"Egg Breakdown!"/*@END_MENU_TOKEN@*/)
-                    .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
-                    .fontWeight(.bold)
+                HStack {
+                    Image("main_title")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
                 
                 Spacer()
                 
                 Button(action: {
                     performActionBeforeNavigation()
                 }) {
-                    Text("Start Game")
+                    Text("Single player")
                         .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
+                        .font(Font.custom("This-Cafe", size: 32))
+                        .foregroundColor(.primary)
+                        .background(.clear)
+                }
+                
+                Rectangle()
+                    .frame(height: 50)
+                    .opacity(0)
+                
+                Button(action: {
+                    
+                }) {
+                    Text("Settings")
+                        .padding()
+                        .font(Font.custom("This-Cafe", size: 32))
+                        .foregroundColor(.primary)
+                        .background(.clear)
                 }
                 
                 Spacer()

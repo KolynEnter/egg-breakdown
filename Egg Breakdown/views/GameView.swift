@@ -63,6 +63,8 @@ struct GameView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                         Text(String(game.getOtherPlayer().numOfGoldenEggs))
+                            .font(Font.custom("Coffee-Fills", size: 32))
+                            .frame(width: 32)
                         Rectangle()
                             .foregroundStyle(.background)
                     }
@@ -106,6 +108,10 @@ struct GameView: View {
                                 .zIndex(1)
                         }
                         
+                        Text(" ")
+                            .font(Font.custom("Coffee-Fills", size: 32))
+                            .frame(width: 32)
+                        
                         Rectangle()
                             .opacity(0)
                         
@@ -113,6 +119,9 @@ struct GameView: View {
                             game.getLocalPlayer().pressSetButton()
                         } label: {
                             Text("Set")
+                                .font(Font.custom("This-Cafe", size: 32))
+                                .foregroundColor(.primary)
+                                .background(.clear)
                         }
                         .opacity(game.gamePhase == GamePhase.setupDefense ? 1 : 0)
                         
@@ -120,6 +129,8 @@ struct GameView: View {
                             .opacity(0)
                         
                         Text(String(game.getLocalPlayer().numOfGoldenEggs))
+                            .font(Font.custom("Coffee-Fills", size: 32))
+                            .frame(width: 32)
                         
                         if isShowDraggables {
                             dragEgg1

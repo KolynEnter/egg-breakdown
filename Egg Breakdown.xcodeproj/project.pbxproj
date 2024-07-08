@@ -25,6 +25,8 @@
 		5DA00FA32C2A143800011AB9 /* Hammer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA00FA22C2A143800011AB9 /* Hammer.swift */; };
 		5DA00FA52C2A431F00011AB9 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA00FA42C2A431F00011AB9 /* CustomError.swift */; };
 		5DA00FA72C2A4C2E00011AB9 /* GameToPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA00FA62C2A4C2E00011AB9 /* GameToPlayer.swift */; };
+		5DD3EAC22C3B8C57008B2F2C /* This_Cafe.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD3EAC12C3B8C57008B2F2C /* This_Cafe.ttf */; };
+		5DD3EAC62C3B8D82008B2F2C /* Coffee_Fills.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD3EAC52C3B8D82008B2F2C /* Coffee_Fills.ttf */; };
 		5DD867A22C26559E00E37087 /* Egg_BreakdownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD867A12C26559E00E37087 /* Egg_BreakdownApp.swift */; };
 		5DD867A42C26559E00E37087 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD867A32C26559E00E37087 /* ContentView.swift */; };
 		5DD867A82C2655A100E37087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DD867A72C2655A100E37087 /* Assets.xcassets */; };
@@ -80,6 +82,8 @@
 		5DA00FA22C2A143800011AB9 /* Hammer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hammer.swift; sourceTree = "<group>"; };
 		5DA00FA42C2A431F00011AB9 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		5DA00FA62C2A4C2E00011AB9 /* GameToPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameToPlayer.swift; sourceTree = "<group>"; };
+		5DD3EAC12C3B8C57008B2F2C /* This_Cafe.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = This_Cafe.ttf; sourceTree = "<group>"; };
+		5DD3EAC52C3B8D82008B2F2C /* Coffee_Fills.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Coffee_Fills.ttf; sourceTree = "<group>"; };
 		5DD8679E2C26559E00E37087 /* Egg Breakdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Egg Breakdown.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DD867A12C26559E00E37087 /* Egg_BreakdownApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Egg_BreakdownApp.swift; sourceTree = "<group>"; };
 		5DD867A32C26559E00E37087 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -174,13 +178,39 @@
 			path = components;
 			sourceTree = "<group>";
 		};
-		5DD867952C26559E00E37087 = {
+		5DD3EAC72C3B8E07008B2F2C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				5D4D4BC72C39D56500F0E00E /* Attribution.txt */,
+				5DD3EAC92C3B8E16008B2F2C /* fonts */,
+				5DD3EAC82C3B8E0C008B2F2C /* audio */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		5DD3EAC82C3B8E0C008B2F2C /* audio */ = {
+			isa = PBXGroup;
+			children = (
 				5D4D4BD02C3A228B00F0E00E /* bgm_loop.mp3 */,
 				5D4D4BCA2C39DD6800F0E00E /* hit_egg.mp3 */,
 				5D4D4BD22C3A23DA00F0E00E /* hit_golden_egg.mp3 */,
+			);
+			path = audio;
+			sourceTree = "<group>";
+		};
+		5DD3EAC92C3B8E16008B2F2C /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5DD3EAC52C3B8D82008B2F2C /* Coffee_Fills.ttf */,
+				5DD3EAC12C3B8C57008B2F2C /* This_Cafe.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		5DD867952C26559E00E37087 = {
+			isa = PBXGroup;
+			children = (
+				5DD3EAC72C3B8E07008B2F2C /* Shared */,
+				5D4D4BC72C39D56500F0E00E /* Attribution.txt */,
 				5D649DB62C3262D500D02D9E /* Egg-Breakdown-Info.plist */,
 				5DD867A02C26559E00E37087 /* Egg Breakdown */,
 				5DD867B32C2655A100E37087 /* Egg BreakdownTests */,
@@ -373,6 +403,8 @@
 				5D4D4BD12C3A228C00F0E00E /* bgm_loop.mp3 in Resources */,
 				5D4D4BCB2C39DD6800F0E00E /* hit_egg.mp3 in Resources */,
 				5DD867A82C2655A100E37087 /* Assets.xcassets in Resources */,
+				5DD3EAC22C3B8C57008B2F2C /* This_Cafe.ttf in Resources */,
+				5DD3EAC62C3B8D82008B2F2C /* Coffee_Fills.ttf in Resources */,
 				5D4D4BD32C3A23DA00F0E00E /* hit_golden_egg.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

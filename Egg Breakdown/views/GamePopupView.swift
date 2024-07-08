@@ -19,7 +19,14 @@ struct GamePopupView: View {
     var body: some View {
         NavigationStack {
             VStack {
+                Spacer()
                 Text(popupControl.message)
+                    .font(Font.custom("Coffee-Fills", size: 24))
+                    .foregroundColor(.primary)
+                    .background(.clear)
+                
+                Spacer()
+                
                 Button {
                     if popupControl.isGoToMain {
 //                        presentationMode.wrappedValue.dismiss()
@@ -30,8 +37,11 @@ struct GamePopupView: View {
                     popupControl.message = ""
                 } label: {
                     Text("Close")
-                        .foregroundStyle(.foreground)
+                        .font(Font.custom("This-Cafe", size: 32))
+                        .foregroundColor(.primary)
+                        .background(.clear)
                 }
+                Spacer()
             }
             .frame(width: 300, height: 200)
             .background(.background)
