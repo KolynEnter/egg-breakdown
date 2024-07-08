@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct GamePopupView: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @ObservedObject private var popupControl: PopupHelper
     @State private var navigate = false
     
@@ -29,7 +28,6 @@ struct GamePopupView: View {
                 
                 Button {
                     if popupControl.isGoToMain {
-//                        presentationMode.wrappedValue.dismiss()
                         navigate = true
                         popupControl.isGoToMain = false
                     }

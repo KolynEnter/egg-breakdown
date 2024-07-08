@@ -184,21 +184,21 @@ class EggBreakdownGame: ObservableObject {
                 let otherGoldenEggs = getOtherPlayer().numOfGoldenEggs
                 if localScore > otherScore {
                     // You won
-                    popupControl.message = "You won"
+                    popupControl.message = "You won!"
                 } else if localScore == otherScore {
                     if localGoldenEggs > otherGoldenEggs {
                         // You won
-                        popupControl.message = "You won"
+                        popupControl.message = "You won!"
                     } else if localGoldenEggs == otherGoldenEggs {
                         // It's a tie
-                        popupControl.message = "It's a tie"
+                        popupControl.message = "It's a tie!"
                     } else {
                         // You lose
-                        popupControl.message = "You lose"
+                        popupControl.message = "You lose..."
                     }
                 } else {
                     // You lose
-                    popupControl.message = "You lose"
+                    popupControl.message = "You lose..."
                 }
                 popupControl.isGoToMain = true
             }

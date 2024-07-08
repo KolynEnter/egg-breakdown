@@ -42,6 +42,8 @@
 		5DF242C62C34E6290057643E /* DragEggCupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF242C32C34E6290057643E /* DragEggCupModel.swift */; };
 		5DF242C72C34E6290057643E /* DragEggCupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF242C42C34E6290057643E /* DragEggCupController.swift */; };
 		5DF242C82C34E6290057643E /* DragEggCupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF242C52C34E6290057643E /* DragEggCupView.swift */; };
+		5DFF0E2F2C3C48700073D7D9 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF0E2E2C3C48700073D7D9 /* TutorialView.swift */; };
+		5DFF0E312C3C57130073D7D9 /* NaturalTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF0E302C3C57130073D7D9 /* NaturalTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,8 @@
 		5DF242C32C34E6290057643E /* DragEggCupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragEggCupModel.swift; sourceTree = "<group>"; };
 		5DF242C42C34E6290057643E /* DragEggCupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragEggCupController.swift; sourceTree = "<group>"; };
 		5DF242C52C34E6290057643E /* DragEggCupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragEggCupView.swift; sourceTree = "<group>"; };
+		5DFF0E2E2C3C48700073D7D9 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		5DFF0E302C3C57130073D7D9 /* NaturalTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaturalTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,7 @@
 		5D778E7B2C27C62E008A5E54 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				5DFF0E2D2C3C48590073D7D9 /* tutorial */,
 				5DF242C22C34E6290057643E /* dragEggCup */,
 				5DE41EDF2C324D80007EBE33 /* eggCupZone */,
 				5DE41EDA2C323A94007EBE33 /* hammer */,
@@ -174,6 +179,7 @@
 				5D52C59B2C290848007810D4 /* EggCupCover.swift */,
 				5DA00FA22C2A143800011AB9 /* Hammer.swift */,
 				5D9F88F42C377CC6001678FF /* PopupHelper.swift */,
+				5DFF0E302C3C57130073D7D9 /* NaturalTextView.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -293,6 +299,14 @@
 				5DF242C52C34E6290057643E /* DragEggCupView.swift */,
 			);
 			path = dragEggCup;
+			sourceTree = "<group>";
+		};
+		5DFF0E2D2C3C48590073D7D9 /* tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				5DFF0E2E2C3C48700073D7D9 /* TutorialView.swift */,
+			);
+			path = tutorial;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -437,6 +451,7 @@
 				5DA00FA52C2A431F00011AB9 /* CustomError.swift in Sources */,
 				5DE41EE72C32575A007EBE33 /* EggCupZoneListView.swift in Sources */,
 				5DE41EDC2C323AAB007EBE33 /* HammerView.swift in Sources */,
+				5DFF0E312C3C57130073D7D9 /* NaturalTextView.swift in Sources */,
 				5D52C5932C28FEF5007810D4 /* Player.swift in Sources */,
 				5D52C5982C29051C007810D4 /* EggImageGetter.swift in Sources */,
 				5D52C58C2C28FCB6007810D4 /* EggType.swift in Sources */,
@@ -444,6 +459,7 @@
 				5DA00FA72C2A4C2E00011AB9 /* GameToPlayer.swift in Sources */,
 				5DD867A22C26559E00E37087 /* Egg_BreakdownApp.swift in Sources */,
 				5DE41EE32C3256FC007EBE33 /* EggCupZoneModel.swift in Sources */,
+				5DFF0E2F2C3C48700073D7D9 /* TutorialView.swift in Sources */,
 				5D4D4BCD2C39E0FD00F0E00E /* SoundManager.swift in Sources */,
 				5D9F24212C2660F7005BF969 /* MainView.swift in Sources */,
 				5DE41EE52C325727007EBE33 /* EggCupZoneController.swift in Sources */,

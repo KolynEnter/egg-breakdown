@@ -11,6 +11,8 @@ struct GameView: View {
     @ObservedObject private var game: EggBreakdownGame
     // Initialization order
     @State private var isShowDraggables: Bool = false
+    @State private var isShowTutorial: Bool = false
+    @State private var opponentGoldenEggNumReferenceFrame: CGSize = .zero
 
     private let p1: Player
     private let p2: Player
@@ -43,106 +45,119 @@ struct GameView: View {
     var body: some View {
         ZStack {
             VStack {
-                HStack {
-                    Text("Round \(String(game.round))")
-                    Spacer()
-                    Text("Time Remaining: 30s")
-                    Spacer()
-                    Text("Your Score: \(game.getLocalPlayer().score)")
-                    Spacer()
-                    Text("Opponent Score: \(game.getOtherPlayer().score)")
-                }
-                .frame(height: 50)
-                .background(.green)
-                .padding()
+                Rectangle()
+                    .frame(height: 70)
+                    .opacity(0)
                 
                 VStack {
-                    
                     HStack {
-                        Image("golden_egg")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                        Text(String(game.getOtherPlayer().numOfGoldenEggs))
-                            .font(Font.custom("Coffee-Fills", size: 32))
-                            .frame(width: 32)
-                        Rectangle()
-                            .foregroundStyle(.background)
-                    }
-                    
-                    Spacer()
-                    
-                    eggCupZoneListView2
-                        .frame(height: 150.0)
-                        .zIndex(-1)
-                    
-                    Rectangle()
-                        .frame(height: 50)
-                        .opacity(0)
-                    
-                    HStack {
-                        Rectangle()
-                            .opacity(0)
-                        
-                        if isShowDraggables {
-                            hammerView
-                                .zIndex(1)
-                        }
-                    }
-                    .zIndex(2)
-                    
-                    Rectangle()
-                        .frame(height: 50)
-                        .opacity(0)
-                    
-                    eggCupZoneListView1
-                        .frame(height: 150.0)
-                        .zIndex(-1)
-                    
-                    Spacer()
-                    
-                    HStack {
+                        Text("00:30")
+                            .font(Font.custom("This-Cafe", size: 24))
                         Spacer()
-                        
-                        if isShowDraggables {
-                            dragEgg2
-                                .zIndex(1)
-                        }
-                        
-                        Text(" ")
-                            .font(Font.custom("Coffee-Fills", size: 32))
-                            .frame(width: 32)
-                        
-                        Rectangle()
-                            .opacity(0)
-                        
                         Button {
-                            game.getLocalPlayer().pressSetButton()
+                            isShowTutorial = true
                         } label: {
-                            Text("Set")
-                                .font(Font.custom("This-Cafe", size: 32))
+                            Text("Help")
+                                .font(Font.custom("This-Cafe", size: 24))
                                 .foregroundColor(.primary)
                                 .background(.clear)
                         }
-                        .opacity(game.gamePhase == GamePhase.setupDefense ? 1 : 0)
-                        
-                        Rectangle()
-                            .opacity(0)
-                        
-                        Text(String(game.getLocalPlayer().numOfGoldenEggs))
-                            .font(Font.custom("Coffee-Fills", size: 32))
-                            .frame(width: 32)
-                        
+                    }
+                    
+                    Text("Round \(String(game.round))")
+                        .font(Font.custom("This-Cafe", size: 32))
+                }
+                .background(.clear)
+                .padding()
+                .frame(height: 32)
+                
+                HStack {
+                    Image("golden_egg")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: opponentGoldenEggNumReferenceFrame.width, height: opponentGoldenEggNumReferenceFrame.height)
+                    
+                    Text(String(game.getOtherPlayer().numOfGoldenEggs))
+                        .font(Font.custom("Coffee-Fills", size: 32))
+                        .offset(x: -15)
+                    
+                    Spacer()
+                }
+                
+                eggCupZoneListView2
+                    .frame(height: 150.0)
+                    .zIndex(-1)
+                
+                Text("\(game.getOtherPlayer().score)")
+                    .font(Font.custom("This-Cafe", size: 32))
+                    .frame(height: 40)
+                
+                HStack {
+                    Rectangle()
+                        .opacity(0)
+                    
+                    if isShowDraggables {
+                        hammerView
+                            .zIndex(1)
+                    }
+                }
+                .zIndex(2)
+                
+                Text("\(game.getLocalPlayer().score)")
+                    .font(Font.custom("This-Cafe", size: 32))
+                    .frame(height: 40)
+                
+                eggCupZoneListView1
+                    .frame(height: 150.0)
+                    .zIndex(-1)
+                
+                Spacer()
+                
+                ZStack {
+                    HStack {
                         if isShowDraggables {
-                            dragEgg1
+                            dragEgg2
                                 .zIndex(1)
+                                .background(GeometryReader { geometry in
+                                    Color.clear
+                                        .onAppear {
+                                            opponentGoldenEggNumReferenceFrame = geometry.size
+                                        }
+                                })
                         }
                         
                         Spacer()
+                        
+                        if isShowDraggables {
+                            Text(String(game.getLocalPlayer().numOfGoldenEggs))
+                                .font(Font.custom("Coffee-Fills", size: 32))
+                                .offset(x: 15)
+                            
+                            dragEgg1
+                                .zIndex(1)
+                        }
                     }
+                    Button {
+                        game.getLocalPlayer().pressSetButton()
+                    } label: {
+                        Text("Set")
+                            .font(Font.custom("This-Cafe", size: 32))
+                            .foregroundColor(.primary)
+                            .background(.clear)
+                            .allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                    }
+                    .opacity(game.gamePhase == GamePhase.setupDefense ? 1 : 0)
                 }
+                .padding()
+                Rectangle()
+                    .frame(height: 70)
+                    .opacity(0)
             }
             VStack {
                 popupView
+            }
+            VStack {
+                TutorialView(isShow: $isShowTutorial)
             }
         }
         .navigationBarBackButtonHidden(true)
