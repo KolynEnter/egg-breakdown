@@ -13,6 +13,7 @@ struct GameView: View {
     @State private var isShowDraggables: Bool = false
     @State private var isShowTutorial: Bool = false
     @State private var opponentGoldenEggNumReferenceFrame: CGSize = .zero
+    @State private var navigate = false
 
     private let p1: Player
     private let p2: Player
@@ -54,6 +55,7 @@ struct GameView: View {
                         Text("00:30")
                             .font(Font.custom("This-Cafe", size: 24))
                         Spacer()
+                        
                         Button {
                             isShowTutorial = true
                         } label: {
@@ -82,6 +84,20 @@ struct GameView: View {
                         .offset(x: -15)
                     
                     Spacer()
+                    NavigationStack {
+                        Button {
+                            navigate = true
+                        } label: {
+                            Image("exit")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: opponentGoldenEggNumReferenceFrame.width, height: opponentGoldenEggNumReferenceFrame.height)
+                        }
+                        
+                        .navigationDestination(isPresented: $navigate) {
+                            ContentView()
+                        }
+                    }
                 }
                 
                 eggCupZoneListView2
@@ -144,7 +160,6 @@ struct GameView: View {
                             .font(Font.custom("This-Cafe", size: 32))
                             .foregroundColor(.primary)
                             .background(.clear)
-                            .allowsTightening(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                     }
                     .opacity(game.gamePhase == GamePhase.setupDefense ? 1 : 0)
                 }
@@ -157,7 +172,7 @@ struct GameView: View {
                 popupView
             }
             VStack {
-                TutorialView(isShow: $isShowTutorial)
+                TutorialView(isShow: $isShowTutorial, height: 300, width: 300)
             }
         }
         .navigationBarBackButtonHidden(true)

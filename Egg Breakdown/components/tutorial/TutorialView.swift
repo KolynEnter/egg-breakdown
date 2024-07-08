@@ -10,9 +10,11 @@ import SwiftUI
 struct TutorialView: View {
     @Binding var isShow: Bool
     @State var linePointer: Int = 0
+    let height: CGFloat
+    let width: CGFloat
     
     private let lines: [String] = [
-        "The goal of game “Egg Breakdown” is to win more scores than your opponent within 3 rounds.",
+        "The goal of game “Egg Breakdown” is to gain a higher score than your opponent within 3 rounds.",
         "Before each round, both you and your opponent will need to set up defenses. To withstand hammer attacks, swap regular eggs with golden ones.",
         "Once your defenses are set up, you can send a message to your opponent.",
         "Then, you and your opponent will each have a turn to attack. You earn points by cracking your opponent’s egg with the hammer.",
@@ -80,7 +82,7 @@ struct TutorialView: View {
             
             Spacer()
         }
-        .frame(width: 300, height: 300)
+        .frame(width: width, height: height)
         .background(.background)
         .cornerRadius(10)
         .shadow(radius: 10)

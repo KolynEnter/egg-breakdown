@@ -8,58 +8,92 @@
 import SwiftUI
 
 struct MainView: View {
+    @ObservedObject var appThemeViewModel: AppThemeViewModel
     @ObservedObject var game: EggBreakdownGame
     @State private var navigate = false
+    @State private var isShowTutorial: Bool = false
 
     let p1: Player
     let p2: Player
     
-    init() {
+    init(appThemeViewModel: AppThemeViewModel) {
         p1 = Player(id: UUID(), numOfGoldenEggs: 8, name: "Player")
         p2 = RobotPlayer(id: UUID(), numOfGoldenEggs: 8, name: "Robot")
         game = EggBreakdownGame(player1: p1, player2: p2)
         
         SoundManager.shared.playBGM(bgmName: "bgm_loop", extension: "mp3")
+        self.appThemeViewModel = appThemeViewModel
     }
     
     var body: some View {
         NavigationStack {
             VStack {
-                Spacer()
-                
-                HStack {
-                    Image("main_title")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                }
-                
-                Spacer()
-                
-                Button(action: {
-                    performActionBeforeNavigation()
-                }) {
-                    Text("Single player")
-                        .padding()
-                        .font(Font.custom("This-Cafe", size: 32))
-                        .foregroundColor(.primary)
-                        .background(.clear)
-                }
-                
                 Rectangle()
                     .frame(height: 50)
                     .opacity(0)
                 
-                Button(action: {
-                    
-                }) {
-                    Text("Settings")
-                        .padding()
-                        .font(Font.custom("This-Cafe", size: 32))
-                        .foregroundColor(.primary)
-                        .background(.clear)
-                }
+                Image("main_title")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
                 
-                Spacer()
+                ZStack {
+                    VStack {
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            performActionBeforeNavigation()
+                        }) {
+                            Text("Single player")
+                                .padding()
+                                .font(Font.custom("This-Cafe", size: 32))
+                                .foregroundColor(.primary)
+                                .background(.clear)
+                        }
+                        
+                        Rectangle()
+                            .frame(height: 50)
+                            .opacity(0)
+                        
+                        Button(action: {
+                            
+                        }) {
+                            Text("Settings")
+                                .padding()
+                                .font(Font.custom("This-Cafe", size: 32))
+                                .foregroundColor(.primary)
+                                .background(.clear)
+                        }
+                        
+                        Button(action: {
+                            isShowTutorial = true
+                        }) {
+                            Text("Tutorial")
+                                .padding()
+                                .font(Font.custom("This-Cafe", size: 32))
+                                .foregroundColor(.primary)
+                                .background(.clear)
+                        }
+                        
+                        Button {
+                            appThemeViewModel.toggleTheme()
+                        } label: {
+                            Text("Change Theme")
+                                .padding()
+                                .font(Font.custom("This-Cafe", size: 32))
+                                .foregroundColor(.primary)
+                                .background(.clear)
+                        }
+                        
+                        Spacer()
+                    }
+                    
+                    VStack {
+                        TutorialView(isShow: $isShowTutorial,
+                                     height: 350,
+                                     width: 300)
+                    }
+                }
             }
             .navigationDestination(isPresented: $navigate) {
                 GameView(game: game, popupControl: game.popupControl, p1: p1, p2: p2)
