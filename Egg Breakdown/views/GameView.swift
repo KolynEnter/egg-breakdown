@@ -61,7 +61,7 @@ struct GameView: View {
                         } label: {
                             Text("Help")
                                 .font(Font.custom("This-Cafe", size: 24))
-                                .foregroundColor(.primary)
+                                .foregroundColor(Color.TextColorPrimary)
                                 .background(.clear)
                         }
                     }
@@ -158,7 +158,7 @@ struct GameView: View {
                     } label: {
                         Text("Set")
                             .font(Font.custom("This-Cafe", size: 32))
-                            .foregroundColor(.primary)
+                            .foregroundColor(Color.TextColorPrimary)
                             .background(.clear)
                     }
                     .opacity(game.gamePhase == GamePhase.setupDefense ? 1 : 0)
@@ -176,5 +176,6 @@ struct GameView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
+        .background(Color.BackgroundColor)
     }
 }

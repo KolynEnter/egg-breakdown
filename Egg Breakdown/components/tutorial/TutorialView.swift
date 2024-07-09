@@ -10,6 +10,7 @@ import SwiftUI
 struct TutorialView: View {
     @Binding var isShow: Bool
     @State var linePointer: Int = 0
+    
     let height: CGFloat
     let width: CGFloat
     
@@ -29,7 +30,7 @@ struct TutorialView: View {
             
             Text("\(String(linePointer + 1)) / \(lines.count)")
                 .font(Font.custom("This-Cafe", size: 32))
-                .foregroundColor(.primary)
+                .foregroundColor(Color.TextColorPrimary)
                 .background(.clear)
             
             Spacer()
@@ -42,7 +43,7 @@ struct TutorialView: View {
                 } label: {
                     Text("<")
                         .font(Font.custom("This-Cafe", size: 64))
-                        .foregroundColor(.primary)
+                        .foregroundColor(Color.TextColorPrimary)
                         .background(.clear)
                 }
                 
@@ -51,7 +52,7 @@ struct TutorialView: View {
                     .opacity(0)
                 
                 NaturalTextView(text: lines[linePointer], customFontName: "Coffee-Fills", fontSize: 18)
-                    .foregroundColor(.primary)
+                    .foregroundColor(Color.TextColorPrimary)
                     .background(.clear)
 
                 Rectangle()
@@ -63,7 +64,7 @@ struct TutorialView: View {
                 } label: {
                     Text(">")
                         .font(Font.custom("This-Cafe", size: 64))
-                        .foregroundColor(.primary)
+                        .foregroundColor(Color.TextColorPrimary)
                         .background(.clear)
                 }
                 Spacer()
@@ -76,14 +77,14 @@ struct TutorialView: View {
             } label: {
                 Text("Close")
                     .font(Font.custom("This-Cafe", size: 32))
-                    .foregroundColor(.primary)
+                    .foregroundColor(Color.TextColorPrimary)
                     .background(.clear)
             }
             
             Spacer()
         }
         .frame(width: width, height: height)
-        .background(.background)
+        .background(Color.BackgroundColor)
         .cornerRadius(10)
         .shadow(radius: 10)
         .padding()

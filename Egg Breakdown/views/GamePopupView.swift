@@ -21,7 +21,7 @@ struct GamePopupView: View {
                 Spacer()
                 Text(popupControl.message)
                     .font(Font.custom("Coffee-Fills", size: 24))
-                    .foregroundColor(.primary)
+                    .foregroundColor(Color.TextColorPrimary)
                     .background(.clear)
                 
                 Spacer()
@@ -36,13 +36,13 @@ struct GamePopupView: View {
                 } label: {
                     Text("Close")
                         .font(Font.custom("This-Cafe", size: 32))
-                        .foregroundColor(.primary)
+                        .foregroundColor(Color.TextColorPrimary)
                         .background(.clear)
                 }
                 Spacer()
             }
             .frame(width: 300, height: 200)
-            .background(.background)
+            .background(Color.BackgroundColor)
             .cornerRadius(10)
             .shadow(radius: 10)
             .padding()

@@ -9,12 +9,9 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @StateObject var appThemeViewModel: AppThemeViewModel  = AppThemeViewModel()
-    
     var body: some View {
-        MainView(appThemeViewModel: appThemeViewModel)
+        MainView()
             .navigationBarBackButtonHidden(true)
-            .modifier(DarkModeViewModifier(appThemeViewModel: appThemeViewModel))
     }
 }
 

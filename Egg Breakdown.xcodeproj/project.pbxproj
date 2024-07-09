@@ -44,8 +44,10 @@
 		5DF242C82C34E6290057643E /* DragEggCupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF242C52C34E6290057643E /* DragEggCupView.swift */; };
 		5DFF0E2F2C3C48700073D7D9 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF0E2E2C3C48700073D7D9 /* TutorialView.swift */; };
 		5DFF0E312C3C57130073D7D9 /* NaturalTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF0E302C3C57130073D7D9 /* NaturalTextView.swift */; };
-		5DFF0E362C3C7FD40073D7D9 /* DarkModeViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF0E352C3C7FD40073D7D9 /* DarkModeViewModifier.swift */; };
-		5DFF0E382C3C83BF0073D7D9 /* AppThemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF0E372C3C83BF0073D7D9 /* AppThemeViewModel.swift */; };
+		5DFF0E3B2C3CB2300073D7D9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF0E3A2C3CB2300073D7D9 /* SettingsView.swift */; };
+		5DFF0E3E2C3CBFE60073D7D9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF0E3D2C3CBFE60073D7D9 /* Color.swift */; };
+		5DFF0E412C3CC05E0073D7D9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF0E402C3CC05E0073D7D9 /* Constants.swift */; };
+		5DFF0E432C3CC0850073D7D9 /* UserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF0E422C3CC0850073D7D9 /* UserDefaultsUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,8 +110,10 @@
 		5DF242C52C34E6290057643E /* DragEggCupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragEggCupView.swift; sourceTree = "<group>"; };
 		5DFF0E2E2C3C48700073D7D9 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		5DFF0E302C3C57130073D7D9 /* NaturalTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaturalTextView.swift; sourceTree = "<group>"; };
-		5DFF0E352C3C7FD40073D7D9 /* DarkModeViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeViewModifier.swift; sourceTree = "<group>"; };
-		5DFF0E372C3C83BF0073D7D9 /* AppThemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppThemeViewModel.swift; sourceTree = "<group>"; };
+		5DFF0E3A2C3CB2300073D7D9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		5DFF0E3D2C3CBFE60073D7D9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		5DFF0E402C3CC05E0073D7D9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5DFF0E422C3CC0850073D7D9 /* UserDefaultsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +179,7 @@
 		5D778E7B2C27C62E008A5E54 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				5DFF0E392C3CB2240073D7D9 /* settings */,
 				5DFF0E2D2C3C48590073D7D9 /* tutorial */,
 				5DF242C22C34E6290057643E /* dragEggCup */,
 				5DE41EDF2C324D80007EBE33 /* eggCupZone */,
@@ -188,13 +193,13 @@
 			path = components;
 			sourceTree = "<group>";
 		};
-		5DD3EAC72C3B8E07008B2F2C /* Shared */ = {
+		5DD3EAC72C3B8E07008B2F2C /* shared */ = {
 			isa = PBXGroup;
 			children = (
 				5DD3EAC92C3B8E16008B2F2C /* fonts */,
 				5DD3EAC82C3B8E0C008B2F2C /* audio */,
 			);
-			path = Shared;
+			path = shared;
 			sourceTree = "<group>";
 		};
 		5DD3EAC82C3B8E0C008B2F2C /* audio */ = {
@@ -219,7 +224,6 @@
 		5DD867952C26559E00E37087 = {
 			isa = PBXGroup;
 			children = (
-				5DD3EAC72C3B8E07008B2F2C /* Shared */,
 				5D4D4BC72C39D56500F0E00E /* Attribution.txt */,
 				5D649DB62C3262D500D02D9E /* Egg-Breakdown-Info.plist */,
 				5DD867A02C26559E00E37087 /* Egg Breakdown */,
@@ -242,11 +246,13 @@
 		5DD867A02C26559E00E37087 /* Egg Breakdown */ = {
 			isa = PBXGroup;
 			children = (
-				5DFF0E342C3C7FC00073D7D9 /* themes */,
 				5D52C5912C28FDB9007810D4 /* app */,
 				5D778E7B2C27C62E008A5E54 /* components */,
-				5D52C58E2C28FD72007810D4 /* enums */,
 				5D52C58D2C28FCE3007810D4 /* views */,
+				5D52C58E2C28FD72007810D4 /* enums */,
+				5DFF0E3C2C3CBFD60073D7D9 /* extensions */,
+				5DD3EAC72C3B8E07008B2F2C /* shared */,
+				5DFF0E3F2C3CC0430073D7D9 /* utils */,
 				5DD867A92C2655A100E37087 /* Preview Content */,
 			);
 			path = "Egg Breakdown";
@@ -314,13 +320,29 @@
 			path = tutorial;
 			sourceTree = "<group>";
 		};
-		5DFF0E342C3C7FC00073D7D9 /* themes */ = {
+		5DFF0E392C3CB2240073D7D9 /* settings */ = {
 			isa = PBXGroup;
 			children = (
-				5DFF0E352C3C7FD40073D7D9 /* DarkModeViewModifier.swift */,
-				5DFF0E372C3C83BF0073D7D9 /* AppThemeViewModel.swift */,
+				5DFF0E3A2C3CB2300073D7D9 /* SettingsView.swift */,
 			);
-			path = themes;
+			path = settings;
+			sourceTree = "<group>";
+		};
+		5DFF0E3C2C3CBFD60073D7D9 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5DFF0E3D2C3CBFE60073D7D9 /* Color.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		5DFF0E3F2C3CC0430073D7D9 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				5DFF0E402C3CC05E0073D7D9 /* Constants.swift */,
+				5DFF0E422C3CC0850073D7D9 /* UserDefaultsUtils.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -465,6 +487,7 @@
 				5DA00FA52C2A431F00011AB9 /* CustomError.swift in Sources */,
 				5DE41EE72C32575A007EBE33 /* EggCupZoneListView.swift in Sources */,
 				5DE41EDC2C323AAB007EBE33 /* HammerView.swift in Sources */,
+				5DFF0E412C3CC05E0073D7D9 /* Constants.swift in Sources */,
 				5DFF0E312C3C57130073D7D9 /* NaturalTextView.swift in Sources */,
 				5D52C5932C28FEF5007810D4 /* Player.swift in Sources */,
 				5D52C5982C29051C007810D4 /* EggImageGetter.swift in Sources */,
@@ -472,9 +495,10 @@
 				5DD867A42C26559E00E37087 /* ContentView.swift in Sources */,
 				5DA00FA72C2A4C2E00011AB9 /* GameToPlayer.swift in Sources */,
 				5DD867A22C26559E00E37087 /* Egg_BreakdownApp.swift in Sources */,
-				5DFF0E362C3C7FD40073D7D9 /* DarkModeViewModifier.swift in Sources */,
-				5DFF0E382C3C83BF0073D7D9 /* AppThemeViewModel.swift in Sources */,
+				5DFF0E3E2C3CBFE60073D7D9 /* Color.swift in Sources */,
+				5DFF0E3B2C3CB2300073D7D9 /* SettingsView.swift in Sources */,
 				5DE41EE32C3256FC007EBE33 /* EggCupZoneModel.swift in Sources */,
+				5DFF0E432C3CC0850073D7D9 /* UserDefaultsUtils.swift in Sources */,
 				5DFF0E2F2C3C48700073D7D9 /* TutorialView.swift in Sources */,
 				5D4D4BCD2C39E0FD00F0E00E /* SoundManager.swift in Sources */,
 				5D9F24212C2660F7005BF969 /* MainView.swift in Sources */,
