@@ -20,7 +20,7 @@ struct GamePopupView: View {
             VStack {
                 Spacer()
                 Text(popupControl.message)
-                    .font(Font.custom("Coffee-Fills", size: 24))
+                    .font(Font.custom("Coffee-Fills", size: TextSize.large.rawValue))
                     .foregroundColor(Color.TextColorPrimary)
                     .background(.clear)
                 
@@ -35,7 +35,7 @@ struct GamePopupView: View {
                     popupControl.message = ""
                 } label: {
                     Text("Close")
-                        .font(Font.custom("This-Cafe", size: 32))
+                        .font(Font.custom("This-Cafe", size: TextSize.large.rawValue))
                         .foregroundColor(Color.TextColorPrimary)
                         .background(.clear)
                 }

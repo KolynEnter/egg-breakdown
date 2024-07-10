@@ -53,21 +53,21 @@ struct GameView: View {
                 VStack {
                     HStack {
                         Text("00:30")
-                            .font(Font.custom("This-Cafe", size: 24))
+                            .font(Font.custom("This-Cafe", size: TextSize.large.rawValue))
                         Spacer()
                         
                         Button {
                             isShowTutorial = true
                         } label: {
                             Text("Help")
-                                .font(Font.custom("This-Cafe", size: 24))
+                                .font(Font.custom("This-Cafe", size: TextSize.large.rawValue))
                                 .foregroundColor(Color.TextColorPrimary)
                                 .background(.clear)
                         }
                     }
                     
                     Text("Round \(String(game.round))")
-                        .font(Font.custom("This-Cafe", size: 32))
+                        .font(Font.custom("This-Cafe", size: TextSize.extraLarge.rawValue))
                 }
                 .background(.clear)
                 .padding()
@@ -80,7 +80,7 @@ struct GameView: View {
                         .frame(width: opponentGoldenEggNumReferenceFrame.width, height: opponentGoldenEggNumReferenceFrame.height)
                     
                     Text(String(game.getOtherPlayer().numOfGoldenEggs))
-                        .font(Font.custom("Coffee-Fills", size: 32))
+                        .font(Font.custom("Coffee-Fills", size: TextSize.extraLarge.rawValue))
                         .offset(x: -15)
                     
                     Spacer()
@@ -105,7 +105,7 @@ struct GameView: View {
                     .zIndex(-1)
                 
                 Text("\(game.getOtherPlayer().score)")
-                    .font(Font.custom("This-Cafe", size: 32))
+                    .font(Font.custom("This-Cafe", size: TextSize.extraLarge.rawValue))
                     .frame(height: 40)
                 
                 HStack {
@@ -120,7 +120,7 @@ struct GameView: View {
                 .zIndex(2)
                 
                 Text("\(game.getLocalPlayer().score)")
-                    .font(Font.custom("This-Cafe", size: 32))
+                    .font(Font.custom("This-Cafe", size: TextSize.extraLarge.rawValue))
                     .frame(height: 40)
                 
                 eggCupZoneListView1
@@ -146,7 +146,7 @@ struct GameView: View {
                         
                         if isShowDraggables {
                             Text(String(game.getLocalPlayer().numOfGoldenEggs))
-                                .font(Font.custom("Coffee-Fills", size: 32))
+                                .font(Font.custom("Coffee-Fills", size: TextSize.extraLarge.rawValue))
                                 .offset(x: 15)
                             
                             dragEgg1
@@ -157,7 +157,7 @@ struct GameView: View {
                         game.getLocalPlayer().pressSetButton()
                     } label: {
                         Text("Set")
-                            .font(Font.custom("This-Cafe", size: 32))
+                            .font(Font.custom("This-Cafe", size: TextSize.extraLarge.rawValue))
                             .foregroundColor(Color.TextColorPrimary)
                             .background(.clear)
                     }

@@ -29,7 +29,7 @@ struct TutorialView: View {
             Spacer()
             
             Text("\(String(linePointer + 1)) / \(lines.count)")
-                .font(Font.custom("This-Cafe", size: 32))
+                .font(Font.custom("This-Cafe", size: TextSize.extraLarge.rawValue))
                 .foregroundColor(Color.TextColorPrimary)
                 .background(.clear)
             
@@ -51,7 +51,7 @@ struct TutorialView: View {
                     .frame(width: 20)
                     .opacity(0)
                 
-                NaturalTextView(text: lines[linePointer], customFontName: "Coffee-Fills", fontSize: 18)
+                NaturalTextView(text: lines[linePointer], customFontName: "Coffee-Fills", fontSize: TextSize.medium.rawValue)
                     .foregroundColor(Color.TextColorPrimary)
                     .background(.clear)
 
@@ -63,7 +63,7 @@ struct TutorialView: View {
                     incrementLinePointer()
                 } label: {
                     Text(">")
-                        .font(Font.custom("This-Cafe", size: 64))
+                        .font(Font.custom("This-Cafe", size: TextSize.ultraLarge.rawValue))
                         .foregroundColor(Color.TextColorPrimary)
                         .background(.clear)
                 }
@@ -76,7 +76,7 @@ struct TutorialView: View {
                 isShow = false
             } label: {
                 Text("Close")
-                    .font(Font.custom("This-Cafe", size: 32))
+                    .font(Font.custom("This-Cafe", size: TextSize.large.rawValue))
                     .foregroundColor(Color.TextColorPrimary)
                     .background(.clear)
             }
