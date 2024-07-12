@@ -84,8 +84,6 @@ struct MainView: View {
                     }
                     VStack {
                         SettingsView(isShow: $isShowSettings,
-                                     bgmPlayer: MusicPlayerViewModel(audioType: AudioType.bgm),
-                                     sfxPlayer: MusicPlayerViewModel(audioType: AudioType.sfx),
                                      height: 350,
                                      width: 300)
                     }
@@ -98,7 +96,7 @@ struct MainView: View {
         }
     }
     
-    func performActionBeforeNavigation() {
+    private func performActionBeforeNavigation() {
         navigate = true
     }
 }

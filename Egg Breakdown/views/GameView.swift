@@ -11,9 +11,8 @@ struct GameView: View {
     @ObservedObject private var game: EggBreakdownGame
     // Initialization order
     @State private var isShowDraggables: Bool = false
-    @State private var isShowTutorial: Bool = false
+    @State private var isShowOptions: Bool = false
     @State private var opponentGoldenEggNumReferenceFrame: CGSize = .zero
-    @State private var navigate = false
 
     private let p1: Player
     private let p2: Player
@@ -57,12 +56,12 @@ struct GameView: View {
                         Spacer()
                         
                         Button {
-                            isShowTutorial = true
+                            isShowOptions = true
                         } label: {
-                            Text("Rules")
-                                .font(Font.custom("This-Cafe", size: TextSize.large.rawValue))
-                                .foregroundColor(Color.TextColorPrimary)
-                                .background(.clear)
+                            Image("cog")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 32, height: 32)
                         }
                     }
                     
@@ -84,20 +83,6 @@ struct GameView: View {
                         .offset(x: -15)
                     
                     Spacer()
-                    NavigationStack {
-                        Button {
-                            navigate = true
-                        } label: {
-                            Image("exit")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: opponentGoldenEggNumReferenceFrame.width, height: opponentGoldenEggNumReferenceFrame.height)
-                        }
-                        
-                        .navigationDestination(isPresented: $navigate) {
-                            ContentView()
-                        }
-                    }
                 }
                 
                 eggCupZoneListView2
@@ -172,7 +157,7 @@ struct GameView: View {
                 popupView
             }
             VStack {
-                TutorialView(isShow: $isShowTutorial, height: 300, width: 300)
+                OptionsView(isShow: $isShowOptions, height: 300, width: 300)
             }
         }
         .navigationBarBackButtonHidden(true)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D04E5A12C41E27600C3194C /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04E5A02C41E27600C3194C /* OptionsView.swift */; };
 		5D0A0F9D2C38E27F00C48719 /* GamePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0A0F9C2C38E27F00C48719 /* GamePopupView.swift */; };
 		5D0A0FA02C38ED8F00C48719 /* PopupHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F88F42C377CC6001678FF /* PopupHelper.swift */; };
 		5D4D4BCB2C39DD6800F0E00E /* hit_egg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5D4D4BCA2C39DD6800F0E00E /* hit_egg.mp3 */; };
@@ -71,6 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D04E5A02C41E27600C3194C /* OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
 		5D0A0F9C2C38E27F00C48719 /* GamePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePopupView.swift; sourceTree = "<group>"; };
 		5D4D4BC72C39D56500F0E00E /* Attribution.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Attribution.txt; sourceTree = "<group>"; };
 		5D4D4BCA2C39DD6800F0E00E /* hit_egg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hit_egg.mp3; sourceTree = "<group>"; };
@@ -147,6 +149,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D04E59F2C41E26900C3194C /* options */ = {
+			isa = PBXGroup;
+			children = (
+				5D04E5A02C41E27600C3194C /* OptionsView.swift */,
+			);
+			path = options;
+			sourceTree = "<group>";
+		};
 		5D52C58D2C28FCE3007810D4 /* views */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +196,7 @@
 		5D778E7B2C27C62E008A5E54 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				5D04E59F2C41E26900C3194C /* options */,
 				5DFF0E392C3CB2240073D7D9 /* settings */,
 				5DFF0E2D2C3C48590073D7D9 /* tutorial */,
 				5DF242C22C34E6290057643E /* dragEggCup */,
@@ -492,6 +503,7 @@
 				5D0A0FA02C38ED8F00C48719 /* PopupHelper.swift in Sources */,
 				5DD06F312C40C6B5006F9E71 /* MusicPlayerViewModel.swift in Sources */,
 				5DA00FA32C2A143800011AB9 /* Hammer.swift in Sources */,
+				5D04E5A12C41E27600C3194C /* OptionsView.swift in Sources */,
 				5DE41EE12C3256B9007EBE33 /* EggCupZoneView.swift in Sources */,
 				5DF242C62C34E6290057643E /* DragEggCupModel.swift in Sources */,
 				5DD06F332C40CDDE006F9E71 /* AudioSlider.swift in Sources */,

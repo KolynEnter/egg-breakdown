@@ -14,8 +14,8 @@ struct SettingsView: View {
     @Binding var isShow: Bool
     @State private var isDarkModeOn = false
     @Environment(\.colorScheme) private var colorScheme: ColorScheme
-    @ObservedObject var bgmPlayer: MusicPlayerViewModel
-    @ObservedObject var sfxPlayer: MusicPlayerViewModel
+    @State private var bgmPlayer: MusicPlayerViewModel = MusicPlayerViewModel(audioType: AudioType.bgm)
+    @State private var sfxPlayer: MusicPlayerViewModel = MusicPlayerViewModel(audioType: AudioType.sfx)
     
     let height: CGFloat
     let width: CGFloat
@@ -24,6 +24,7 @@ struct SettingsView: View {
         Toggle("Dark Mode", isOn: $isDarkModeOn).onChange(of: isDarkModeOn) { (oldState, newState)  in
             changeDarkMode(state: newState)
         }.labelsHidden()
+            .tint(Color.TextColorSecondary)
     }
     
     var body: some View {

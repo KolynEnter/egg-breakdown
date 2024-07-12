@@ -17,10 +17,10 @@ struct AudioSlider: View {
                     .fill(Color.black.opacity(0.08))
                     .frame(height: 8)
                 Capsule()
-                    .fill(Color.red)
+                    .fill(Color.TextColorPrimary)
                     .frame(width: musicPlayer.percentVolume * metrics.size.width, height: 8)
                 Circle()
-                    .fill(Color.red)
+                    .fill(Color.TextColorPrimary)
                     .frame(width: 18, height: 18)
                     .padding(.leading, musicPlayer.percentVolume * metrics.size.width - 9)
             }
