@@ -67,7 +67,7 @@ struct MainView: View {
                         Button(action: {
                             isShowTutorial = true
                         }) {
-                            Text("Tutorial")
+                            Text("Rules")
                                 .padding()
                                 .font(Font.custom("This-Cafe", size: TextSize.large.rawValue))
                                 .foregroundColor(Color.TextColorPrimary)
@@ -84,6 +84,8 @@ struct MainView: View {
                     }
                     VStack {
                         SettingsView(isShow: $isShowSettings,
+                                     bgmPlayer: MusicPlayerViewModel(audioType: AudioType.bgm),
+                                     sfxPlayer: MusicPlayerViewModel(audioType: AudioType.sfx),
                                      height: 350,
                                      width: 300)
                     }

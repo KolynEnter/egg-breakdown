@@ -59,7 +59,7 @@ struct GameView: View {
                         Button {
                             isShowTutorial = true
                         } label: {
-                            Text("Help")
+                            Text("Rules")
                                 .font(Font.custom("This-Cafe", size: TextSize.large.rawValue))
                                 .foregroundColor(Color.TextColorPrimary)
                                 .background(.clear)

@@ -12,12 +12,13 @@ class SoundManager {
     
     private var sfxPlayer: AVAudioPlayer?
     private var bgmPlayer: AVAudioPlayer?
+    private var sfxVolume: Float = 1
 
     private init() {
         // Private initializer to enforce singleton pattern
     }
     
-    func playSFX(sfxName: String, extension ext: String) {
+    func playSFX(sfxName: String, extension ext: String) -> Void {
         guard let soundURL = Bundle.main.url(forResource: sfxName, withExtension: ext) else {
             print("Sound file not found")
             return
@@ -25,6 +26,7 @@ class SoundManager {
         
         do {
             sfxPlayer = try AVAudioPlayer(contentsOf: soundURL)
+            sfxPlayer?.volume = sfxVolume
             sfxPlayer?.prepareToPlay()
             sfxPlayer?.play()
         } catch {
@@ -32,7 +34,7 @@ class SoundManager {
         }
     }
     
-    func playBGM(bgmName: String, extension ext: String) {
+    func playBGM(bgmName: String, extension ext: String) -> Void {
         guard let soundURL = Bundle.main.url(forResource: bgmName, withExtension: ext) else {
             print("Sound file not found")
             return
@@ -45,6 +47,14 @@ class SoundManager {
             bgmPlayer?.play()
         } catch {
             print("Failed to load the sound: \(error)")
+        }
+    }
+    
+    func adjustVolume(audioType: AudioType, newVolume: Float) -> Void {
+        if audioType == .sfx {
+            sfxVolume = newVolume
+        } else if audioType == .bgm {
+            bgmPlayer?.volume = newVolume
         }
     }
 }

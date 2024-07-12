@@ -17,7 +17,6 @@ struct TutorialView: View {
     private let lines: [String] = [
         "The goal of game “Egg Breakdown” is to gain a higher score than your opponent within 3 rounds.",
         "Before each round, both you and your opponent will need to set up defenses. To withstand hammer attacks, swap regular eggs with golden ones.",
-        "Once your defenses are set up, you can send a message to your opponent.",
         "Then, you and your opponent will each have a turn to attack. You earn points by cracking your opponent’s egg with the hammer.",
         "Be wary! The hammer cannot break golden eggs.",
         "Both you and your opponent will start with eight golden eggs.",

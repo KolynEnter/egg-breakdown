@@ -14,6 +14,8 @@ struct SettingsView: View {
     @Binding var isShow: Bool
     @State private var isDarkModeOn = false
     @Environment(\.colorScheme) private var colorScheme: ColorScheme
+    @ObservedObject var bgmPlayer: MusicPlayerViewModel
+    @ObservedObject var sfxPlayer: MusicPlayerViewModel
     
     let height: CGFloat
     let width: CGFloat
@@ -26,24 +28,23 @@ struct SettingsView: View {
     
     var body: some View {
         VStack {
-            Button {
-                
-            } label: {
+            
+            HStack {
                 Text("BGM")
                     .padding()
                     .font(Font.custom("This-Cafe", size: TextSize.extraLarge.rawValue))
                     .foregroundColor(Color.TextColorPrimary)
                     .background(.clear)
+                AudioSlider(musicPlayer: bgmPlayer)
             }
             
-            Button {
-                
-            } label: {
+            HStack {
                 Text("SFX")
                     .padding()
                     .font(Font.custom("This-Cafe", size: TextSize.extraLarge.rawValue))
                     .foregroundColor(Color.TextColorPrimary)
                     .background(.clear)
+                AudioSlider(musicPlayer: sfxPlayer)
             }
             
             HStack {
@@ -76,7 +77,7 @@ struct SettingsView: View {
         })
     }
     
-    private func setAppTheme(){
+    private func setAppTheme() -> Void {
       //MARK: use saved device theme from toggle
       isDarkModeOn = UserDefaultsUtils.shared.getDarkMode()
       changeDarkMode(state: isDarkModeOn)
@@ -91,7 +92,7 @@ struct SettingsView: View {
       changeDarkMode(state: isDarkModeOn)*/
     }
     
-    private func changeDarkMode(state: Bool){
+    private func changeDarkMode(state: Bool) -> Void {
         (UIApplication.shared.connectedScenes.first as? UIWindowScene)?
             .windows.first!.overrideUserInterfaceStyle = state ? .dark : .light
         UserDefaultsUtils.shared.setDarkMode(enable: state)

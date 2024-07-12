@@ -7,7 +7,6 @@
 
 enum GamePhase {
     case setupDefense
-    case sendMessage
     case attack
     case newRound
     case reveal

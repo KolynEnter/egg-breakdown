@@ -26,6 +26,8 @@
 		5DA00FA32C2A143800011AB9 /* Hammer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA00FA22C2A143800011AB9 /* Hammer.swift */; };
 		5DA00FA52C2A431F00011AB9 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA00FA42C2A431F00011AB9 /* CustomError.swift */; };
 		5DA00FA72C2A4C2E00011AB9 /* GameToPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA00FA62C2A4C2E00011AB9 /* GameToPlayer.swift */; };
+		5DD06F312C40C6B5006F9E71 /* MusicPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD06F302C40C6B5006F9E71 /* MusicPlayerViewModel.swift */; };
+		5DD06F332C40CDDE006F9E71 /* AudioSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD06F322C40CDDE006F9E71 /* AudioSlider.swift */; };
 		5DD3EAC22C3B8C57008B2F2C /* This_Cafe.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD3EAC12C3B8C57008B2F2C /* This_Cafe.ttf */; };
 		5DD3EAC62C3B8D82008B2F2C /* Coffee_Fills.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD3EAC52C3B8D82008B2F2C /* Coffee_Fills.ttf */; };
 		5DD867A22C26559E00E37087 /* Egg_BreakdownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD867A12C26559E00E37087 /* Egg_BreakdownApp.swift */; };
@@ -90,6 +92,8 @@
 		5DA00FA22C2A143800011AB9 /* Hammer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hammer.swift; sourceTree = "<group>"; };
 		5DA00FA42C2A431F00011AB9 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		5DA00FA62C2A4C2E00011AB9 /* GameToPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameToPlayer.swift; sourceTree = "<group>"; };
+		5DD06F302C40C6B5006F9E71 /* MusicPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerViewModel.swift; sourceTree = "<group>"; };
+		5DD06F322C40CDDE006F9E71 /* AudioSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSlider.swift; sourceTree = "<group>"; };
 		5DD3EAC12C3B8C57008B2F2C /* This_Cafe.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = This_Cafe.ttf; sourceTree = "<group>"; };
 		5DD3EAC52C3B8D82008B2F2C /* Coffee_Fills.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Coffee_Fills.ttf; sourceTree = "<group>"; };
 		5DD8679E2C26559E00E37087 /* Egg Breakdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Egg Breakdown.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,13 +200,13 @@
 			path = components;
 			sourceTree = "<group>";
 		};
-		5DD3EAC72C3B8E07008B2F2C /* shared */ = {
+		5DD3EAC72C3B8E07008B2F2C /* resource */ = {
 			isa = PBXGroup;
 			children = (
 				5DD3EAC92C3B8E16008B2F2C /* fonts */,
 				5DD3EAC82C3B8E0C008B2F2C /* audio */,
 			);
-			path = shared;
+			path = resource;
 			sourceTree = "<group>";
 		};
 		5DD3EAC82C3B8E0C008B2F2C /* audio */ = {
@@ -254,7 +258,7 @@
 				5D52C58D2C28FCE3007810D4 /* views */,
 				5D52C58E2C28FD72007810D4 /* enums */,
 				5DFF0E3C2C3CBFD60073D7D9 /* extensions */,
-				5DD3EAC72C3B8E07008B2F2C /* shared */,
+				5DD3EAC72C3B8E07008B2F2C /* resource */,
 				5DFF0E3F2C3CC0430073D7D9 /* utils */,
 				5DD867A92C2655A100E37087 /* Preview Content */,
 			);
@@ -327,6 +331,8 @@
 			isa = PBXGroup;
 			children = (
 				5DFF0E3A2C3CB2300073D7D9 /* SettingsView.swift */,
+				5DD06F302C40C6B5006F9E71 /* MusicPlayerViewModel.swift */,
+				5DD06F322C40CDDE006F9E71 /* AudioSlider.swift */,
 			);
 			path = settings;
 			sourceTree = "<group>";
@@ -484,9 +490,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D0A0FA02C38ED8F00C48719 /* PopupHelper.swift in Sources */,
+				5DD06F312C40C6B5006F9E71 /* MusicPlayerViewModel.swift in Sources */,
 				5DA00FA32C2A143800011AB9 /* Hammer.swift in Sources */,
 				5DE41EE12C3256B9007EBE33 /* EggCupZoneView.swift in Sources */,
 				5DF242C62C34E6290057643E /* DragEggCupModel.swift in Sources */,
+				5DD06F332C40CDDE006F9E71 /* AudioSlider.swift in Sources */,
 				5DA00FA52C2A431F00011AB9 /* CustomError.swift in Sources */,
 				5DE41EE72C32575A007EBE33 /* EggCupZoneListView.swift in Sources */,
 				5DE41EDC2C323AAB007EBE33 /* HammerView.swift in Sources */,
