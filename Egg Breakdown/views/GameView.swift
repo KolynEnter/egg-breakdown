@@ -42,6 +42,19 @@ struct GameView: View {
         DragEggCupView(game: game, targets: eggCupZoneListView1, eggType: EggType.normal)
     }
     
+    struct TimerView: View {
+        @ObservedObject var gameFlowTimer: GameFlowTimer
+        private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+
+        var body: some View {
+            Text("\(gameFlowTimer.display)")
+                .font(Font.custom("This-Cafe", size: TextSize.large.rawValue))
+                .onReceive(timer) { _ in
+                    gameFlowTimer.updateCountdown()
+                }
+        }
+    }
+    
     var body: some View {
         ZStack {
             VStack {
@@ -51,8 +64,8 @@ struct GameView: View {
                 
                 VStack {
                     HStack {
-                        Text("00:30")
-                            .font(Font.custom("This-Cafe", size: TextSize.large.rawValue))
+                        TimerView(gameFlowTimer: game.gameFlowTimer)
+                        
                         Spacer()
                         
                         Button {

@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-// Settings
-// Rules
-// Exit
-
 struct OptionsView: View {
     @Binding var isShow: Bool
     @State private var navigate = false

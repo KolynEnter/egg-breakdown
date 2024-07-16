@@ -1,3 +1,5 @@
 hit_egg.mp3 (Pixabay): https://pixabay.com/sound-effects/search/splat/
 hit_golden_egg.mp3 (floraphonic): https://pixabay.com/sound-effects/search/hit/?pagi=2
 bgm_loop (MusicGenerate): https://www.musicgenerate.com/
+cog <a href="https://www.flaticon.com/free-icons/cog" title="cog icons">Cog icons created by Dave Gandy - Flaticon</a>
+

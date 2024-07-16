@@ -22,7 +22,8 @@ class EggBreakdownGame: ObservableObject {
     @Published var round: Int = 1
     @Published private(set) var popupControl: PopupHelper
     @Published private(set) var hasGameEnd: Bool = false
-
+    @Published var gameFlowTimer: GameFlowTimer
+    
     var eggCupFrames: [CGRect] = Array(repeating: .zero, count: 8)
 
     private let p1: Player
@@ -31,6 +32,18 @@ class EggBreakdownGame: ObservableObject {
     // nil if not in an attack turn
     private let gameFlowController = GameFlowController()
     private var setupReadyPlayerIDs: [UUID] = []
+    private var firstHandPlayer: Player?
+    private var FirstHandPlayer: Player {
+        get {
+            return firstHandPlayer!
+        }
+    }
+    private var secondHandPlayer: Player?
+    private var SecondHandPlayer: Player {
+        get {
+             return secondHandPlayer!
+        }
+    }
     
     init(player1: Player, player2: Player) {
         popupControl = PopupHelper()
@@ -39,6 +52,8 @@ class EggBreakdownGame: ObservableObject {
         self.p2 = player2
         
         gamePhase = gameFlowController.getCurrPhase()
+        
+        gameFlowTimer = GameFlowTimer()
         
         p1.setGame(gameToPlayer: GameToPlayer(game: self,
                                               gameBreakEgg: breakEgg,
@@ -50,6 +65,13 @@ class EggBreakdownGame: ObservableObject {
         startSetupDefenseTurn()
         
         turnOwnerId = p1.id
+        
+        gameFlowTimer.startNext(callOnEnd: goToNextGamePhase)
+    }
+    
+    private func decideAttackOrder() -> Void {
+        firstHandPlayer = p1
+        secondHandPlayer = p2
     }
     
     func popup(message: String) -> Void {
@@ -88,6 +110,10 @@ class EggBreakdownGame: ObservableObject {
         }
     }
     
+    func updateCountdown() {
+        gameFlowTimer.updateCountdown()
+    }
+    
     private func breakEgg(at zoneIndex: Int) -> Void {
         if dropZoneEggType[zoneIndex] == EggType.normal {
             coverAlphaValues[zoneIndex] = 0
@@ -107,7 +133,7 @@ class EggBreakdownGame: ObservableObject {
     private func endAttackTurn() -> Void {
         if gameFlowController.getCurrPhase() == GamePhase.attack {
             turnOwnerId = getOtherId()
-//            print("Give turn to \(getTurnOwner().name).")
+            print("Give turn to \(getTurnOwner().name).")
 //            startAttackTurn()
             goToNextGamePhase()
         } else {
@@ -119,14 +145,6 @@ class EggBreakdownGame: ObservableObject {
                 self.turnOwnerId = nil
                 self.goToNextGamePhase()
             }
-        }
-    }
-    
-    private func decideWhoWillAttack() -> Void {
-        if turnOwnerId != p1.id {
-            turnOwnerId = p1.id
-        } else {
-            turnOwnerId = p2.id
         }
     }
     
@@ -167,8 +185,10 @@ class EggBreakdownGame: ObservableObject {
     private func goToNextGamePhase() -> Void {
         gameFlowController.advanceFlow()
         gamePhase = gameFlowController.getCurrPhase()
+        gameFlowTimer.startNext(callOnEnd: goToNextGamePhase)
         
         if gameFlowController.getCurrPhase() == GamePhase.attack {
+//            decideWhoWillAttack()
             startAttackTurn()
         } else if gameFlowController.getCurrPhase() == GamePhase.setupDefense {
             startSetupDefenseTurn()
@@ -218,21 +238,7 @@ class EggBreakdownGame: ObservableObject {
 }
 
 fileprivate class GameFlowController {
-    private let gameFlow = [GamePhase.setupDefense,
-                            GamePhase.attack,
-                            GamePhase.attack,
-                            GamePhase.reveal,
-                            GamePhase.newRound,
-                            GamePhase.setupDefense,
-                            GamePhase.attack,
-                            GamePhase.attack,
-                            GamePhase.reveal,
-                            GamePhase.newRound,
-                            GamePhase.setupDefense,
-                            GamePhase.attack,
-                            GamePhase.attack,
-                            GamePhase.reveal,
-                            GamePhase.newRound]
+    private let gameFlow = GameConfig.gameFlow
     private var flowPointer: Int = 0
     
     func getCurrPhase() -> GamePhase {

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5D04E5A12C41E27600C3194C /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04E5A02C41E27600C3194C /* OptionsView.swift */; };
+		5D04E5A32C41F63D00C3194C /* GameConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04E5A22C41F63D00C3194C /* GameConfig.swift */; };
+		5D04E5A62C41F8DD00C3194C /* GameFlowTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04E5A52C41F8DD00C3194C /* GameFlowTimer.swift */; };
 		5D0A0F9D2C38E27F00C48719 /* GamePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0A0F9C2C38E27F00C48719 /* GamePopupView.swift */; };
 		5D0A0FA02C38ED8F00C48719 /* PopupHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F88F42C377CC6001678FF /* PopupHelper.swift */; };
 		5D4D4BCB2C39DD6800F0E00E /* hit_egg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5D4D4BCA2C39DD6800F0E00E /* hit_egg.mp3 */; };
@@ -73,6 +75,8 @@
 
 /* Begin PBXFileReference section */
 		5D04E5A02C41E27600C3194C /* OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
+		5D04E5A22C41F63D00C3194C /* GameConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfig.swift; sourceTree = "<group>"; };
+		5D04E5A52C41F8DD00C3194C /* GameFlowTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFlowTimer.swift; sourceTree = "<group>"; };
 		5D0A0F9C2C38E27F00C48719 /* GamePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePopupView.swift; sourceTree = "<group>"; };
 		5D4D4BC72C39D56500F0E00E /* Attribution.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Attribution.txt; sourceTree = "<group>"; };
 		5D4D4BCA2C39DD6800F0E00E /* hit_egg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hit_egg.mp3; sourceTree = "<group>"; };
@@ -189,6 +193,8 @@
 				5D52C5972C29051C007810D4 /* EggImageGetter.swift */,
 				5DA00FA62C2A4C2E00011AB9 /* GameToPlayer.swift */,
 				5D4D4BCC2C39E0FD00F0E00E /* SoundManager.swift */,
+				5D04E5A22C41F63D00C3194C /* GameConfig.swift */,
+				5D04E5A52C41F8DD00C3194C /* GameFlowTimer.swift */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -519,6 +525,7 @@
 				5DD867A42C26559E00E37087 /* ContentView.swift in Sources */,
 				5DA00FA72C2A4C2E00011AB9 /* GameToPlayer.swift in Sources */,
 				5DD867A22C26559E00E37087 /* Egg_BreakdownApp.swift in Sources */,
+				5D04E5A32C41F63D00C3194C /* GameConfig.swift in Sources */,
 				5DFF0E3E2C3CBFE60073D7D9 /* Color.swift in Sources */,
 				5DFF0E3B2C3CB2300073D7D9 /* SettingsView.swift in Sources */,
 				5DE41EE32C3256FC007EBE33 /* EggCupZoneModel.swift in Sources */,
@@ -533,6 +540,7 @@
 				5DF242C72C34E6290057643E /* DragEggCupController.swift in Sources */,
 				5D52C59C2C290848007810D4 /* EggCupCover.swift in Sources */,
 				5D9F241F2C266085005BF969 /* EggBreakdownGame.swift in Sources */,
+				5D04E5A62C41F8DD00C3194C /* GameFlowTimer.swift in Sources */,
 				5D52C5902C28FD7F007810D4 /* GamePhase.swift in Sources */,
 				5D0A0F9D2C38E27F00C48719 /* GamePopupView.swift in Sources */,
 			);
