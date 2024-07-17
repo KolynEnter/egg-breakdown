@@ -52,7 +52,7 @@ struct HammerView: View {
                                     game.popup(message: "Not in attack phase, attack failed.")
                                     break
                                 }
-                                if game.getLocalPlayer().id != game.turnOwnerId {
+                                if game.getLocalPlayer().id != game.turnOwner?.id {
 //                                    print("It's not your turn to attack yet. Please wait for your opponent.")
                                     game.popup(message: "It's not your turn to attack yet. Please wait for your opponent.")
                                     break

@@ -60,7 +60,7 @@ class Player {
     
     func pressSetButton() -> Void {
         do {
-            try Game.exitSetupDefenseTurn(id: id)
+            try Game.endSetupDefenseTurn(id: id)
 //            print("\(name) pressed Set button.")
             try Game.coverAlphaValues = [0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1]
         } catch {
@@ -161,7 +161,7 @@ class RobotPlayer: Player {
                 sleep(UInt32(0.2))
             }
             do {
-                try self.Game.exitSetupDefenseTurn(id: self.id)
+                try self.Game.endSetupDefenseTurn(id: self.id)
 //                print("ROBOT: exit setup defense")
             } catch {
                 print("Game is not initialized for robot player")

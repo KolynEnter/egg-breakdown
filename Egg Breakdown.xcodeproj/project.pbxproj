@@ -33,6 +33,7 @@
 		5DD06F332C40CDDE006F9E71 /* AudioSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD06F322C40CDDE006F9E71 /* AudioSlider.swift */; };
 		5DD3EAC22C3B8C57008B2F2C /* This_Cafe.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD3EAC12C3B8C57008B2F2C /* This_Cafe.ttf */; };
 		5DD3EAC62C3B8D82008B2F2C /* Coffee_Fills.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD3EAC52C3B8D82008B2F2C /* Coffee_Fills.ttf */; };
+		5DD64A1A2C471ABB00FA9115 /* TurnManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD64A192C471ABB00FA9115 /* TurnManager.swift */; };
 		5DD867A22C26559E00E37087 /* Egg_BreakdownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD867A12C26559E00E37087 /* Egg_BreakdownApp.swift */; };
 		5DD867A42C26559E00E37087 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD867A32C26559E00E37087 /* ContentView.swift */; };
 		5DD867A82C2655A100E37087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DD867A72C2655A100E37087 /* Assets.xcassets */; };
@@ -102,6 +103,7 @@
 		5DD06F322C40CDDE006F9E71 /* AudioSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSlider.swift; sourceTree = "<group>"; };
 		5DD3EAC12C3B8C57008B2F2C /* This_Cafe.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = This_Cafe.ttf; sourceTree = "<group>"; };
 		5DD3EAC52C3B8D82008B2F2C /* Coffee_Fills.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Coffee_Fills.ttf; sourceTree = "<group>"; };
+		5DD64A192C471ABB00FA9115 /* TurnManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnManager.swift; sourceTree = "<group>"; };
 		5DD8679E2C26559E00E37087 /* Egg Breakdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Egg Breakdown.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DD867A12C26559E00E37087 /* Egg_BreakdownApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Egg_BreakdownApp.swift; sourceTree = "<group>"; };
 		5DD867A32C26559E00E37087 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				5D4D4BCC2C39E0FD00F0E00E /* SoundManager.swift */,
 				5D04E5A22C41F63D00C3194C /* GameConfig.swift */,
 				5D04E5A52C41F8DD00C3194C /* GameFlowTimer.swift */,
+				5DD64A192C471ABB00FA9115 /* TurnManager.swift */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 			files = (
 				5D0A0FA02C38ED8F00C48719 /* PopupHelper.swift in Sources */,
 				5DD06F312C40C6B5006F9E71 /* MusicPlayerViewModel.swift in Sources */,
+				5DD64A1A2C471ABB00FA9115 /* TurnManager.swift in Sources */,
 				5DA00FA32C2A143800011AB9 /* Hammer.swift in Sources */,
 				5D04E5A12C41E27600C3194C /* OptionsView.swift in Sources */,
 				5DE41EE12C3256B9007EBE33 /* EggCupZoneView.swift in Sources */,
