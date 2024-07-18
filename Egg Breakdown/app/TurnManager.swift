@@ -19,7 +19,7 @@ class TurnManager {
             if turnOwnerArray.count == 0 {
                 turnOwnerArray = getTurnOwnerArray()
             }
-            return turnOwnerArray[flowController.flowPointer]
+            return turnOwnerArray[flowController.pointer]
         }
     }
     
@@ -35,23 +35,6 @@ class TurnManager {
     
     func startAttackTurn() -> Void {
         turnOwner?.startAttackTurn()
-    }
-    
-    /// Ends the setup defense turn for both players.
-    ///
-    /// - Parameters:
-    ///     - id: The player's id.
-    ///
-    /// - Returns: true if two players have ended setup, otherwise false.
-    func endSetupDefenseTurn(id: UUID) -> Bool {
-        if !setupReadyPlayerIDs.contains(id) {
-            setupReadyPlayerIDs.append(id)
-        }
-        if setupReadyPlayerIDs.count == 2 {
-            setupReadyPlayerIDs.removeAll()
-            return true
-        }
-        return false
     }
     
     func goToNextPhase() -> GamePhase {
@@ -99,13 +82,13 @@ class TurnManager {
 
 fileprivate class FlowController {
     private let flow = GameConfig.gameFlow
-    private(set) var flowPointer: Int = 0
+    private(set) var pointer: Int = 0
     
     func getCurrPhase() -> GamePhase {
-        return flow[flowPointer]
+        return flow[pointer]
     }
     
     func advanceFlow() -> Void {
-        flowPointer += 1
+        pointer += 1
     }
 }

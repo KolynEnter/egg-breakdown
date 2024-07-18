@@ -10,6 +10,7 @@ import Foundation
 class Player {
     @Published fileprivate(set) var numOfGoldenEggs: Int
     @Published private(set) var score: Int = 0
+    @Published var isSetupReady: Bool = false
     
     let id: UUID
     let name: String
@@ -60,8 +61,8 @@ class Player {
     
     func pressSetButton() -> Void {
         do {
-            try Game.endSetupDefenseTurn(id: id)
-//            print("\(name) pressed Set button.")
+            isSetupReady = true
+            try Game.endSetupDefenseTurn()
             try Game.coverAlphaValues = [0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1]
         } catch {
             print("Game not initialized for player. Press Set button failed.")
@@ -111,11 +112,6 @@ class Player {
     func incrementScore() -> Void {
         score += 1
     }
-    
-    func reInit() -> Void {
-        numOfGoldenEggs = 8
-        score = 0
-    }
 }
 
 class RobotPlayer: Player {
@@ -161,7 +157,8 @@ class RobotPlayer: Player {
                 sleep(UInt32(0.2))
             }
             do {
-                try self.Game.endSetupDefenseTurn(id: self.id)
+                self.isSetupReady = true
+                try self.Game.endSetupDefenseTurn()
 //                print("ROBOT: exit setup defense")
             } catch {
                 print("Game is not initialized for robot player")

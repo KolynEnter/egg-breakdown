@@ -102,9 +102,15 @@ struct GameView: View {
                     .frame(height: 150.0)
                     .zIndex(-1)
                 
-                Text("\(game.getOtherPlayer().score)")
-                    .font(Font.custom("This-Cafe", size: TextSize.extraLarge.rawValue))
-                    .frame(height: 40)
+                HStack {
+                    Text(String(game.getOtherPlayer().isSetupReady ? "Ready": "---"))
+                        .font(Font.custom("Coffee-Fills", size: TextSize.extraLarge.rawValue))
+                        .offset(x: -15)
+                    
+                    Text("\(game.getOtherPlayer().score)")
+                        .font(Font.custom("This-Cafe", size: TextSize.extraLarge.rawValue))
+                        .frame(height: 40)
+                }
                 
                 HStack {
                     Rectangle()
@@ -117,9 +123,14 @@ struct GameView: View {
                 }
                 .zIndex(2)
                 
-                Text("\(game.getLocalPlayer().score)")
-                    .font(Font.custom("This-Cafe", size: TextSize.extraLarge.rawValue))
-                    .frame(height: 40)
+                HStack {
+                    Text(String(game.getLocalPlayer().isSetupReady ? "Ready": "---"))
+                        .font(Font.custom("Coffee-Fills", size: TextSize.extraLarge.rawValue))
+                        .offset(x: -15)
+                    Text("\(game.getLocalPlayer().score)")
+                        .font(Font.custom("This-Cafe", size: TextSize.extraLarge.rawValue))
+                        .frame(height: 40)
+                }
                 
                 eggCupZoneListView1
                     .frame(height: 150.0)

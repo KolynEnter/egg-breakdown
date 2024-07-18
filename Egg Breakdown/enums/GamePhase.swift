@@ -10,4 +10,5 @@ enum GamePhase {
     case attack
     case newRound
     case reveal
+    case gameEnd
 }
