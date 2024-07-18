@@ -10,10 +10,11 @@ import Foundation
 class Player {
     @Published fileprivate(set) var numOfGoldenEggs: Int
     @Published private(set) var score: Int = 0
+    @Published var isSetupReady: Bool = false
     
     let id: UUID
     let name: String
-    
+
     private var game: EggBreakdownGame?
     fileprivate var Game: EggBreakdownGame {
         get throws {
@@ -60,8 +61,8 @@ class Player {
     
     func pressSetButton() -> Void {
         do {
-            try Game.exitSetupDefenseTurn(id: id)
-//            print("\(name) pressed Set button.")
+            isSetupReady = true
+            try Game.endSetupDefenseTurn()
             try Game.coverAlphaValues = [0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1]
         } catch {
             print("Game not initialized for player. Press Set button failed.")
@@ -111,11 +112,6 @@ class Player {
     func incrementScore() -> Void {
         score += 1
     }
-    
-    func reInit() -> Void {
-        numOfGoldenEggs = 8
-        score = 0
-    }
 }
 
 class RobotPlayer: Player {
@@ -161,7 +157,8 @@ class RobotPlayer: Player {
                 sleep(UInt32(0.2))
             }
             do {
-                try self.Game.exitSetupDefenseTurn(id: self.id)
+                self.isSetupReady = true
+                try self.Game.endSetupDefenseTurn()
 //                print("ROBOT: exit setup defense")
             } catch {
                 print("Game is not initialized for robot player")
@@ -177,11 +174,6 @@ class RobotPlayer: Player {
             let breakEggIndex = Int.random(in: 0...3)
 //            print("Robot breaks \(breakEggIndex)")
             super.breakEgg(at: breakEggIndex)
-            do {
-                try super.EndAttackTurn()
-            } catch {
-                print("EndAttackTurn function not initialized for player. Cannot end turn.")
-            }
         }
     }
     

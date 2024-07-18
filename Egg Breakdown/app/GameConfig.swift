@@ -9,11 +9,6 @@ import Foundation
 
 struct GameConfig {
     private static let config: [(GamePhase, Int)] = [
-        (GamePhase.setupDefense,    5),
-        (GamePhase.attack,          5),
-        (GamePhase.attack,          5),
-        (GamePhase.reveal,          3),
-        (GamePhase.newRound,        3),
         (GamePhase.setupDefense,    30),
         (GamePhase.attack,          30),
         (GamePhase.attack,          30),
@@ -23,7 +18,12 @@ struct GameConfig {
         (GamePhase.attack,          30),
         (GamePhase.attack,          30),
         (GamePhase.reveal,          3),
-        (GamePhase.newRound,        0)
+        (GamePhase.newRound,        0),
+        (GamePhase.setupDefense,    30),
+        (GamePhase.attack,          30),
+        (GamePhase.attack,          30),
+        (GamePhase.reveal,          3),
+        (GamePhase.gameEnd,         0)
     ]
     
     static var gameFlow: [GamePhase] {

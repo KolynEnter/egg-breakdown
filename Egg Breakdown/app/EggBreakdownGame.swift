@@ -9,51 +9,41 @@ import Foundation
 import AVFoundation
 
 class EggBreakdownGame: ObservableObject {
-    private let NUM_OF_PLAYERS: Int = 2
     
     // Hack: Set player's eggs for now, not multi-player yet
     @Published var coverAlphaValues: [Double] = [0, 0, 0, 0, 1, 1, 1, 1]
     @Published var dropZoneEggType: [EggType] = Array(repeating: EggType.normal, count: 8)
     @Published var isZoneTargeted:     [Bool] = Array(repeating: false,          count: 8)
     @Published private(set) var gamePhase: GamePhase
-    // If nil, it's a turn for both players
-    @Published private(set) var turnOwnerId: UUID? = nil
     // Current Round of the game (1, 2, 3; game ends after Round 3)
     @Published var round: Int = 1
     @Published private(set) var popupControl: PopupHelper
-    @Published private(set) var hasGameEnd: Bool = false
     @Published var gameFlowTimer: GameFlowTimer
     
     var eggCupFrames: [CGRect] = Array(repeating: .zero, count: 8)
 
     private let p1: Player
     private let p2: Player
-    // Who currently owns this attack turn,
-    // nil if not in an attack turn
-    private let gameFlowController = GameFlowController()
-    private var setupReadyPlayerIDs: [UUID] = []
-    private var firstHandPlayer: Player?
-    private var FirstHandPlayer: Player {
+    private let turnManager: TurnManager
+    var turnOwner: Player? {
         get {
-            return firstHandPlayer!
+            return turnManager.turnOwner
         }
     }
-    private var secondHandPlayer: Player?
-    private var SecondHandPlayer: Player {
-        get {
-             return secondHandPlayer!
-        }
-    }
-    
+    var hasGameEnd: Bool = false
+
     init(player1: Player, player2: Player) {
         popupControl = PopupHelper()
         
         self.p1 = player1
         self.p2 = player2
         
-        gamePhase = gameFlowController.getCurrPhase()
-        
         gameFlowTimer = GameFlowTimer()
+        
+        let order = [p1, p2].shuffled()
+        turnManager = TurnManager(firstHandPlayer: order[0], secondHandPlayer: order[1])
+        
+        gamePhase = turnManager.getCurrPhase()
         
         p1.setGame(gameToPlayer: GameToPlayer(game: self,
                                               gameBreakEgg: breakEgg,
@@ -64,14 +54,7 @@ class EggBreakdownGame: ObservableObject {
         
         startSetupDefenseTurn()
         
-        turnOwnerId = p1.id
-        
         gameFlowTimer.startNext(callOnEnd: goToNextGamePhase)
-    }
-    
-    private func decideAttackOrder() -> Void {
-        firstHandPlayer = p1
-        secondHandPlayer = p2
     }
     
     func popup(message: String) -> Void {
@@ -92,69 +75,42 @@ class EggBreakdownGame: ObservableObject {
         return p2
     }
     
-    func exitSetupDefenseTurn(id: UUID) -> Void {
-        func getName() -> String {
-            return id == getLocalPlayer().id ? getLocalPlayer().name : getOtherPlayer().name
-        }
-        
-        if !setupReadyPlayerIDs.contains(id) {
-            setupReadyPlayerIDs.append(id)
-//            print("The ids \(setupReadyPlayerIDs)")
-//            print("\(getName()) is ready")
-        }
-        
-        if setupReadyPlayerIDs.count == NUM_OF_PLAYERS {
-            turnOwnerId = p1.id // make p1 first-hand
+    func endSetupDefenseTurn() -> Void {
+        if p1.isSetupReady && p2.isSetupReady {
+            p1.isSetupReady = false
+            p2.isSetupReady = false
             goToNextGamePhase()
-            setupReadyPlayerIDs.removeAll()
         }
     }
     
-    func updateCountdown() {
+    private func endAttackTurn() -> Void {
+        if turnManager.getCurrPhase() == .attack {
+            goToNextGamePhase()
+        }
+    }
+    
+    func updateCountdown() -> Void {
         gameFlowTimer.updateCountdown()
+    }
+    
+    func isLocalPlayerFirst() -> Bool {
+        return turnManager.isPlayerFirst(player: getLocalPlayer())
     }
     
     private func breakEgg(at zoneIndex: Int) -> Void {
         if dropZoneEggType[zoneIndex] == EggType.normal {
             coverAlphaValues[zoneIndex] = 0
             dropZoneEggType[zoneIndex] = EggType.broken
-            print("BROKE A NORMAL EGG.")
+//            print("BROKE A NORMAL EGG.")
             SoundManager.shared.playSFX(sfxName: "hit_egg", extension: "mp3")
-            addScoreToAttacker()
+            turnManager.turnOwner?.incrementScore()
         } else if dropZoneEggType[zoneIndex] == EggType.golden {
             coverAlphaValues[zoneIndex] = 0
             SoundManager.shared.playSFX(sfxName: "hit_golden_egg", extension: "mp3")
-            print("IT'S A GOLDEN EGG!")
+//            print("IT'S A GOLDEN EGG!")
         } else {
             
         }
-    }
-    
-    private func endAttackTurn() -> Void {
-        if gameFlowController.getCurrPhase() == GamePhase.attack {
-            turnOwnerId = getOtherId()
-            print("Give turn to \(getTurnOwner().name).")
-//            startAttackTurn()
-            goToNextGamePhase()
-        } else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { [self] in
-                if self.hasGameEnd {
-                    return
-                }
-                self.refresh()
-                self.turnOwnerId = nil
-                self.goToNextGamePhase()
-            }
-        }
-    }
-    
-    private func startAttackTurn() -> Void {
-//        decideWhoWillAttack()
-        getTurnOwner().startAttackTurn()
-    }
-    
-    private func addScoreToAttacker() -> Void {
-        getTurnOwner().incrementScore()
     }
     
     private func startSetupDefenseTurn() -> Void {
@@ -167,63 +123,25 @@ class EggBreakdownGame: ObservableObject {
         coverAlphaValues = [0, 0, 0, 0, 1, 1, 1, 1]
     }
     
-    private func getOtherId() -> UUID? {
-        if turnOwnerId == nil {
-            return nil
-        }
-        if turnOwnerId == getLocalPlayer().id {
-            return getOtherPlayer().id
-        } else {
-            return getLocalPlayer().id
-        }
-    }
-    
-    private func getTurnOwner() -> Player {
-        return turnOwnerId == getLocalPlayer().id ? getLocalPlayer() : getOtherPlayer()
-    }
-    
     private func goToNextGamePhase() -> Void {
-        gameFlowController.advanceFlow()
-        gamePhase = gameFlowController.getCurrPhase()
+        if hasGameEnd { return }
+
+        gamePhase = turnManager.goToNextPhase()
         gameFlowTimer.startNext(callOnEnd: goToNextGamePhase)
         
-        if gameFlowController.getCurrPhase() == GamePhase.attack {
-//            decideWhoWillAttack()
-            startAttackTurn()
-        } else if gameFlowController.getCurrPhase() == GamePhase.setupDefense {
-            startSetupDefenseTurn()
+        turnManager.start()
+        
+        if turnManager.getCurrPhase() == .attack &&
+            ((p1.isSetupReady && !p2.isSetupReady) ||
+             (p2.isSetupReady && !p1.isSetupReady))  {
+            p1.isSetupReady = false
+            p2.isSetupReady = false
+            coverAlphaValues = [0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1]
+        }
+        else if turnManager.getCurrPhase() == .newRound {
             round += 1
-        } else if gameFlowController.getCurrPhase() == GamePhase.newRound {
-            if round + 1 == 4 {
-                // Game end
-                hasGameEnd = true
-                popupControl.showPopup = true
-                let localScore = getLocalPlayer().score
-                let otherScore = getOtherPlayer().score
-                let localGoldenEggs = getLocalPlayer().numOfGoldenEggs
-                let otherGoldenEggs = getOtherPlayer().numOfGoldenEggs
-                if localScore > otherScore {
-                    // You won
-                    popupControl.message = "You won!"
-                } else if localScore == otherScore {
-                    if localGoldenEggs > otherGoldenEggs {
-                        // You won
-                        popupControl.message = "You won!"
-                    } else if localGoldenEggs == otherGoldenEggs {
-                        // It's a tie
-                        popupControl.message = "It's a tie!"
-                    } else {
-                        // You lose
-                        popupControl.message = "You lose..."
-                    }
-                } else {
-                    // You lose
-                    popupControl.message = "You lose..."
-                }
-                popupControl.isGoToMain = true
-            }
-//            goToNextGamePhase()
-        } else if gameFlowController.getCurrPhase() == GamePhase.reveal {
+        } 
+        else if turnManager.getCurrPhase() == .reveal {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
                 self.coverAlphaValues = [0, 0, 0, 0, 0, 0, 0, 0]
             }
@@ -231,22 +149,41 @@ class EggBreakdownGame: ObservableObject {
                 if self.getOtherPlayer() is RobotPlayer {
                     (getOtherPlayer() as! RobotPlayer).revealNumOfGoldenEggs()
                 }
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { [self] in
+                if self.round + 1 == 4 { return }
+                self.refresh()
                 self.goToNextGamePhase()
             }
+        } 
+        else if turnManager.getCurrPhase() == .gameEnd {
+            hasGameEnd = true
+            
+            // Game end
+            popupControl.showPopup = true
+            let localScore = getLocalPlayer().score
+            let otherScore = getOtherPlayer().score
+            let localGoldenEggs = getLocalPlayer().numOfGoldenEggs
+            let otherGoldenEggs = getOtherPlayer().numOfGoldenEggs
+            if localScore > otherScore {
+                // You won
+                popupControl.message = "You won!"
+            } else if localScore == otherScore {
+                if localGoldenEggs > otherGoldenEggs {
+                    // You won
+                    popupControl.message = "You won!"
+                } else if localGoldenEggs == otherGoldenEggs {
+                    // It's a tie
+                    popupControl.message = "It's a tie!"
+                } else {
+                    // You lose
+                    popupControl.message = "You lose..."
+                }
+            } else {
+                // You lose
+                popupControl.message = "You lose..."
+            }
+            popupControl.isGoToMain = true
         }
-    }
-}
-
-fileprivate class GameFlowController {
-    private let gameFlow = GameConfig.gameFlow
-    private var flowPointer: Int = 0
-    
-    func getCurrPhase() -> GamePhase {
-        return gameFlow[flowPointer]
-    }
-    
-    func advanceFlow() -> Void {
-        flowPointer += 1
-//        print("Flow pointer \(flowPointer): \(gameFlow[flowPointer])")
     }
 }

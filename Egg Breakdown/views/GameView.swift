@@ -12,6 +12,7 @@ struct GameView: View {
     // Initialization order
     @State private var isShowDraggables: Bool = false
     @State private var isShowOptions: Bool = false
+    @State private var isShowTossCoin: Bool = true
     @State private var opponentGoldenEggNumReferenceFrame: CGSize = .zero
 
     private let p1: Player
@@ -59,7 +60,7 @@ struct GameView: View {
         ZStack {
             VStack {
                 Rectangle()
-                    .frame(height: 70)
+                    .frame(height: 150)
                     .opacity(0)
                 
                 VStack {
@@ -70,6 +71,7 @@ struct GameView: View {
                         
                         Button {
                             isShowOptions = true
+                            game.gameFlowTimer.isActive = false
                         } label: {
                             Image("cog")
                                 .resizable()
@@ -80,6 +82,8 @@ struct GameView: View {
                     
                     Text("Round \(String(game.round))")
                         .font(Font.custom("This-Cafe", size: TextSize.extraLarge.rawValue))
+                    Text("\((game.turnOwner?.name ?? "")+" ")\(game.gamePhase.rawValue)")
+                        .font(Font.custom("This-Cafe", size: TextSize.medium.rawValue))
                 }
                 .background(.clear)
                 .padding()
@@ -102,9 +106,15 @@ struct GameView: View {
                     .frame(height: 150.0)
                     .zIndex(-1)
                 
-                Text("\(game.getOtherPlayer().score)")
-                    .font(Font.custom("This-Cafe", size: TextSize.extraLarge.rawValue))
-                    .frame(height: 40)
+                HStack {
+                    Text(String(game.getOtherPlayer().isSetupReady ? "Ready": "---"))
+                        .font(Font.custom("Coffee-Fills", size: TextSize.large.rawValue))
+                        .offset(x: -15)
+                    
+                    Text("\(game.getOtherPlayer().score)")
+                        .font(Font.custom("This-Cafe", size: TextSize.large.rawValue))
+                        .frame(height: 40)
+                }
                 
                 HStack {
                     Rectangle()
@@ -117,9 +127,14 @@ struct GameView: View {
                 }
                 .zIndex(2)
                 
-                Text("\(game.getLocalPlayer().score)")
-                    .font(Font.custom("This-Cafe", size: TextSize.extraLarge.rawValue))
-                    .frame(height: 40)
+                HStack {
+                    Text(String(game.getLocalPlayer().isSetupReady ? "Ready": "---"))
+                        .font(Font.custom("Coffee-Fills", size: TextSize.large.rawValue))
+                        .offset(x: -15)
+                    Text("\(game.getLocalPlayer().score)")
+                        .font(Font.custom("This-Cafe", size: TextSize.large.rawValue))
+                        .frame(height: 40)
+                }
                 
                 eggCupZoneListView1
                     .frame(height: 150.0)
@@ -163,14 +178,17 @@ struct GameView: View {
                 }
                 .padding()
                 Rectangle()
-                    .frame(height: 70)
+                    .frame(height: 130)
                     .opacity(0)
             }
             VStack {
                 popupView
             }
             VStack {
-                OptionsView(isShow: $isShowOptions, height: 300, width: 300)
+                OptionsView(isShow: $isShowOptions, height: 300, width: 300, gameFlowTimer: game.gameFlowTimer)
+            }
+            VStack {
+                TossCoinView(isShow: $isShowTossCoin, height: 300, width: 300, isFirst: game.isLocalPlayerFirst(), gameFlowTimer: game.gameFlowTimer)
             }
         }
         .navigationBarBackButtonHidden(true)
