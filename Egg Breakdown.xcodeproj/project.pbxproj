@@ -16,6 +16,7 @@
 		5D4D4BCD2C39E0FD00F0E00E /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4D4BCC2C39E0FD00F0E00E /* SoundManager.swift */; };
 		5D4D4BD12C3A228C00F0E00E /* bgm_loop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5D4D4BD02C3A228B00F0E00E /* bgm_loop.mp3 */; };
 		5D4D4BD32C3A23DA00F0E00E /* hit_golden_egg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5D4D4BD22C3A23DA00F0E00E /* hit_golden_egg.mp3 */; };
+		5D4D94712C49D84C00AA64B4 /* TossCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4D94702C49D84C00AA64B4 /* TossCoinView.swift */; };
 		5D52C58C2C28FCB6007810D4 /* EggType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D52C58B2C28FCB6007810D4 /* EggType.swift */; };
 		5D52C5902C28FD7F007810D4 /* GamePhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D52C58F2C28FD7F007810D4 /* GamePhase.swift */; };
 		5D52C5932C28FEF5007810D4 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D52C5922C28FEF5007810D4 /* Player.swift */; };
@@ -84,6 +85,7 @@
 		5D4D4BCC2C39E0FD00F0E00E /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		5D4D4BD02C3A228B00F0E00E /* bgm_loop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm_loop.mp3; sourceTree = "<group>"; };
 		5D4D4BD22C3A23DA00F0E00E /* hit_golden_egg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hit_golden_egg.mp3; sourceTree = "<group>"; };
+		5D4D94702C49D84C00AA64B4 /* TossCoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossCoinView.swift; sourceTree = "<group>"; };
 		5D52C58B2C28FCB6007810D4 /* EggType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggType.swift; sourceTree = "<group>"; };
 		5D52C58F2C28FD7F007810D4 /* GamePhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePhase.swift; sourceTree = "<group>"; };
 		5D52C5922C28FEF5007810D4 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -163,6 +165,14 @@
 			path = options;
 			sourceTree = "<group>";
 		};
+		5D4D946F2C49D83200AA64B4 /* tossCoin */ = {
+			isa = PBXGroup;
+			children = (
+				5D4D94702C49D84C00AA64B4 /* TossCoinView.swift */,
+			);
+			path = tossCoin;
+			sourceTree = "<group>";
+		};
 		5D52C58D2C28FCE3007810D4 /* views */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +215,7 @@
 		5D778E7B2C27C62E008A5E54 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				5D4D946F2C49D83200AA64B4 /* tossCoin */,
 				5D04E59F2C41E26900C3194C /* options */,
 				5DFF0E392C3CB2240073D7D9 /* settings */,
 				5DFF0E2D2C3C48590073D7D9 /* tutorial */,
@@ -519,6 +530,7 @@
 				5DD06F332C40CDDE006F9E71 /* AudioSlider.swift in Sources */,
 				5DA00FA52C2A431F00011AB9 /* CustomError.swift in Sources */,
 				5DE41EE72C32575A007EBE33 /* EggCupZoneListView.swift in Sources */,
+				5D4D94712C49D84C00AA64B4 /* TossCoinView.swift in Sources */,
 				5DE41EDC2C323AAB007EBE33 /* HammerView.swift in Sources */,
 				5DFF0E412C3CC05E0073D7D9 /* Constants.swift in Sources */,
 				5DFF0E312C3C57130073D7D9 /* NaturalTextView.swift in Sources */,

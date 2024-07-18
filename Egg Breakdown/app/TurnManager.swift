@@ -55,6 +55,10 @@ class TurnManager {
         return flowController.getCurrPhase()
     }
     
+    func isPlayerFirst(player: Player) -> Bool {
+        return first_HandPlayer.id == player.id
+    }
+    
     /// Get an array of turn owners during this game according to the flow pointer.
     /// Only during an attack turn there is a turn owner, otherwise nil.
     ///

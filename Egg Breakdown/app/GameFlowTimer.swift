@@ -25,7 +25,7 @@ class GameFlowTimer: ObservableObject {
         }
     }
     
-    private func start(seconds: Int) -> Void {
+    private func startTimer(seconds: Int) -> Void {
         self.endDate = Date()
         self.isActive = true
         self.endDate = Calendar.current.date(byAdding: .second, value: seconds, to: endDate)!
@@ -37,7 +37,6 @@ class GameFlowTimer: ObservableObject {
         // Updates the time string with the formatted time
         if seconds == 0 {
             callOnEnd?()
-            callOnEnd = nil
             return
         }
         
@@ -47,7 +46,7 @@ class GameFlowTimer: ObservableObject {
     func startNext(callOnEnd: @escaping () -> Void) -> Void {
         pointer += 1
         seconds = times[pointer]
-        start(seconds: seconds)
+        startTimer(seconds: seconds)
         self.callOnEnd = callOnEnd
     }
 }

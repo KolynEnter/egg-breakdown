@@ -40,7 +40,8 @@ class EggBreakdownGame: ObservableObject {
         
         gameFlowTimer = GameFlowTimer()
         
-        turnManager = TurnManager(firstHandPlayer: p1, secondHandPlayer: p2)
+        let order = [p1, p2].shuffled()
+        turnManager = TurnManager(firstHandPlayer: order[0], secondHandPlayer: order[1])
         
         gamePhase = turnManager.getCurrPhase()
         
@@ -88,8 +89,12 @@ class EggBreakdownGame: ObservableObject {
         }
     }
     
-    func updateCountdown() {
+    func updateCountdown() -> Void {
         gameFlowTimer.updateCountdown()
+    }
+    
+    func isLocalPlayerFirst() -> Bool {
+        return turnManager.isPlayerFirst(player: getLocalPlayer())
     }
     
     private func breakEgg(at zoneIndex: Int) -> Void {
@@ -122,13 +127,21 @@ class EggBreakdownGame: ObservableObject {
         if hasGameEnd { return }
 
         gamePhase = turnManager.goToNextPhase()
-        gameFlowTimer.startNext(callOnEnd: goToNextGamePhaseForceSetup)
+        gameFlowTimer.startNext(callOnEnd: goToNextGamePhase)
         
         turnManager.start()
         
-        if turnManager.getCurrPhase() == .newRound {
+        if turnManager.getCurrPhase() == .attack &&
+            ((p1.isSetupReady && !p2.isSetupReady) ||
+             (p2.isSetupReady && !p1.isSetupReady))  {
+            p1.isSetupReady = false
+            p2.isSetupReady = false
+            coverAlphaValues = [0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1]
+        }
+        else if turnManager.getCurrPhase() == .newRound {
             round += 1
-        } else if turnManager.getCurrPhase() == .reveal {
+        } 
+        else if turnManager.getCurrPhase() == .reveal {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
                 self.coverAlphaValues = [0, 0, 0, 0, 0, 0, 0, 0]
             }
@@ -138,11 +151,12 @@ class EggBreakdownGame: ObservableObject {
                 }
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { [self] in
-                if self.hasGameEnd { return }
+                if self.round + 1 == 4 { return }
                 self.refresh()
                 self.goToNextGamePhase()
             }
-        } else if turnManager.getCurrPhase() == .gameEnd {
+        } 
+        else if turnManager.getCurrPhase() == .gameEnd {
             hasGameEnd = true
             
             // Game end
@@ -171,12 +185,5 @@ class EggBreakdownGame: ObservableObject {
             }
             popupControl.isGoToMain = true
         }
-    }
-    
-    private func goToNextGamePhaseForceSetup() -> Void {
-        if turnManager.getCurrPhase() == .setupDefense {
-            turnOwner?.pressSetButton()
-        }
-        goToNextGamePhase()
     }
 }

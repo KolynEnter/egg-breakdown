@@ -14,9 +14,9 @@ struct OptionsView: View {
     @State private var isShowSettings: Bool = false
     @State private var isShowConfirmExit: Bool = false
 
-    
     let height: CGFloat
     let width: CGFloat
+    let gameFlowTimer: GameFlowTimer
     
     var confirmExitView: some View {
         VStack {
@@ -102,6 +102,7 @@ struct OptionsView: View {
                 
                 Button {
                     isShow = false
+                    gameFlowTimer.isActive = true
                 } label: {
                     Text("Close")
                         .padding()

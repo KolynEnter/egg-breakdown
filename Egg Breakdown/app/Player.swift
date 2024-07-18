@@ -14,7 +14,7 @@ class Player {
     
     let id: UUID
     let name: String
-    
+
     private var game: EggBreakdownGame?
     fileprivate var Game: EggBreakdownGame {
         get throws {
@@ -174,11 +174,6 @@ class RobotPlayer: Player {
             let breakEggIndex = Int.random(in: 0...3)
 //            print("Robot breaks \(breakEggIndex)")
             super.breakEgg(at: breakEggIndex)
-            do {
-                try super.EndAttackTurn()
-            } catch {
-                print("EndAttackTurn function not initialized for player. Cannot end turn.")
-            }
         }
     }
     

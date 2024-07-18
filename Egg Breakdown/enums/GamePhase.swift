@@ -5,10 +5,10 @@
 //  Created by Jianxin Lin on 6/23/24.
 //
 
-enum GamePhase {
-    case setupDefense
+enum GamePhase: String {
+    case setupDefense = "Setup defense Turn"
     case attack
-    case newRound
-    case reveal
-    case gameEnd
+    case newRound = "New Round"
+    case reveal = "Reveal eggs"
+    case gameEnd = "Game End"
 }
