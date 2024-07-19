@@ -90,9 +90,7 @@ struct GameView: View {
                 .frame(height: 32)
                 
                 HStack {
-                    Image("golden_egg")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
+                    getEggImage(eggType: EggType.golden)
                         .frame(width: opponentGoldenEggNumReferenceFrame.width, height: opponentGoldenEggNumReferenceFrame.height)
                     
                     Text(String(game.getOtherPlayer().numOfGoldenEggs))

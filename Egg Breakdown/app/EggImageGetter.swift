@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-func getEggImage(eggType: EggType) -> some View {
+func getEggCupImage(eggType: EggType) -> some View {
     if eggType == EggType.normal {
         return Image("egg")
                 .resizable()
@@ -18,6 +18,22 @@ func getEggImage(eggType: EggType) -> some View {
                 .aspectRatio(contentMode: .fit)
     } else {
         return Image("broken_egg")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+    }
+}
+
+func getEggImage(eggType: EggType) -> some View {
+    if eggType == EggType.normal {
+        return Image("egg_d")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+    } else if eggType == EggType.golden {
+        return Image("golden_egg_d")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+    } else {
+        return Image("broken_egg_d")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
     }

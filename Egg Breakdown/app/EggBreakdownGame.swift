@@ -55,6 +55,7 @@ class EggBreakdownGame: ObservableObject {
         startSetupDefenseTurn()
         
         gameFlowTimer.startNext(callOnEnd: goToNextGamePhase)
+        gameFlowTimer.isActive = false
     }
     
     func popup(message: String) -> Void {

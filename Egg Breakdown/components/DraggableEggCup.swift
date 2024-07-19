@@ -14,7 +14,7 @@ struct DraggableEggCup: View, Codable, Hashable, Transferable {
     
     var body: some View {
         return ZStack {
-            getEggImage(eggType: eggType)
+            getEggCupImage(eggType: eggType)
         }
     }
     

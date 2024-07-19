@@ -79,7 +79,7 @@ struct MainView: View {
                     
                     VStack {
                         TutorialView(isShow: $isShowTutorial,
-                                     height: 350,
+                                     height: 300,
                                      width: 300)
                     }
                     VStack {

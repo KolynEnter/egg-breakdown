@@ -12,9 +12,9 @@ struct EggCupZoneView: View {
 
     private let index: Int
     private let eggViews: [EggType: some View] = [
-        EggType.normal: getEggImage(eggType: EggType.normal),
-        EggType.golden: getEggImage(eggType: EggType.golden),
-        EggType.broken: getEggImage(eggType: EggType.broken)
+        EggType.normal: getEggCupImage(eggType: EggType.normal),
+        EggType.golden: getEggCupImage(eggType: EggType.golden),
+        EggType.broken: getEggCupImage(eggType: EggType.broken)
     ]
 
     init(game:EggBreakdownGame, index: Int) {

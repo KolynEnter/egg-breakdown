@@ -16,71 +16,88 @@ struct TutorialView: View {
     
     private let lines: [String] = [
         "The goal of game “Egg Breakdown” is to gain a higher score than your opponent within 3 rounds.",
-        "Before each round, both you and your opponent will need to set up defenses. To withstand hammer attacks, swap regular eggs with golden ones.",
+        "Before each round, players should set up defenses. To withstand hammer attacks, swap regular eggs with golden ones.",
         "Then, you and your opponent will each have a turn to attack. You earn points by cracking your opponent’s egg with the hammer.",
         "Be wary! The hammer cannot break golden eggs.",
         "Both you and your opponent will start with eight golden eggs.",
         "If there’s a tie after three rounds, the player with the most golden eggs wins."
     ]
+    private let images: [String] = [
+        "tutorial1",
+        "tutorial2",
+        "tutorial3",
+        "tutorial4",
+        "tutorial5",
+        "tutorial6",
+    ]
 
     var body: some View {
-        VStack {
-            Spacer()
-            
-            Text("\(String(linePointer + 1)) / \(lines.count)")
-                .font(Font.custom("This-Cafe", size: TextSize.extraLarge.rawValue))
-                .foregroundColor(Color.TextColorPrimary)
-                .background(.clear)
-            
-            Spacer()
-            
-            HStack {
-                Spacer()
+        ZStack {
+            VStack {
+                Text("\(String(linePointer + 1)) / \(lines.count)")
+                    .font(Font.custom("This-Cafe", size: TextSize.extraLarge.rawValue))
+                    .foregroundColor(Color.TextColorPrimary)
                 
-                Button {
-                    decrementLinePointer()
-                } label: {
-                    Text("<")
-                        .font(Font.custom("This-Cafe", size: 64))
+                HStack {
+                    Button {
+                        decrementLinePointer()
+                    } label: {
+                        Text("<")
+                            .font(Font.custom("This-Cafe", size: 64))
+                            .foregroundColor(Color.TextColorPrimary)
+                            .background(.clear)
+                    }
+                    
+                    Rectangle()
+                        .frame(width: 10)
+                        .opacity(0)
+                    
+                    NaturalTextView(text: lines[linePointer], customFontName: "Coffee-Fills", fontSize:
+                                        lines[linePointer].count <= lines[0].count ?
+                                    TextSize.medium.rawValue : TextSize.smallMedium.rawValue)
                         .foregroundColor(Color.TextColorPrimary)
                         .background(.clear)
+                    
+                    Rectangle()
+                        .frame(width: 10)
+                        .opacity(0)
+                    
+                    Button {
+                        incrementLinePointer()
+                    } label: {
+                        Text(">")
+                            .font(Font.custom("This-Cafe", size: TextSize.ultraLarge.rawValue))
+                            .foregroundColor(Color.TextColorPrimary)
+                            .background(.clear)
+                    }
+                    
                 }
-                
-                Rectangle()
-                    .frame(width: 20)
-                    .opacity(0)
-                
-                NaturalTextView(text: lines[linePointer], customFontName: "Coffee-Fills", fontSize: TextSize.medium.rawValue)
-                    .foregroundColor(Color.TextColorPrimary)
-                    .background(.clear)
+                .frame(height: 150)
+                .offset(y: -20)
 
-                Rectangle()
-                    .frame(width: 20)
-                    .opacity(0)
+                Spacer()
                 
                 Button {
-                    incrementLinePointer()
+                    isShow = false
                 } label: {
-                    Text(">")
-                        .font(Font.custom("This-Cafe", size: TextSize.ultraLarge.rawValue))
+                    Text("Close")
+                        .font(Font.custom("This-Cafe", size: TextSize.large.rawValue))
                         .foregroundColor(Color.TextColorPrimary)
                         .background(.clear)
                 }
-                Spacer()
             }
+            .padding()
+            
+            VStack {
+                Rectangle()
+                    .frame(height: 100)
+                    .opacity(0)
                 
-            Spacer()
-            
-            Button {
-                isShow = false
-            } label: {
-                Text("Close")
-                    .font(Font.custom("This-Cafe", size: TextSize.large.rawValue))
-                    .foregroundColor(Color.TextColorPrimary)
-                    .background(.clear)
+                Image(images[linePointer])
+                    .resizable()
+                    .frame(width: 100, height: 100)
             }
-            
-            Spacer()
+            .zIndex(1)
         }
         .frame(width: width, height: height)
         .background(Color.BackgroundColor)
