@@ -13,7 +13,7 @@ struct TossCoinView: View {
     let height: CGFloat
     let width: CGFloat
     let isFirst: Bool
-    let gameFlowTimer: GameFlowTimer
+    let pauseManager: PauseManager
     
     var body: some View {
         VStack {
@@ -37,7 +37,7 @@ struct TossCoinView: View {
             
             Button {
                 isShow = false
-                gameFlowTimer.isActive = true
+                pauseManager.unpause(lock: "Toss")
             } label: {
                 Text("Close")
                     .padding()

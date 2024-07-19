@@ -30,6 +30,7 @@
 		5DA00FA32C2A143800011AB9 /* Hammer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA00FA22C2A143800011AB9 /* Hammer.swift */; };
 		5DA00FA52C2A431F00011AB9 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA00FA42C2A431F00011AB9 /* CustomError.swift */; };
 		5DA00FA72C2A4C2E00011AB9 /* GameToPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA00FA62C2A4C2E00011AB9 /* GameToPlayer.swift */; };
+		5DBA00D72C4B2CFB008DDA3A /* PauseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBA00D62C4B2CFB008DDA3A /* PauseManager.swift */; };
 		5DD06F312C40C6B5006F9E71 /* MusicPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD06F302C40C6B5006F9E71 /* MusicPlayerViewModel.swift */; };
 		5DD06F332C40CDDE006F9E71 /* AudioSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD06F322C40CDDE006F9E71 /* AudioSlider.swift */; };
 		5DD3EAC22C3B8C57008B2F2C /* This_Cafe.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD3EAC12C3B8C57008B2F2C /* This_Cafe.ttf */; };
@@ -101,6 +102,7 @@
 		5DA00FA22C2A143800011AB9 /* Hammer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hammer.swift; sourceTree = "<group>"; };
 		5DA00FA42C2A431F00011AB9 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		5DA00FA62C2A4C2E00011AB9 /* GameToPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameToPlayer.swift; sourceTree = "<group>"; };
+		5DBA00D62C4B2CFB008DDA3A /* PauseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseManager.swift; sourceTree = "<group>"; };
 		5DD06F302C40C6B5006F9E71 /* MusicPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerViewModel.swift; sourceTree = "<group>"; };
 		5DD06F322C40CDDE006F9E71 /* AudioSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSlider.swift; sourceTree = "<group>"; };
 		5DD3EAC12C3B8C57008B2F2C /* This_Cafe.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = This_Cafe.ttf; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				5D04E5A22C41F63D00C3194C /* GameConfig.swift */,
 				5D04E5A52C41F8DD00C3194C /* GameFlowTimer.swift */,
 				5DD64A192C471ABB00FA9115 /* TurnManager.swift */,
+				5DBA00D62C4B2CFB008DDA3A /* PauseManager.swift */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				5DA00FA72C2A4C2E00011AB9 /* GameToPlayer.swift in Sources */,
 				5DD867A22C26559E00E37087 /* Egg_BreakdownApp.swift in Sources */,
 				5D04E5A32C41F63D00C3194C /* GameConfig.swift in Sources */,
+				5DBA00D72C4B2CFB008DDA3A /* PauseManager.swift in Sources */,
 				5DFF0E3E2C3CBFE60073D7D9 /* Color.swift in Sources */,
 				5DFF0E3B2C3CB2300073D7D9 /* SettingsView.swift in Sources */,
 				5DE41EE32C3256FC007EBE33 /* EggCupZoneModel.swift in Sources */,

@@ -71,7 +71,7 @@ struct GameView: View {
                         
                         Button {
                             isShowOptions = true
-                            game.gameFlowTimer.isActive = false
+                            game.pauseManager.pause(lock: "Option")
                         } label: {
                             Image("cog")
                                 .resizable()
@@ -183,10 +183,10 @@ struct GameView: View {
                 popupView
             }
             VStack {
-                OptionsView(isShow: $isShowOptions, height: 300, width: 300, gameFlowTimer: game.gameFlowTimer)
+                OptionsView(isShow: $isShowOptions, height: 300, width: 300, pauseManager: game.pauseManager)
             }
             VStack {
-                TossCoinView(isShow: $isShowTossCoin, height: 300, width: 300, isFirst: game.isLocalPlayerFirst(), gameFlowTimer: game.gameFlowTimer)
+                TossCoinView(isShow: $isShowTossCoin, height: 300, width: 300, isFirst: game.isLocalPlayerFirst(), pauseManager: game.pauseManager)
             }
         }
         .navigationBarBackButtonHidden(true)

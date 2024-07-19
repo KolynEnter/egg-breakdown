@@ -16,7 +16,7 @@ struct OptionsView: View {
 
     let height: CGFloat
     let width: CGFloat
-    let gameFlowTimer: GameFlowTimer
+    let pauseManager: PauseManager
     
     var confirmExitView: some View {
         VStack {
@@ -102,7 +102,7 @@ struct OptionsView: View {
                 
                 Button {
                     isShow = false
-                    gameFlowTimer.isActive = true
+                    pauseManager.unpause(lock: "Option")
                 } label: {
                     Text("Close")
                         .padding()

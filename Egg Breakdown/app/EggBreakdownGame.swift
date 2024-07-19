@@ -31,6 +31,16 @@ class EggBreakdownGame: ObservableObject {
         }
     }
     var hasGameEnd: Bool = false
+    
+    private var _pauseManager: PauseManager?
+    var pauseManager: PauseManager {
+        get {
+            if _pauseManager == nil {
+                _pauseManager = PauseManager(gameFlowTimer: gameFlowTimer)
+            }
+            return _pauseManager!
+        }
+    }
 
     init(player1: Player, player2: Player) {
         popupControl = PopupHelper()
@@ -44,7 +54,7 @@ class EggBreakdownGame: ObservableObject {
         turnManager = TurnManager(firstHandPlayer: order[0], secondHandPlayer: order[1])
         
         gamePhase = turnManager.getCurrPhase()
-        
+
         p1.setGame(gameToPlayer: GameToPlayer(game: self,
                                               gameBreakEgg: breakEgg,
                                               endAttackTurn: endAttackTurn))
@@ -55,7 +65,7 @@ class EggBreakdownGame: ObservableObject {
         startSetupDefenseTurn()
         
         gameFlowTimer.startNext(callOnEnd: goToNextGamePhase)
-        gameFlowTimer.isActive = false
+        pauseManager.pause(lock: "Toss")
     }
     
     func popup(message: String) -> Void {
