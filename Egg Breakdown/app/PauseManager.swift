@@ -11,6 +11,11 @@ class PauseManager {
     @Published private var gameFlowTimer: GameFlowTimer
     
     private var locks: Set<String> = Set()
+    var isPaused: Bool {
+        get {
+            return locks.count > 0
+        }
+    }
     
     init(gameFlowTimer: GameFlowTimer) {
         self.gameFlowTimer = gameFlowTimer

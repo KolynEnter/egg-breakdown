@@ -13,7 +13,6 @@ struct GameView: View {
     @State private var isShowDraggables: Bool = false
     @State private var isShowOptions: Bool = false
     @State private var isShowTossCoin: Bool = true
-    @State private var opponentGoldenEggNumReferenceFrame: CGSize = .zero
 
     private let p1: Player
     private let p2: Player
@@ -60,10 +59,10 @@ struct GameView: View {
         ZStack {
             VStack {
                 Rectangle()
-                    .frame(height: 150)
+                    .frame(height: 100)
                     .opacity(0)
                 
-                VStack {
+                ZStack {
                     HStack {
                         TimerView(gameFlowTimer: game.gameFlowTimer)
                         
@@ -80,10 +79,12 @@ struct GameView: View {
                         }
                     }
                     
-                    Text("Round \(String(game.round))")
-                        .font(Font.custom("This-Cafe", size: TextSize.extraLarge.rawValue))
-                    Text("\((game.turnOwner?.name ?? "")+" ")\(game.gamePhase.rawValue)")
-                        .font(Font.custom("This-Cafe", size: TextSize.medium.rawValue))
+                    VStack {
+                        Text("Round \(String(game.round))")
+                            .font(Font.custom("This-Cafe", size: TextSize.extraLarge.rawValue))
+                        Text("\((game.turnOwner?.name ?? "")+" ")\(game.gamePhase.rawValue)")
+                            .font(Font.custom("This-Cafe", size: TextSize.medium.rawValue))
+                    }
                 }
                 .background(.clear)
                 .padding()
@@ -91,7 +92,6 @@ struct GameView: View {
                 
                 HStack {
                     getEggImage(eggType: EggType.golden)
-                        .frame(width: opponentGoldenEggNumReferenceFrame.width, height: opponentGoldenEggNumReferenceFrame.height)
                     
                     Text(String(game.getOtherPlayer().numOfGoldenEggs))
                         .font(Font.custom("Coffee-Fills", size: TextSize.extraLarge.rawValue))
@@ -145,12 +145,6 @@ struct GameView: View {
                         if isShowDraggables {
                             dragEgg2
                                 .zIndex(1)
-                                .background(GeometryReader { geometry in
-                                    Color.clear
-                                        .onAppear {
-                                            opponentGoldenEggNumReferenceFrame = geometry.size
-                                        }
-                                })
                         }
                         
                         Spacer()
@@ -164,6 +158,7 @@ struct GameView: View {
                                 .zIndex(1)
                         }
                     }
+                    
                     Button {
                         game.getLocalPlayer().pressSetButton()
                     } label: {
@@ -174,7 +169,7 @@ struct GameView: View {
                     }
                     .opacity(game.gamePhase == GamePhase.setupDefense ? 1 : 0)
                 }
-                .padding()
+                
                 Rectangle()
                     .frame(height: 130)
                     .opacity(0)

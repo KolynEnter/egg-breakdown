@@ -33,6 +33,10 @@ struct HammerView: View {
                         if game.hasGameEnd {
                             return
                         }
+                        if game.pauseManager.isPaused {
+                            return
+                        }
+                        
                         offset = gesture.translation
                         showHammerSelection()
                     }

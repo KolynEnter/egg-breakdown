@@ -32,6 +32,9 @@ struct DragEggCupView: View {
                         if game.hasGameEnd {
                             return
                         }
+                        if game.pauseManager.isPaused {
+                            return
+                        }
                         
                         offset = gesture.translation
                         showDropTargetSelection()
