@@ -27,7 +27,6 @@ class GameFlowTimer: ObservableObject {
     
     private func startTimer(seconds: Int) -> Void {
         self.endDate = Date()
-        self.isActive = true
         self.endDate = Calendar.current.date(byAdding: .second, value: seconds, to: endDate)!
     }
     
