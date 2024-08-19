@@ -12,6 +12,8 @@
 		5D04E5A62C41F8DD00C3194C /* GameFlowTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D04E5A52C41F8DD00C3194C /* GameFlowTimer.swift */; };
 		5D0A0F9D2C38E27F00C48719 /* GamePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0A0F9C2C38E27F00C48719 /* GamePopupView.swift */; };
 		5D0A0FA02C38ED8F00C48719 /* PopupHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F88F42C377CC6001678FF /* PopupHelper.swift */; };
+		5D338EE72C72EF980023D4AA /* EggCupCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D338EE62C72EF980023D4AA /* EggCupCover.swift */; };
+		5D338EE92C72EFD20023D4AA /* NaturalTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D338EE82C72EFD20023D4AA /* NaturalTextView.swift */; };
 		5D4D4BCB2C39DD6800F0E00E /* hit_egg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5D4D4BCA2C39DD6800F0E00E /* hit_egg.mp3 */; };
 		5D4D4BCD2C39E0FD00F0E00E /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4D4BCC2C39E0FD00F0E00E /* SoundManager.swift */; };
 		5D4D4BD12C3A228C00F0E00E /* bgm_loop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5D4D4BD02C3A228B00F0E00E /* bgm_loop.mp3 */; };
@@ -21,13 +23,10 @@
 		5D52C5902C28FD7F007810D4 /* GamePhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D52C58F2C28FD7F007810D4 /* GamePhase.swift */; };
 		5D52C5932C28FEF5007810D4 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D52C5922C28FEF5007810D4 /* Player.swift */; };
 		5D52C5982C29051C007810D4 /* EggImageGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D52C5972C29051C007810D4 /* EggImageGetter.swift */; };
-		5D52C59C2C290848007810D4 /* EggCupCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D52C59B2C290848007810D4 /* EggCupCover.swift */; };
 		5D7269152C3E367900966DE6 /* TextSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7269142C3E367900966DE6 /* TextSize.swift */; };
-		5D778E802C27CA35008A5E54 /* DraggableEggCup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D778E7F2C27CA35008A5E54 /* DraggableEggCup.swift */; };
 		5D9F241F2C266085005BF969 /* EggBreakdownGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F241E2C266085005BF969 /* EggBreakdownGame.swift */; };
 		5D9F24212C2660F7005BF969 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24202C2660F7005BF969 /* MainView.swift */; };
 		5D9F24232C26610F005BF969 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9F24222C26610F005BF969 /* GameView.swift */; };
-		5DA00FA32C2A143800011AB9 /* Hammer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA00FA22C2A143800011AB9 /* Hammer.swift */; };
 		5DA00FA52C2A431F00011AB9 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA00FA42C2A431F00011AB9 /* CustomError.swift */; };
 		5DA00FA72C2A4C2E00011AB9 /* GameToPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA00FA62C2A4C2E00011AB9 /* GameToPlayer.swift */; };
 		5DBA00D72C4B2CFB008DDA3A /* PauseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBA00D62C4B2CFB008DDA3A /* PauseManager.swift */; };
@@ -48,11 +47,8 @@
 		5DE41EE32C3256FC007EBE33 /* EggCupZoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE41EE22C3256FC007EBE33 /* EggCupZoneModel.swift */; };
 		5DE41EE52C325727007EBE33 /* EggCupZoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE41EE42C325727007EBE33 /* EggCupZoneController.swift */; };
 		5DE41EE72C32575A007EBE33 /* EggCupZoneListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE41EE62C32575A007EBE33 /* EggCupZoneListView.swift */; };
-		5DF242C62C34E6290057643E /* DragEggCupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF242C32C34E6290057643E /* DragEggCupModel.swift */; };
-		5DF242C72C34E6290057643E /* DragEggCupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF242C42C34E6290057643E /* DragEggCupController.swift */; };
 		5DF242C82C34E6290057643E /* DragEggCupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF242C52C34E6290057643E /* DragEggCupView.swift */; };
 		5DFF0E2F2C3C48700073D7D9 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF0E2E2C3C48700073D7D9 /* TutorialView.swift */; };
-		5DFF0E312C3C57130073D7D9 /* NaturalTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF0E302C3C57130073D7D9 /* NaturalTextView.swift */; };
 		5DFF0E3B2C3CB2300073D7D9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF0E3A2C3CB2300073D7D9 /* SettingsView.swift */; };
 		5DFF0E3E2C3CBFE60073D7D9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF0E3D2C3CBFE60073D7D9 /* Color.swift */; };
 		5DFF0E412C3CC05E0073D7D9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF0E402C3CC05E0073D7D9 /* Constants.swift */; };
@@ -81,6 +77,8 @@
 		5D04E5A22C41F63D00C3194C /* GameConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfig.swift; sourceTree = "<group>"; };
 		5D04E5A52C41F8DD00C3194C /* GameFlowTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFlowTimer.swift; sourceTree = "<group>"; };
 		5D0A0F9C2C38E27F00C48719 /* GamePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePopupView.swift; sourceTree = "<group>"; };
+		5D338EE62C72EF980023D4AA /* EggCupCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggCupCover.swift; sourceTree = "<group>"; };
+		5D338EE82C72EFD20023D4AA /* NaturalTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaturalTextView.swift; sourceTree = "<group>"; };
 		5D4D4BC72C39D56500F0E00E /* Attribution.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Attribution.txt; sourceTree = "<group>"; };
 		5D4D4BCA2C39DD6800F0E00E /* hit_egg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hit_egg.mp3; sourceTree = "<group>"; };
 		5D4D4BCC2C39E0FD00F0E00E /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
@@ -91,15 +89,12 @@
 		5D52C58F2C28FD7F007810D4 /* GamePhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePhase.swift; sourceTree = "<group>"; };
 		5D52C5922C28FEF5007810D4 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		5D52C5972C29051C007810D4 /* EggImageGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggImageGetter.swift; sourceTree = "<group>"; };
-		5D52C59B2C290848007810D4 /* EggCupCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggCupCover.swift; sourceTree = "<group>"; };
 		5D649DB62C3262D500D02D9E /* Egg-Breakdown-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Egg-Breakdown-Info.plist"; sourceTree = "<group>"; };
 		5D7269142C3E367900966DE6 /* TextSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSize.swift; sourceTree = "<group>"; };
-		5D778E7F2C27CA35008A5E54 /* DraggableEggCup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableEggCup.swift; sourceTree = "<group>"; };
 		5D9F241E2C266085005BF969 /* EggBreakdownGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggBreakdownGame.swift; sourceTree = "<group>"; };
 		5D9F24202C2660F7005BF969 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		5D9F24222C26610F005BF969 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		5D9F88F42C377CC6001678FF /* PopupHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupHelper.swift; sourceTree = "<group>"; };
-		5DA00FA22C2A143800011AB9 /* Hammer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hammer.swift; sourceTree = "<group>"; };
 		5DA00FA42C2A431F00011AB9 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		5DA00FA62C2A4C2E00011AB9 /* GameToPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameToPlayer.swift; sourceTree = "<group>"; };
 		5DBA00D62C4B2CFB008DDA3A /* PauseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseManager.swift; sourceTree = "<group>"; };
@@ -123,11 +118,8 @@
 		5DE41EE22C3256FC007EBE33 /* EggCupZoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggCupZoneModel.swift; sourceTree = "<group>"; };
 		5DE41EE42C325727007EBE33 /* EggCupZoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggCupZoneController.swift; sourceTree = "<group>"; };
 		5DE41EE62C32575A007EBE33 /* EggCupZoneListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggCupZoneListView.swift; sourceTree = "<group>"; };
-		5DF242C32C34E6290057643E /* DragEggCupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragEggCupModel.swift; sourceTree = "<group>"; };
-		5DF242C42C34E6290057643E /* DragEggCupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragEggCupController.swift; sourceTree = "<group>"; };
 		5DF242C52C34E6290057643E /* DragEggCupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragEggCupView.swift; sourceTree = "<group>"; };
 		5DFF0E2E2C3C48700073D7D9 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
-		5DFF0E302C3C57130073D7D9 /* NaturalTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaturalTextView.swift; sourceTree = "<group>"; };
 		5DFF0E3A2C3CB2300073D7D9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		5DFF0E3D2C3CBFE60073D7D9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		5DFF0E402C3CC05E0073D7D9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -159,88 +151,211 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5D04E59F2C41E26900C3194C /* options */ = {
+		5D338ED52C72EC4A0023D4AA /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				5D04E5A02C41E27600C3194C /* OptionsView.swift */,
+				5D338ED62C72EC530023D4AA /* Model */,
+				5D338ED72C72EC5A0023D4AA /* View */,
+				5D338ED82C72EC600023D4AA /* ViewModel */,
 			);
-			path = options;
+			path = Home;
 			sourceTree = "<group>";
 		};
-		5D4D946F2C49D83200AA64B4 /* tossCoin */ = {
+		5D338ED62C72EC530023D4AA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5D4D94702C49D84C00AA64B4 /* TossCoinView.swift */,
 			);
-			path = tossCoin;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		5D52C58D2C28FCE3007810D4 /* views */ = {
+		5D338ED72C72EC5A0023D4AA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5DD867A32C26559E00E37087 /* ContentView.swift */,
 				5D9F24202C2660F7005BF969 /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5D338ED82C72EC600023D4AA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5D338ED92C72EC8A0023D4AA /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				5D338EEA2C72F06F0023D4AA /* Enum */,
+				5D338EDA2C72EC940023D4AA /* Model */,
+				5D338EDB2C72EC9B0023D4AA /* View */,
+				5D338EDC2C72EC9F0023D4AA /* ViewModel */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		5D338EDA2C72EC940023D4AA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D52C5972C29051C007810D4 /* EggImageGetter.swift */,
+				5D52C5922C28FEF5007810D4 /* Player.swift */,
+				5DA00FA62C2A4C2E00011AB9 /* GameToPlayer.swift */,
+				5D04E5A22C41F63D00C3194C /* GameConfig.swift */,
+				5DE41EE22C3256FC007EBE33 /* EggCupZoneModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5D338EDB2C72EC9B0023D4AA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5DF242C52C34E6290057643E /* DragEggCupView.swift */,
+				5DE41EE62C32575A007EBE33 /* EggCupZoneListView.swift */,
+				5DE41EE02C3256B9007EBE33 /* EggCupZoneView.swift */,
+				5DE41EDB2C323AAB007EBE33 /* HammerView.swift */,
+				5D4D94702C49D84C00AA64B4 /* TossCoinView.swift */,
+				5D338EE62C72EF980023D4AA /* EggCupCover.swift */,
 				5D9F24222C26610F005BF969 /* GameView.swift */,
 				5D0A0F9C2C38E27F00C48719 /* GamePopupView.swift */,
 			);
-			path = views;
+			path = View;
 			sourceTree = "<group>";
 		};
-		5D52C58E2C28FD72007810D4 /* enums */ = {
+		5D338EDC2C72EC9F0023D4AA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				5D52C58B2C28FCB6007810D4 /* EggType.swift */,
+				5D9F241E2C266085005BF969 /* EggBreakdownGame.swift */,
+				5D04E5A52C41F8DD00C3194C /* GameFlowTimer.swift */,
+				5DD64A192C471ABB00FA9115 /* TurnManager.swift */,
+				5DE41EE42C325727007EBE33 /* EggCupZoneController.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5D338EDD2C72ED140023D4AA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5D338EEB2C72F0FC0023D4AA /* Util */,
+				5D338EE12C72ED470023D4AA /* Model */,
+				5D338EE02C72ED430023D4AA /* View */,
+				5D338EDF2C72ED3C0023D4AA /* ViewModel */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		5D338EDF2C72ED3C0023D4AA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5D4D4BCC2C39E0FD00F0E00E /* SoundManager.swift */,
+				5DBA00D62C4B2CFB008DDA3A /* PauseManager.swift */,
+				5D9F88F42C377CC6001678FF /* PopupHelper.swift */,
+				5DD06F302C40C6B5006F9E71 /* MusicPlayerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5D338EE02C72ED430023D4AA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5DD06F322C40CDDE006F9E71 /* AudioSlider.swift */,
+				5D04E5A02C41E27600C3194C /* OptionsView.swift */,
+				5DFF0E3A2C3CB2300073D7D9 /* SettingsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5D338EE12C72ED470023D4AA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5D338EE22C72ED580023D4AA /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				5D338EE52C72ED6A0023D4AA /* Model */,
+				5D338EE42C72ED670023D4AA /* View */,
+				5D338EE32C72ED620023D4AA /* ViewModel */,
+			);
+			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		5D338EE32C72ED620023D4AA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5D338EE42C72ED670023D4AA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5DFF0E2E2C3C48700073D7D9 /* TutorialView.swift */,
+				5D338EE82C72EFD20023D4AA /* NaturalTextView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5D338EE52C72ED6A0023D4AA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5D338EEA2C72F06F0023D4AA /* Enum */ = {
+			isa = PBXGroup;
+			children = (
 				5D52C58F2C28FD7F007810D4 /* GamePhase.swift */,
+				5D52C58B2C28FCB6007810D4 /* EggType.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		5D338EEB2C72F0FC0023D4AA /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				5DFF0E402C3CC05E0073D7D9 /* Constants.swift */,
+				5DFF0E422C3CC0850073D7D9 /* UserDefaultsUtils.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		5D338EEC2C72F1190023D4AA /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				5DD3EAC72C3B8E07008B2F2C /* Resource */,
+				5D338EEE2C72F1390023D4AA /* Extension */,
+				5D338EED2C72F1260023D4AA /* Enum */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		5D338EED2C72F1260023D4AA /* Enum */ = {
+			isa = PBXGroup;
+			children = (
 				5DA00FA42C2A431F00011AB9 /* CustomError.swift */,
 				5D7269142C3E367900966DE6 /* TextSize.swift */,
 			);
-			path = enums;
+			path = Enum;
 			sourceTree = "<group>";
 		};
-		5D52C5912C28FDB9007810D4 /* app */ = {
+		5D338EEE2C72F1390023D4AA /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				5DD867A72C2655A100E37087 /* Assets.xcassets */,
-				5D9F241E2C266085005BF969 /* EggBreakdownGame.swift */,
-				5DD867A12C26559E00E37087 /* Egg_BreakdownApp.swift */,
-				5D52C5922C28FEF5007810D4 /* Player.swift */,
-				5D52C5972C29051C007810D4 /* EggImageGetter.swift */,
-				5DA00FA62C2A4C2E00011AB9 /* GameToPlayer.swift */,
-				5D4D4BCC2C39E0FD00F0E00E /* SoundManager.swift */,
-				5D04E5A22C41F63D00C3194C /* GameConfig.swift */,
-				5D04E5A52C41F8DD00C3194C /* GameFlowTimer.swift */,
-				5DD64A192C471ABB00FA9115 /* TurnManager.swift */,
-				5DBA00D62C4B2CFB008DDA3A /* PauseManager.swift */,
+				5DFF0E3D2C3CBFE60073D7D9 /* Color.swift */,
 			);
-			path = app;
+			path = Extension;
 			sourceTree = "<group>";
 		};
-		5D778E7B2C27C62E008A5E54 /* components */ = {
-			isa = PBXGroup;
-			children = (
-				5D4D946F2C49D83200AA64B4 /* tossCoin */,
-				5D04E59F2C41E26900C3194C /* options */,
-				5DFF0E392C3CB2240073D7D9 /* settings */,
-				5DFF0E2D2C3C48590073D7D9 /* tutorial */,
-				5DF242C22C34E6290057643E /* dragEggCup */,
-				5DE41EDF2C324D80007EBE33 /* eggCupZone */,
-				5DE41EDA2C323A94007EBE33 /* hammer */,
-				5D778E7F2C27CA35008A5E54 /* DraggableEggCup.swift */,
-				5D52C59B2C290848007810D4 /* EggCupCover.swift */,
-				5DA00FA22C2A143800011AB9 /* Hammer.swift */,
-				5D9F88F42C377CC6001678FF /* PopupHelper.swift */,
-				5DFF0E302C3C57130073D7D9 /* NaturalTextView.swift */,
-			);
-			path = components;
-			sourceTree = "<group>";
-		};
-		5DD3EAC72C3B8E07008B2F2C /* resource */ = {
+		5DD3EAC72C3B8E07008B2F2C /* Resource */ = {
 			isa = PBXGroup;
 			children = (
 				5DD3EAC92C3B8E16008B2F2C /* fonts */,
 				5DD3EAC82C3B8E0C008B2F2C /* audio */,
 			);
-			path = resource;
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		5DD3EAC82C3B8E0C008B2F2C /* audio */ = {
@@ -287,14 +402,15 @@
 		5DD867A02C26559E00E37087 /* Egg Breakdown */ = {
 			isa = PBXGroup;
 			children = (
-				5D52C5912C28FDB9007810D4 /* app */,
-				5D778E7B2C27C62E008A5E54 /* components */,
-				5D52C58D2C28FCE3007810D4 /* views */,
-				5D52C58E2C28FD72007810D4 /* enums */,
-				5DFF0E3C2C3CBFD60073D7D9 /* extensions */,
-				5DD3EAC72C3B8E07008B2F2C /* resource */,
-				5DFF0E3F2C3CC0430073D7D9 /* utils */,
+				5D338ED52C72EC4A0023D4AA /* Home */,
+				5D338ED92C72EC8A0023D4AA /* Game */,
+				5D338EDD2C72ED140023D4AA /* Settings */,
+				5D338EE22C72ED580023D4AA /* Tutorial */,
+				5D338EEC2C72F1190023D4AA /* Global */,
 				5DD867A92C2655A100E37087 /* Preview Content */,
+				5DD867A72C2655A100E37087 /* Assets.xcassets */,
+				5DD867A32C26559E00E37087 /* ContentView.swift */,
+				5DD867A12C26559E00E37087 /* Egg_BreakdownApp.swift */,
 			);
 			path = "Egg Breakdown";
 			sourceTree = "<group>";
@@ -322,70 +438,6 @@
 				5DD867C02C2655A100E37087 /* Egg_BreakdownUITestsLaunchTests.swift */,
 			);
 			path = "Egg BreakdownUITests";
-			sourceTree = "<group>";
-		};
-		5DE41EDA2C323A94007EBE33 /* hammer */ = {
-			isa = PBXGroup;
-			children = (
-				5DE41EDB2C323AAB007EBE33 /* HammerView.swift */,
-			);
-			path = hammer;
-			sourceTree = "<group>";
-		};
-		5DE41EDF2C324D80007EBE33 /* eggCupZone */ = {
-			isa = PBXGroup;
-			children = (
-				5DE41EE02C3256B9007EBE33 /* EggCupZoneView.swift */,
-				5DE41EE22C3256FC007EBE33 /* EggCupZoneModel.swift */,
-				5DE41EE42C325727007EBE33 /* EggCupZoneController.swift */,
-				5DE41EE62C32575A007EBE33 /* EggCupZoneListView.swift */,
-			);
-			path = eggCupZone;
-			sourceTree = "<group>";
-		};
-		5DF242C22C34E6290057643E /* dragEggCup */ = {
-			isa = PBXGroup;
-			children = (
-				5DF242C32C34E6290057643E /* DragEggCupModel.swift */,
-				5DF242C42C34E6290057643E /* DragEggCupController.swift */,
-				5DF242C52C34E6290057643E /* DragEggCupView.swift */,
-			);
-			path = dragEggCup;
-			sourceTree = "<group>";
-		};
-		5DFF0E2D2C3C48590073D7D9 /* tutorial */ = {
-			isa = PBXGroup;
-			children = (
-				5DFF0E2E2C3C48700073D7D9 /* TutorialView.swift */,
-			);
-			path = tutorial;
-			sourceTree = "<group>";
-		};
-		5DFF0E392C3CB2240073D7D9 /* settings */ = {
-			isa = PBXGroup;
-			children = (
-				5DFF0E3A2C3CB2300073D7D9 /* SettingsView.swift */,
-				5DD06F302C40C6B5006F9E71 /* MusicPlayerViewModel.swift */,
-				5DD06F322C40CDDE006F9E71 /* AudioSlider.swift */,
-			);
-			path = settings;
-			sourceTree = "<group>";
-		};
-		5DFF0E3C2C3CBFD60073D7D9 /* extensions */ = {
-			isa = PBXGroup;
-			children = (
-				5DFF0E3D2C3CBFE60073D7D9 /* Color.swift */,
-			);
-			path = extensions;
-			sourceTree = "<group>";
-		};
-		5DFF0E3F2C3CC0430073D7D9 /* utils */ = {
-			isa = PBXGroup;
-			children = (
-				5DFF0E402C3CC05E0073D7D9 /* Constants.swift */,
-				5DFF0E422C3CC0850073D7D9 /* UserDefaultsUtils.swift */,
-			);
-			path = utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -526,17 +578,15 @@
 				5D0A0FA02C38ED8F00C48719 /* PopupHelper.swift in Sources */,
 				5DD06F312C40C6B5006F9E71 /* MusicPlayerViewModel.swift in Sources */,
 				5DD64A1A2C471ABB00FA9115 /* TurnManager.swift in Sources */,
-				5DA00FA32C2A143800011AB9 /* Hammer.swift in Sources */,
 				5D04E5A12C41E27600C3194C /* OptionsView.swift in Sources */,
 				5DE41EE12C3256B9007EBE33 /* EggCupZoneView.swift in Sources */,
-				5DF242C62C34E6290057643E /* DragEggCupModel.swift in Sources */,
 				5DD06F332C40CDDE006F9E71 /* AudioSlider.swift in Sources */,
 				5DA00FA52C2A431F00011AB9 /* CustomError.swift in Sources */,
+				5D338EE92C72EFD20023D4AA /* NaturalTextView.swift in Sources */,
 				5DE41EE72C32575A007EBE33 /* EggCupZoneListView.swift in Sources */,
 				5D4D94712C49D84C00AA64B4 /* TossCoinView.swift in Sources */,
 				5DE41EDC2C323AAB007EBE33 /* HammerView.swift in Sources */,
 				5DFF0E412C3CC05E0073D7D9 /* Constants.swift in Sources */,
-				5DFF0E312C3C57130073D7D9 /* NaturalTextView.swift in Sources */,
 				5D7269152C3E367900966DE6 /* TextSize.swift in Sources */,
 				5D52C5932C28FEF5007810D4 /* Player.swift in Sources */,
 				5D52C5982C29051C007810D4 /* EggImageGetter.swift in Sources */,
@@ -550,15 +600,13 @@
 				5DFF0E3B2C3CB2300073D7D9 /* SettingsView.swift in Sources */,
 				5DE41EE32C3256FC007EBE33 /* EggCupZoneModel.swift in Sources */,
 				5DFF0E432C3CC0850073D7D9 /* UserDefaultsUtils.swift in Sources */,
+				5D338EE72C72EF980023D4AA /* EggCupCover.swift in Sources */,
 				5DFF0E2F2C3C48700073D7D9 /* TutorialView.swift in Sources */,
 				5D4D4BCD2C39E0FD00F0E00E /* SoundManager.swift in Sources */,
 				5D9F24212C2660F7005BF969 /* MainView.swift in Sources */,
 				5DE41EE52C325727007EBE33 /* EggCupZoneController.swift in Sources */,
-				5D778E802C27CA35008A5E54 /* DraggableEggCup.swift in Sources */,
 				5D9F24232C26610F005BF969 /* GameView.swift in Sources */,
 				5DF242C82C34E6290057643E /* DragEggCupView.swift in Sources */,
-				5DF242C72C34E6290057643E /* DragEggCupController.swift in Sources */,
-				5D52C59C2C290848007810D4 /* EggCupCover.swift in Sources */,
 				5D9F241F2C266085005BF969 /* EggBreakdownGame.swift in Sources */,
 				5D04E5A62C41F8DD00C3194C /* GameFlowTimer.swift in Sources */,
 				5D52C5902C28FD7F007810D4 /* GamePhase.swift in Sources */,
@@ -735,14 +783,18 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "KolynEnterprise.Egg-Breakdown";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KolynEnterprise.Egg-Breakdown";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -764,14 +816,18 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "KolynEnterprise.Egg-Breakdown";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KolynEnterprise.Egg-Breakdown";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
