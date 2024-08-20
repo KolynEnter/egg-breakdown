@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RulesView: View {
     @State private var linePointer: Int = 0
-    @Environment(MenuViewModel.self) var menuViewModel: MenuViewModel
+    @Environment(WindowViewModel.self) var windowViewModel: WindowViewModel
     
     private var model = RulesModel()
     
@@ -60,7 +60,7 @@ struct RulesView: View {
                 Spacer()
                     
                 Button {
-                    menuViewModel.showMenu(.none)
+                    windowViewModel.showMenu(.none)
                 } label: {
                     Text("Close")
                         .font(Font.custom("This-Cafe", size: TextSize.large.rawValue))
@@ -86,8 +86,8 @@ struct RulesView: View {
         .cornerRadius(10)
         .shadow(radius: 10)
         .padding()
-        .opacity(menuViewModel.currentMenu == .rules ? 1 : 0)
-        .onChange(of: menuViewModel.currentMenu) {
+        .opacity(windowViewModel.currentWindow == .rules ? 1 : 0)
+        .onChange(of: windowViewModel.currentWindow) {
             linePointer = 0
         }
     }
@@ -109,5 +109,5 @@ struct RulesView: View {
 
 #Preview {
     RulesView()
-        .environment(MenuViewModel(defaultMenu: .rules))
+        .environment(WindowViewModel(defaultWindow: .rules))
 }

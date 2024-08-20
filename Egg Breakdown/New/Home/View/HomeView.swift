@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @Environment(MenuViewModel.self) var menuViewModel: MenuViewModel
+    @Environment(WindowViewModel.self) var windowViewModel: WindowViewModel
     @Environment(OptionsViewModel.self) var optionsViewModel: OptionsViewModel
 
     var body: some View {
@@ -33,12 +33,12 @@ struct HomeView: View {
                                 .foregroundColor(Color.TextColorPrimary)
                                 .background(.clear)
                         }
-                        .allowsHitTesting(menuViewModel.currentMenu == .none)
+                        .allowsHitTesting(windowViewModel.currentWindow == .none)
                         Rectangle()
                             .frame(height: 50)
                             .opacity(0)
                         Button(action: {
-                            menuViewModel.currentMenu = .settings
+                            windowViewModel.showMenu(.settings)
                         }) {
                             Text("Settings")
                                 .padding()
@@ -47,7 +47,7 @@ struct HomeView: View {
                                 .background(.clear)
                         }
                         Button(action: {
-                            menuViewModel.currentMenu = .rules
+                            windowViewModel.showMenu(.rules)
                         }) {
                             Text("Rules")
                                 .padding()
@@ -59,10 +59,10 @@ struct HomeView: View {
                     }
                     
                     VStack {
-                        if menuViewModel.currentMenu == .settings {
+                        if windowViewModel.currentWindow == .settings {
                             NewSettingsView()
                         }
-                        if menuViewModel.currentMenu == .rules {
+                        if windowViewModel.currentWindow == .rules {
                             RulesView()
                         }
                     }
@@ -70,11 +70,12 @@ struct HomeView: View {
             }
             .background(Color.BackgroundColor)
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 #Preview {
     HomeView()
-        .environment(MenuViewModel())
+        .environment(WindowViewModel())
         .environment(OptionsViewModel())
 }

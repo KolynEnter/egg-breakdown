@@ -13,7 +13,7 @@
 		5D0566F42C73D0B5009A4583 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0566F32C73D0B5009A4583 /* GameViewModel.swift */; };
 		5D0566F62C73D628009A4583 /* OptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0566F52C73D628009A4583 /* OptionsViewModel.swift */; };
 		5D0566F82C73D670009A4583 /* AudioSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0566F72C73D670009A4583 /* AudioSystem.swift */; };
-		5D0566FA2C74058F009A4583 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0566F92C74058F009A4583 /* MenuViewModel.swift */; };
+		5D0566FA2C74058F009A4583 /* WindowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0566F92C74058F009A4583 /* WindowViewModel.swift */; };
 		5D0567092C74290B009A4583 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0567082C74290B009A4583 /* HomeView.swift */; };
 		5D0567112C742C8C009A4583 /* NewGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0567102C742C8C009A4583 /* NewGameView.swift */; };
 		5D0567152C7435E5009A4583 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0567142C7435E5009A4583 /* RulesView.swift */; };
@@ -41,6 +41,17 @@
 		5DA00FA52C2A431F00011AB9 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA00FA42C2A431F00011AB9 /* CustomError.swift */; };
 		5DA00FA72C2A4C2E00011AB9 /* GameToPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA00FA62C2A4C2E00011AB9 /* GameToPlayer.swift */; };
 		5DBA00D72C4B2CFB008DDA3A /* PauseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBA00D62C4B2CFB008DDA3A /* PauseManager.swift */; };
+		5DC6BB4F2C74F441000AA413 /* NewTossCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6BB4E2C74F441000AA413 /* NewTossCoinView.swift */; };
+		5DC6BB522C74FA3A000AA413 /* CupZoneListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6BB512C74FA3A000AA413 /* CupZoneListView.swift */; };
+		5DC6BB542C74FFCE000AA413 /* CupZoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6BB532C74FFCE000AA413 /* CupZoneView.swift */; };
+		5DC6BB562C750304000AA413 /* CupZoneListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6BB552C750304000AA413 /* CupZoneListViewModel.swift */; };
+		5DC6BB582C7505C2000AA413 /* CupZoneListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6BB572C7505C2000AA413 /* CupZoneListModel.swift */; };
+		5DC6BB5A2C750809000AA413 /* CupZoneListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6BB592C750808000AA413 /* CupZoneListViewModelTests.swift */; };
+		5DC6BB5C2C751F88000AA413 /* NewCupCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6BB5B2C751F88000AA413 /* NewCupCoverView.swift */; };
+		5DC6BB5E2C75234E000AA413 /* HammerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6BB5D2C75234E000AA413 /* HammerViewModel.swift */; };
+		5DC6BB602C75235A000AA413 /* NewHammerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6BB5F2C75235A000AA413 /* NewHammerView.swift */; };
+		5DC6BB622C752E13000AA413 /* DragEggView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6BB612C752E13000AA413 /* DragEggView.swift */; };
+		5DC6BB642C752EFB000AA413 /* DragEggViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC6BB632C752EFB000AA413 /* DragEggViewModel.swift */; };
 		5DD06F312C40C6B5006F9E71 /* MusicPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD06F302C40C6B5006F9E71 /* MusicPlayerViewModel.swift */; };
 		5DD06F332C40CDDE006F9E71 /* AudioSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD06F322C40CDDE006F9E71 /* AudioSlider.swift */; };
 		5DD3EAC22C3B8C57008B2F2C /* This_Cafe.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DD3EAC12C3B8C57008B2F2C /* This_Cafe.ttf */; };
@@ -90,7 +101,7 @@
 		5D0566F32C73D0B5009A4583 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		5D0566F52C73D628009A4583 /* OptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewModel.swift; sourceTree = "<group>"; };
 		5D0566F72C73D670009A4583 /* AudioSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSystem.swift; sourceTree = "<group>"; };
-		5D0566F92C74058F009A4583 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		5D0566F92C74058F009A4583 /* WindowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowViewModel.swift; sourceTree = "<group>"; };
 		5D0567082C74290B009A4583 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5D0567102C742C8C009A4583 /* NewGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameView.swift; sourceTree = "<group>"; };
 		5D0567142C7435E5009A4583 /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
@@ -120,6 +131,17 @@
 		5DA00FA42C2A431F00011AB9 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		5DA00FA62C2A4C2E00011AB9 /* GameToPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameToPlayer.swift; sourceTree = "<group>"; };
 		5DBA00D62C4B2CFB008DDA3A /* PauseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseManager.swift; sourceTree = "<group>"; };
+		5DC6BB4E2C74F441000AA413 /* NewTossCoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTossCoinView.swift; sourceTree = "<group>"; };
+		5DC6BB512C74FA3A000AA413 /* CupZoneListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupZoneListView.swift; sourceTree = "<group>"; };
+		5DC6BB532C74FFCE000AA413 /* CupZoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupZoneView.swift; sourceTree = "<group>"; };
+		5DC6BB552C750304000AA413 /* CupZoneListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupZoneListViewModel.swift; sourceTree = "<group>"; };
+		5DC6BB572C7505C2000AA413 /* CupZoneListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupZoneListModel.swift; sourceTree = "<group>"; };
+		5DC6BB592C750808000AA413 /* CupZoneListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupZoneListViewModelTests.swift; sourceTree = "<group>"; };
+		5DC6BB5B2C751F88000AA413 /* NewCupCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCupCoverView.swift; sourceTree = "<group>"; };
+		5DC6BB5D2C75234E000AA413 /* HammerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HammerViewModel.swift; path = "Egg Breakdown/New/Game/View/HammerViewModel.swift"; sourceTree = SOURCE_ROOT; };
+		5DC6BB5F2C75235A000AA413 /* NewHammerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHammerView.swift; sourceTree = "<group>"; };
+		5DC6BB612C752E13000AA413 /* DragEggView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragEggView.swift; sourceTree = "<group>"; };
+		5DC6BB632C752EFB000AA413 /* DragEggViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragEggViewModel.swift; sourceTree = "<group>"; };
 		5DD06F302C40C6B5006F9E71 /* MusicPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerViewModel.swift; sourceTree = "<group>"; };
 		5DD06F322C40CDDE006F9E71 /* AudioSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSlider.swift; sourceTree = "<group>"; };
 		5DD3EAC12C3B8C57008B2F2C /* This_Cafe.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = This_Cafe.ttf; sourceTree = "<group>"; };
@@ -176,7 +198,7 @@
 		5D0566FB2C740611009A4583 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				5D0566F92C74058F009A4583 /* MenuViewModel.swift */,
+				5D0566F92C74058F009A4583 /* WindowViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -212,6 +234,7 @@
 		5D0567012C7424E3009A4583 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				5DC6BB502C74F92E000AA413 /* Model */,
 				5D05670E2C742C3D009A4583 /* View */,
 				5D0567022C7424EE009A4583 /* ViewModel */,
 			);
@@ -222,6 +245,9 @@
 			isa = PBXGroup;
 			children = (
 				5D0566F32C73D0B5009A4583 /* GameViewModel.swift */,
+				5DC6BB552C750304000AA413 /* CupZoneListViewModel.swift */,
+				5DC6BB5D2C75234E000AA413 /* HammerViewModel.swift */,
+				5DC6BB632C752EFB000AA413 /* DragEggViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -272,6 +298,12 @@
 			isa = PBXGroup;
 			children = (
 				5D0567102C742C8C009A4583 /* NewGameView.swift */,
+				5DC6BB4E2C74F441000AA413 /* NewTossCoinView.swift */,
+				5DC6BB512C74FA3A000AA413 /* CupZoneListView.swift */,
+				5DC6BB532C74FFCE000AA413 /* CupZoneView.swift */,
+				5DC6BB5B2C751F88000AA413 /* NewCupCoverView.swift */,
+				5DC6BB5F2C75235A000AA413 /* NewHammerView.swift */,
+				5DC6BB612C752E13000AA413 /* DragEggView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -325,7 +357,6 @@
 		5D338EDA2C72EC940023D4AA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5D52C5972C29051C007810D4 /* EggImageGetter.swift */,
 				5D52C5922C28FEF5007810D4 /* Player.swift */,
 				5DA00FA62C2A4C2E00011AB9 /* GameToPlayer.swift */,
 				5D04E5A22C41F63D00C3194C /* GameConfig.swift */,
@@ -477,6 +508,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		5DC6BB502C74F92E000AA413 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D52C5972C29051C007810D4 /* EggImageGetter.swift */,
+				5DC6BB572C7505C2000AA413 /* CupZoneListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5DD3EAC72C3B8E07008B2F2C /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -556,6 +596,7 @@
 			isa = PBXGroup;
 			children = (
 				5DD867B42C2655A100E37087 /* Egg_BreakdownTests.swift */,
+				5DC6BB592C750808000AA413 /* CupZoneListViewModelTests.swift */,
 			);
 			path = "Egg BreakdownTests";
 			sourceTree = "<group>";
@@ -709,11 +750,14 @@
 				5D05671D2C7440A6009A4583 /* NewAudioSlider.swift in Sources */,
 				5DD64A1A2C471ABB00FA9115 /* TurnManager.swift in Sources */,
 				5D0567182C74366B009A4583 /* RulesModel.swift in Sources */,
+				5DC6BB602C75235A000AA413 /* NewHammerView.swift in Sources */,
 				5D04E5A12C41E27600C3194C /* OptionsView.swift in Sources */,
 				5D0567152C7435E5009A4583 /* RulesView.swift in Sources */,
+				5DC6BB4F2C74F441000AA413 /* NewTossCoinView.swift in Sources */,
 				5DE41EE12C3256B9007EBE33 /* EggCupZoneView.swift in Sources */,
 				5DD06F332C40CDDE006F9E71 /* AudioSlider.swift in Sources */,
 				5DA00FA52C2A431F00011AB9 /* CustomError.swift in Sources */,
+				5DC6BB562C750304000AA413 /* CupZoneListViewModel.swift in Sources */,
 				5D338EE92C72EFD20023D4AA /* NaturalTextView.swift in Sources */,
 				5D0566F82C73D670009A4583 /* AudioSystem.swift in Sources */,
 				5DE41EE72C32575A007EBE33 /* EggCupZoneListView.swift in Sources */,
@@ -726,6 +770,7 @@
 				5D0567112C742C8C009A4583 /* NewGameView.swift in Sources */,
 				5D52C5932C28FEF5007810D4 /* Player.swift in Sources */,
 				5D52C5982C29051C007810D4 /* EggImageGetter.swift in Sources */,
+				5DC6BB5C2C751F88000AA413 /* NewCupCoverView.swift in Sources */,
 				5D52C58C2C28FCB6007810D4 /* EggType.swift in Sources */,
 				5D0566F42C73D0B5009A4583 /* GameViewModel.swift in Sources */,
 				5DD867A42C26559E00E37087 /* ContentView.swift in Sources */,
@@ -733,7 +778,8 @@
 				5DD867A22C26559E00E37087 /* Egg_BreakdownApp.swift in Sources */,
 				5D04E5A32C41F63D00C3194C /* GameConfig.swift in Sources */,
 				5DBA00D72C4B2CFB008DDA3A /* PauseManager.swift in Sources */,
-				5D0566FA2C74058F009A4583 /* MenuViewModel.swift in Sources */,
+				5DC6BB542C74FFCE000AA413 /* CupZoneView.swift in Sources */,
+				5D0566FA2C74058F009A4583 /* WindowViewModel.swift in Sources */,
 				5DFF0E3E2C3CBFE60073D7D9 /* Color.swift in Sources */,
 				5DFF0E3B2C3CB2300073D7D9 /* SettingsView.swift in Sources */,
 				5D05671B2C743D6A009A4583 /* NewSettingsView.swift in Sources */,
@@ -743,13 +789,18 @@
 				5DFF0E2F2C3C48700073D7D9 /* TutorialView.swift in Sources */,
 				5D4D4BCD2C39E0FD00F0E00E /* SoundManager.swift in Sources */,
 				5D9F24212C2660F7005BF969 /* MainView.swift in Sources */,
+				5DC6BB582C7505C2000AA413 /* CupZoneListModel.swift in Sources */,
 				5DE41EE52C325727007EBE33 /* EggCupZoneController.swift in Sources */,
 				5D0566F62C73D628009A4583 /* OptionsViewModel.swift in Sources */,
+				5DC6BB642C752EFB000AA413 /* DragEggViewModel.swift in Sources */,
 				5D9F24232C26610F005BF969 /* GameView.swift in Sources */,
+				5DC6BB622C752E13000AA413 /* DragEggView.swift in Sources */,
 				5DF242C82C34E6290057643E /* DragEggCupView.swift in Sources */,
 				5D9F241F2C266085005BF969 /* EggBreakdownGame.swift in Sources */,
 				5D04E5A62C41F8DD00C3194C /* GameFlowTimer.swift in Sources */,
+				5DC6BB522C74FA3A000AA413 /* CupZoneListView.swift in Sources */,
 				5D52C5902C28FD7F007810D4 /* GamePhase.swift in Sources */,
+				5DC6BB5E2C75234E000AA413 /* HammerViewModel.swift in Sources */,
 				5D0A0F9D2C38E27F00C48719 /* GamePopupView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -759,6 +810,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DD867B52C2655A100E37087 /* Egg_BreakdownTests.swift in Sources */,
+				5DC6BB5A2C750809000AA413 /* CupZoneListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

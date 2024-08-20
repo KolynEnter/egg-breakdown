@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NewSettingsView: View {
     @Environment(\.colorScheme) private var colorScheme: ColorScheme
-    @Environment(MenuViewModel.self) var menuViewModel: MenuViewModel
+    @Environment(WindowViewModel.self) var windowViewModel: WindowViewModel
     @State private var isDarkModeOn = false
 
     private var ToggleThemeView: some View {
@@ -49,7 +49,7 @@ struct NewSettingsView: View {
             }
             
             Button {
-                menuViewModel.showMenu(.none)
+                windowViewModel.showMenu(.none)
             } label: {
                 Text("Close")
                     .padding()
@@ -63,7 +63,7 @@ struct NewSettingsView: View {
         .cornerRadius(10)
         .shadow(radius: 10)
         .padding()
-        .opacity(menuViewModel.currentMenu == .settings ? 1 : 0)
+        .opacity(windowViewModel.currentWindow == .settings ? 1 : 0)
         .onAppear(perform: {
             setAppTheme()
         })
@@ -83,6 +83,6 @@ struct NewSettingsView: View {
 
 #Preview {
     NewSettingsView()
-        .environment(MenuViewModel(defaultMenu: .settings))
+        .environment(WindowViewModel(defaultWindow: .settings))
         .environment(OptionsViewModel())
 }
